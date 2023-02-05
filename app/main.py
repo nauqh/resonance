@@ -51,8 +51,8 @@ run = st.button("Find out")
 if run:
     token = get_token()
     info, artists, features = extract_playlist(token, url)
-    artists.to_csv('data/artists.csv', index=False)
-    features.to_csv('data/playlist.csv', index=False)
+    # artists.to_csv('data/artists.csv', index=False)
+    # features.to_csv('data/playlist.csv', index=False)
 
 # TODO: General info
     st.write("##")

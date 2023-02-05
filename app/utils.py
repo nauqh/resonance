@@ -8,6 +8,7 @@ from requests import post, get
 client_id = st.secrets["CID"]
 client_secret = st.secrets["SECRETS"]
 
+
 # TODO: Authentication
 
 
@@ -110,6 +111,7 @@ def get_audio_features(token: str, track_id: str) -> dict:
 
 
 # TODO: Utility
+@st.experimental_memo
 def extract_playlist(token: str, playlist_url: str) -> tuple[dict, pd.DataFrame, pd.DataFrame]:
     playlist = get_playlist(token, playlist_url)
 
