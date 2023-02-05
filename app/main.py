@@ -24,7 +24,7 @@ with st.sidebar:
     st.markdown(
         "Status: `Beta`")
     st.markdown(
-        "Sever shutdown on: Mon, Feb 4th, 2023 @ 1:25am (PT)")
+        "Sever shutdown on: Tue, Feb 14th, 2023 @ 1:25am (PT)")
     st.markdown("##")
 
 # TODO: Main

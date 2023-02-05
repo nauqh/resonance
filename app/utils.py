@@ -111,7 +111,7 @@ def get_audio_features(token: str, track_id: str) -> dict:
 
 
 # TODO: Utility
-@st.experimental_memo
+@st.experimental_singleton
 def extract_playlist(token: str, playlist_url: str) -> tuple[dict, pd.DataFrame, pd.DataFrame]:
     playlist = get_playlist(token, playlist_url)
 
