@@ -63,6 +63,7 @@ def get_track_info(playlist: dict, index: int) -> dict:
     data = {}
     data['name'] = track['track']['name']
     data['added_date'] = track['added_at']
+    data['release_date'] = track['track']['album']['release_date']
     data['track_id'] = track['track']['id']
     data['artist_id'] = track['track']['album']['artists'][0]['id']
     data['track_pop'] = track['track']['popularity']
