@@ -2,7 +2,6 @@ import re
 import pandas as pd
 from sklearn.preprocessing import MinMaxScaler
 from sklearn.metrics.pairwise import cosine_similarity
-from utils import extract_playlist
 
 
 class Pipeline():
