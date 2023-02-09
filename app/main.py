@@ -15,7 +15,7 @@ st.set_page_config(
 # TODO: Sidebar
 with st.sidebar:
     st.info(
-        "📌 **NOTE**: A rate limit is set to 100 requests every 2 minutes! [Details](https://github.com/nauqh/Resonance)")
+        "📌 **NOTE**: A rate limit is set to 100 requests every 2 minutes! [Details](https://github.com/nauqh/Resonance-app)")
     st.write("## About the project")
     st.markdown(
         "Resonance lets you analyze your Spotify playlists to give you a deeper understanding of your music.")
