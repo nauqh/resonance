@@ -101,6 +101,7 @@ def recommend(playlist: pd.DataFrame):
     float_cols = playlist.dtypes[playlist.dtypes == 'float64'].index.values
 
     pl = Pipeline()
+    playlist = pl.select_cols(playlist)
     playlist = pl.create_feature_set(
         playlist, float_cols=float_cols)
     playlist_vector = pl.create_playlist_vector(playlist)
