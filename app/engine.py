@@ -97,7 +97,7 @@ class Pipeline():
 
 
 def recommend(playlist: pd.DataFrame):
-    features = pd.read_csv("features.csv")
+    features = pd.read_csv("data/features.csv")
     float_cols = playlist.dtypes[playlist.dtypes == 'float64'].index.values
 
     pl = Pipeline()
