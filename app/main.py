@@ -60,7 +60,7 @@ if run:
         l, r = st.columns([1, 1])
         with l:
             components.iframe(
-                f"https://open.spotify.com/embed/playlist/{info['id']}?utm_source=generator", height=400)
+                f"https://open.spotify.com/embed/playlist/{info['id']}?utm_source=generator", height=450)
         with r:
             st.write("##")
             st.markdown("""<span style=' 
