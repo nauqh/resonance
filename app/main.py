@@ -1,11 +1,16 @@
+from db import *
+from engine import *
 from graph import *
 from utils import *
-from engine import *
 import random
 
 import streamlit as st
 import streamlit.components.v1 as components
 
+db_path = "data/resonance.db"
+build_path = "data/resonance.sql"
+db = Database(db_path, build_path)
+db.connect()
 
 st.set_page_config(
     page_title="Resonance",
@@ -53,6 +58,7 @@ if run:
     info, artists, features = extract_playlist(token, url)
     # artists.to_csv('data/artists.csv', index=False)
     # features.to_csv('data/playlist.csv', index=False)
+    insert_playlist(db, info, artists, features)
 
 # TODO: General info
     st.write("##")
