@@ -5,10 +5,8 @@ import streamlit as st
 from requests import post, get
 
 
-# client_id = st.secrets["CID"]
-# client_secret = st.secrets["SECRETS"]
-client_id = "41ebc65d020d4aa8be24bd1f97cbd9ed"
-client_secret = "62ceb3db85854f739c3fd9598504ecaf"
+client_id = st.secrets["CID"]
+client_secret = st.secrets["SECRETS"]
 
 # TODO: Authentication
 
