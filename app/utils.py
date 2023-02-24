@@ -5,9 +5,10 @@ import streamlit as st
 from requests import post, get
 
 
-client_id = st.secrets["CID"]
-client_secret = st.secrets["SECRETS"]
-
+# client_id = st.secrets["CID"]
+# client_secret = st.secrets["SECRETS"]
+client_id = "41ebc65d020d4aa8be24bd1f97cbd9ed"
+client_secret = "62ceb3db85854f739c3fd9598504ecaf"
 
 # TODO: Authentication
 
@@ -83,7 +84,10 @@ def get_artist_info(token: str, artist_id: str) -> dict:
     artist['followers'] = resp['followers']['total']
     artist['genres'] = resp['genres']
     artist['popularity'] = resp['popularity']
-    artist['image'] = resp['images'][0]['url']
+    if not resp['images']:
+        artist['image'] = ''
+    else:
+        artist['image'] = resp['images'][0]['url']
     artist['url'] = resp['external_urls']['spotify']
     return artist
 
