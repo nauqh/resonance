@@ -48,6 +48,10 @@ url = st.text_input(
     "Please share your playlist URL (https://open.spotify.com/playlist/..)", "")
 run = st.button("Find out")
 
+if st.button("Try sample playlist"):
+    url = "https://open.spotify.com/playlist/0UT1JN2PGg2Uitze6ujdl4?si=6ec3fc6868c044ab"
+    run = True
+
 if run:
     token = get_token()
     info, artists, features = extract_playlist(token, url)
@@ -164,5 +168,3 @@ if run:
                 components.iframe(tracks[i+1], height=352)
             with col3:
                 components.iframe(tracks[i+2], height=352)
-
-# NOTE: https://open.spotify.com/playlist/0UT1JN2PGg2Uitze6ujdl4?si=6ec3fc6868c044ab
