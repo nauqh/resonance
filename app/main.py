@@ -45,7 +45,7 @@ st.markdown("""<h3 style='
 st.markdown("##")
 st.image("img/shelf.jpeg")
 url = st.text_input(
-    "Please share your playlist URL (https://open.spotify.com/playlist/..)", "")
+    "☃️Please share your playlist URL (https://open.spotify.com/playlist/..)", "")
 run = st.button("Find out")
 
 if st.button("Try sample playlist"):
