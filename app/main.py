@@ -9,7 +9,7 @@ import streamlit.components.v1 as components
 
 st.set_page_config(
     page_title="Resonance",
-    page_icon="📡",
+    page_icon="🌨️",
     layout="wide")
 
 # TODO: Sidebar
@@ -45,7 +45,7 @@ st.markdown("""<h3 style='
 st.markdown("##")
 st.image("img/shelf.jpeg")
 url = st.text_input(
-    "☃️Please share your playlist URL (https://open.spotify.com/playlist/..)", "")
+    "🌨️Please share your playlist URL (https://open.spotify.com/playlist/..)", "")
 run = st.button("Find out")
 
 if st.button("Try sample playlist"):
@@ -64,7 +64,7 @@ if run:
         l, r = st.columns([1, 1])
         with l:
             components.iframe(
-                f"https://open.spotify.com/embed/playlist/{info['id']}?utm_source=generator", height=450)
+                f"https://open.spotify.com/embed/playlist/{info['id']}?utm_source=generator", height=500)
         with r:
             st.write("##")
             st.markdown("""<span style=' 
