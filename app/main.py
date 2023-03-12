@@ -9,7 +9,7 @@ import streamlit.components.v1 as components
 
 st.set_page_config(
     page_title="Resonance",
-    page_icon="🌨️",
+    page_icon="img/favicon.png",
     layout="wide")
 
 # TODO: Sidebar
