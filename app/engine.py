@@ -110,5 +110,6 @@ def recommend(playlist: pd.DataFrame):
 
 
 if __name__ == '__main__':
+    pass
     # playlist = pd.read_csv("data/playlist.csv")
     # print(recommend(playlist)['id'].tolist())
