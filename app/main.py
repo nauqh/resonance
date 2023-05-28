@@ -158,7 +158,7 @@ if run:
         track = f"https://open.spotify.com/embed/track/{uri}?utm_source=generator"
         tracks.append(track)
 
-    st.header("Your music resonates with these following tastes")
+    st.header("Your music resonates with these tastes")
     with st.container():
         col1, col2, col3 = st.columns([1, 1, 1])
         for i in range(1, len(tracks), 3):
