@@ -113,7 +113,7 @@ def get_obscurity(df: pd.DataFrame):
     if score > 50:
         quote = "You listen to some pretty unique music! But you still enjoy top hits now and again."
     else:
-        quote = "You're pretty balanced. You enjoy popular music, but also venture into the unknown."
+        quote = "You're pretty balanced (or low-key tbh). You enjoy popular music, but also venture into the unknown."
 
     return df['track_pop'].mean(), quote
 
