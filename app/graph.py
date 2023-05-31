@@ -1,4 +1,6 @@
 import pandas as pd
+import numpy as np
+
 import matplotlib.pyplot as plt
 import plotly.graph_objects as go
 from wordcloud import WordCloud
@@ -14,24 +16,29 @@ def graph_features(df: pd.DataFrame) -> go.Figure:
     if (df['instrumentalness'].astype(int) == 0).all():
         df['instrumentalness'] = 0
 
-    features = ['valence', 'energy', 'acousticness',
-                'liveness', 'instrumentalness', 'danceability']
-    df = df[features].mean().tolist()
+    letho = ['valence', 'energy', 'acousticness',
+             'liveness', 'instrumentalness', 'danceability']
+    letho = [*letho, letho[0]]
 
-    fig = go.Figure(go.Scatterpolar(
-        r=df,
-        theta=features,
-        fill='toself',
-        name='',
-        hovertemplate="%{r}"
-    ))
-    fig.update_layout(
-        template='seaborn',
-        polar=dict(
-            radialaxis=dict(showticklabels=False, ticks='')
-        ),
-        margin=dict(r=0)
-    )
+    df = df[letho].mean().tolist()
+
+    label_loc = np.linspace(start=0, stop=2*np.pi, num=len(letho))
+
+    fig, ax = plt.subplots(figsize=(10, 10), subplot_kw=dict(polar=True))
+    lines, labels = plt.thetagrids(np.degrees(label_loc), labels=letho)
+    ax.set_facecolor("#233554")
+
+    ax.plot(label_loc, df, lw=2)
+    ax.fill(label_loc, df, alpha=0.3)
+
+    ax.tick_params(axis='x', which='major', pad=30, labelsize=15)
+
+    edge_color = (1, 1, 1, 0.2)
+    ax.spines['polar'].set_color(edge_color)
+    ax.spines['polar'].set_linewidth(3)
+
+    ax.grid(color='white')
+
     return fig
 
 
