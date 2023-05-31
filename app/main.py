@@ -109,17 +109,17 @@ if run:
             fig = graph_features(features)
             st.plotly_chart(fig, True)
 
-# TODO: Genres
-    st.header("Genres Wordcloud")
-    with st.container():
-        fig = graph_genres(artists)
-        st.pyplot(fig, True)
-
 # TODO: PLaylist update time
     with st.container():
         st.header("Playlist update timeline")
         fig = graph_timeline(features)
         st.plotly_chart(fig, True)
+
+# TODO: Genres
+    st.header("Wordcloud of genres")
+    with st.container():
+        fig = graph_genres(artists)
+        st.pyplot(fig, True)
 
 # TODO: Top artists
     with st.container():
