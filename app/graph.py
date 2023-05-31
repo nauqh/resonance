@@ -1,5 +1,7 @@
 import pandas as pd
+import matplotlib.pyplot as plt
 import plotly.graph_objects as go
+from wordcloud import WordCloud
 
 
 def convert_ms(ms):
@@ -147,3 +149,27 @@ def graph_timeline(df: pd.DataFrame):
     fig.update_xaxes(title='Date')
 
     return fig
+
+
+def to_1D(series):
+    """
+    Convert lists of genres into one vector
+    """
+    return pd.Series([x for _list in series for x in _list])
+
+
+def graph_genres(df):
+    genres_count = to_1D(df['genres']).value_counts().to_dict()
+    if "alt z" in genres_count:
+        genres_count['hip hop'] = genres_count.pop('alt z')
+
+    # Generate wordcloud
+    wordcloud = WordCloud(width=1600, height=800,
+                          background_color='white').generate_from_frequencies(genres_count)
+
+    # Plot the wordcloud
+    plt.figure(figsize=(20, 10))
+    plt.imshow(wordcloud)
+    plt.axis('off')
+    plt.tight_layout(pad=0)
+    return plt

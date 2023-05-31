@@ -109,7 +109,13 @@ if run:
             fig = graph_features(features)
             st.plotly_chart(fig, True)
 
-# TODO: General mood
+# TODO: Genres
+    st.header("Genres Wordcloud")
+    with st.container():
+        fig = graph_genres(artists)
+        st.pyplot(fig, True)
+
+# TODO: PLaylist update time
     with st.container():
         st.header("Playlist update timeline")
         fig = graph_timeline(features)
@@ -168,3 +174,4 @@ if run:
                 components.iframe(tracks[i+1], height=352)
             with col3:
                 components.iframe(tracks[i+2], height=352)
+
