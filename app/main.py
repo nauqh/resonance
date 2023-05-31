@@ -114,9 +114,10 @@ if run:
         st.header("Playlist update timeline")
         fig = graph_timeline(features)
         st.plotly_chart(fig, True)
+        st.markdown("##")
 
 # TODO: Genres
-    st.header("Wordcloud of genres")
+    st.header("Your beloved genres")
     with st.container():
         fig = graph_genres(artists)
         st.pyplot(fig, True)
