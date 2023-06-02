@@ -32,10 +32,7 @@ def graph_features(df: pd.DataFrame) -> go.Figure:
     ax.fill(label_loc, df, alpha=0.3)
 
     ax.tick_params(axis='x', which='major', pad=30, labelsize=15)
-
-    edge_color = (1, 1, 1, 0.2)
-    ax.spines['polar'].set_color(edge_color)
-    ax.spines['polar'].set_linewidth(3)
+    ax.tick_params(axis='y', colors='white')
 
     ax.grid(color='white')
 
