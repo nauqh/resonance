@@ -13,10 +13,13 @@ def convert_ms(ms):
 
 
 def graph_features(df: pd.DataFrame) -> go.Figure:
+    # Normalize loudness to 0-1 scale
+    df['loudness'] = (df['loudness']-min(df['loudness'])) / \
+        (max(df['loudness'])-min(df['loudness']))
     if (df['instrumentalness'].astype(int) == 0).all():
         df['instrumentalness'] = 0
 
-    letho = ['valence', 'energy', 'acousticness',
+    letho = ['valence', 'energy', 'acousticness', 'loudness',
              'liveness', 'instrumentalness', 'danceability']
     letho = [*letho, letho[0]]
 
