@@ -31,7 +31,7 @@ def graph_features(df: pd.DataFrame) -> go.Figure:
         hovertemplate="%{r}",
         fillcolor='#1db954',
         line_color='#1ed760',
-        opacity=0.8,
+        opacity=0.5,
     ))
     fig.update_layout(
         template='seaborn',
@@ -39,7 +39,7 @@ def graph_features(df: pd.DataFrame) -> go.Figure:
             radialaxis=dict(showticklabels=True, ticks='',
                             color='white', nticks=4),
             angularaxis=dict(direction="clockwise"),
-            bgcolor='#1e5631'
+            bgcolor='#adf7b6'
         ),
         margin=dict(r=0)
     )
