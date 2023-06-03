@@ -209,7 +209,7 @@ def graph_decades(df):
                       marker=dict(colors=colors, line=dict(color='#000000', width=1)))
 
     fig.update_layout(
-        margin=dict(t=0, b=0, l=0, r=0),
+        margin=dict(t=0, b=0, l=0, r=10),
         legend=dict(
             x=0,
             y=1,
