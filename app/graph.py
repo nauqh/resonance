@@ -203,7 +203,7 @@ def graph_decades(df):
     fig = go.Figure(data=[go.Pie(labels=decade_counts.index, values=decade_counts.values, hole=0.4, sort=False,
                                  direction='clockwise', pull=[0.1]*len(decade_counts.index))])
 
-    fig.update_traces(name='',
+    fig.update_traces(name='', textinfo='none',
                       #   textinfo='percent', textposition='inside', textfont_size=15,
                       hovertemplate='%{label} <br> Tracks by decade: %{value}',
                       marker=dict(colors=colors, line=dict(color='#000000', width=1)))
