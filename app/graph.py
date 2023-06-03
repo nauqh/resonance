@@ -1,5 +1,4 @@
 import pandas as pd
-import numpy as np
 
 import matplotlib.pyplot as plt
 import plotly.graph_objects as go
@@ -40,7 +39,7 @@ def graph_features(df: pd.DataFrame) -> go.Figure:
             radialaxis=dict(showticklabels=True, ticks='',
                             color='white', nticks=4, angle=0),
             angularaxis=dict(direction="clockwise"),
-            bgcolor="#31333f"
+            bgcolor='#1e5631'
         ),
         margin=dict(r=0)
     )
@@ -157,7 +156,7 @@ def graph_timeline(df: pd.DataFrame):
     fig.update_layout(
         autosize=True,
         hoverlabel=dict(bgcolor='#000', font_color='#fff'),
-        margin=dict(t=10),
+        margin=dict(t=0, b=0, l=0, r=0),
         height=400)
     fig.update_yaxes(title='Number of tracks')
     fig.update_xaxes(title='Date')
@@ -187,3 +186,43 @@ def graph_genres(df):
     plt.axis('off')
     plt.tight_layout(pad=0)
     return plt
+
+
+def graph_decades(df):
+    release = df['release_date']
+    release = pd.to_datetime(release)
+    years = release.dt.year.to_list()
+    # Create a pandas Series from the list of years
+    years_series = pd.Series(years)
+
+    # Create a new column 'Decade' by dividing the years by 10 and flooring the result
+    years_series['Decade'] = years_series // 10 * 10
+
+    # Use value_counts() to count the occurrences of each decade
+    decade_counts = years_series['Decade'].value_counts().sort_index()
+
+    colors = ['#b9fbc0', '#98f5e1', '#8eecf5',
+              '#90dbf4', '#a3c4f3', '#cfbaf0', 'f1c0e8']
+
+    fig = go.Figure(data=[go.Pie(labels=decade_counts.index, values=decade_counts.values, hole=0.4, sort=False,
+                                 direction='clockwise', pull=0.1)])
+
+    fig.update_traces(name='',
+                      textinfo='percent',
+                      hovertemplate='%{label} <br> Tracks by decade: %{value}',
+                      marker=dict(colors=colors, line=dict(color='#000000', width=1)))
+
+    fig.update_layout(
+        margin=dict(t=0, b=0, l=0, r=0),
+        legend=dict(
+            x=0,
+            y=1,
+            font=dict(
+                size=15,
+                color="black"
+            ),
+        )
+
+    )
+
+    return fig

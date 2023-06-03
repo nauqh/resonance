@@ -111,10 +111,37 @@ if run:
 
 
 # TODO: PLaylist update time
-    with st.container():
-        st.header("Playlist update timeline")
-        fig = graph_timeline(features)
-        st.plotly_chart(fig, True)
+    st.header("Playlist timeline")
+    l, r = st.columns([1, 1])
+    with l:
+        tabl, tabr = st.tabs(["By decade", "By date"])
+        with tabl:
+            fig = graph_decades(features)
+            st.plotly_chart(fig, True)
+        with tabr:
+            fig = graph_timeline(features)
+            st.plotly_chart(fig, True)
+    with r:
+        st.markdown("##")
+        st.markdown("##")
+        st.subheader("Playlist by decades")
+        st.write("""
+        You're a musical time traveler! You've been listening to music made from a whopping 6 decades.
+
+        Your favorite decade of music is the 2020s.
+
+        Check out songs you’ve been listening to in each decade.
+        """)
+        st.subheader("Playlist by decades")
+        st.write("""
+        You're a musical time traveler! You've been listening to music made from a whopping 6 decades.
+
+        Your favorite decade of music is the 2020s.
+
+        Check out songs you’ve been listening to in each decade.
+        """)
+    
+
 
 # TODO: Genres
     st.header("Your beloved genres")
