@@ -38,7 +38,7 @@ def graph_features(df: pd.DataFrame) -> go.Figure:
         template='seaborn',
         polar=dict(
             radialaxis=dict(showticklabels=True, ticks='',
-                            color='white', nticks=4),
+                            color='white', nticks=4, angle=0),
             angularaxis=dict(direction="clockwise"),
             bgcolor="#31333f"
         ),
