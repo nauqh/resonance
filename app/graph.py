@@ -18,8 +18,8 @@ def graph_features(df: pd.DataFrame) -> go.Figure:
     if (df['instrumentalness'].astype(int) == 0).all():
         df['instrumentalness'] = 0
 
-    features = ['valence', 'energy', 'acousticness', 'loudness',
-                'liveness', 'instrumentalness', 'danceability']
+    features = ['valence', 'energy', 'acousticness', 'instrumentalness',
+                'liveness', 'loudness', 'danceability']
     features = [*features, features[0]]
     df = df[features].mean().tolist()
 
@@ -37,7 +37,7 @@ def graph_features(df: pd.DataFrame) -> go.Figure:
         template='seaborn',
         polar=dict(
             radialaxis=dict(showticklabels=True, ticks='',
-                            color='white', nticks=4, angle=0),
+                            color='white', nticks=4),
             angularaxis=dict(direction="clockwise"),
             bgcolor='#1e5631'
         ),
