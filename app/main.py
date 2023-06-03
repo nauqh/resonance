@@ -89,7 +89,7 @@ if run:
 
 # TODO: General mood
     with st.container():
-        l, r = st.columns([1, 1.5])
+        l, r = st.columns([1, 1])
         with l:
             adj = ['frantic', 'mellow', 'ambient', 'melodious', 'breathy', 'calming', 'monophonic',
                    'harmonious', 'dainty', 'heartfelt', 'lyrical', 'uplifting', 'synthetic', 'soulful', 'rejuvenating']
