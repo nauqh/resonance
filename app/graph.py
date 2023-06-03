@@ -192,13 +192,9 @@ def graph_decades(df):
     release = df['release_date']
     release = pd.to_datetime(release)
     years = release.dt.year.to_list()
-    # Create a pandas Series from the list of years
+
     years_series = pd.Series(years)
-
-    # Create a new column 'Decade' by dividing the years by 10 and flooring the result
     years_series['Decade'] = years_series // 10 * 10
-
-    # Use value_counts() to count the occurrences of each decade
     decade_counts = years_series['Decade'].value_counts().sort_index()
 
     colors = ['#b9fbc0', '#98f5e1', '#8eecf5',
