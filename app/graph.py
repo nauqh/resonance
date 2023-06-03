@@ -40,7 +40,7 @@ def graph_features(df: pd.DataFrame) -> go.Figure:
             radialaxis=dict(showticklabels=True, ticks='',
                             color='white', nticks=4, angle=10),
             angularaxis=dict(direction="clockwise"),
-            bgcolor="#212121"
+            bgcolor="#31333f"
         ),
         margin=dict(r=0)
     )
