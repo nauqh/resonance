@@ -88,17 +88,15 @@ if run:
 
 
 # TODO: General mood
-    st.markdown("##")
     with st.container():
-        st.header("Playlist mood")
         l, r = st.columns([1, 1.5])
         with l:
             adj = ['frantic', 'mellow', 'ambient', 'melodious', 'breathy', 'calming', 'monophonic',
                    'harmonious', 'dainty', 'heartfelt', 'lyrical', 'uplifting', 'synthetic', 'soulful', 'rejuvenating']
             x, y, z = random.sample(adj, 3)
 
-               
             st.markdown("##")
+            st.header("Playlist mood")
             st.write(f"You have a `{x}-{y}-{z}` spotify")
 
             l, h = analysis(features)
