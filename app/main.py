@@ -107,7 +107,7 @@ if run:
 
         with r:
             fig = graph_features(features)
-            st.plotly_chart(fig, theme=None, use_container_width=True)
+            st.plotly_chart(fig, True)
 
 
 # TODO: PLaylist update time
