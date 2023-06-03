@@ -204,7 +204,7 @@ def graph_decades(df):
                                  direction='clockwise', pull=[0.1]*len(decade_counts.index))])
 
     fig.update_traces(name='',
-                      textinfo='percent', textposition='inside', textfont_size=15,
+                      #   textinfo='percent', textposition='inside', textfont_size=15,
                       hovertemplate='%{label} <br> Tracks by decade: %{value}',
                       marker=dict(colors=colors, line=dict(color='#000000', width=1)))
 
