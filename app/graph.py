@@ -19,26 +19,31 @@ def graph_features(df: pd.DataFrame) -> go.Figure:
     if (df['instrumentalness'].astype(int) == 0).all():
         df['instrumentalness'] = 0
 
-    letho = ['valence', 'energy', 'acousticness', 'loudness',
-             'liveness', 'instrumentalness', 'danceability']
-    letho = [*letho, letho[0]]
+    features = ['valence', 'energy', 'acousticness', 'loudness',
+                'liveness', 'instrumentalness', 'danceability']
+    features = [*features, features[0]]
+    df = df[features].mean().tolist()
 
-    df = df[letho].mean().tolist()
-
-    label_loc = np.linspace(start=0, stop=2*np.pi, num=len(letho))
-
-    fig, ax = plt.subplots(figsize=(10, 10), subplot_kw=dict(polar=True))
-    lines, labels = plt.thetagrids(np.degrees(label_loc), labels=letho)
-    ax.set_facecolor("#233554")
-
-    ax.plot(label_loc, df, lw=2)
-    ax.fill(label_loc, df, alpha=0.3)
-
-    ax.tick_params(axis='x', which='major', pad=30, labelsize=15)
-    ax.tick_params(axis='y', colors='white')
-
-    ax.grid(color='white')
-
+    fig = go.Figure(go.Scatterpolar(
+        r=df,
+        theta=features,
+        fill='toself',
+        name='',
+        hovertemplate="%{r}",
+        fillcolor='#1db954',
+        line_color='#1ed760',
+        opacity=0.8,
+    ))
+    fig.update_layout(
+        template='seaborn',
+        polar=dict(
+            radialaxis=dict(showticklabels=True, ticks='',
+                            color='white', nticks=4, angle=10),
+            angularaxis=dict(direction="clockwise"),
+            bgcolor="#212121"
+        ),
+        margin=dict(r=0)
+    )
     return fig
 
 
@@ -138,9 +143,11 @@ def get_popular_artist(df: pd.DataFrame):
 
 
 def graph_timeline(df: pd.DataFrame):
-    df['added_date'] = pd.to_datetime(df['added_date'])
-    df['added_date'] = df['added_date'].dt.date
-    data = df['added_date'].value_counts().sort_index()
+    timeline = df['added_date']
+
+    timeline = pd.to_datetime(timeline)
+    timeline = timeline.dt.date
+    data = timeline.value_counts().sort_index()
 
     fig = go.Figure(data=go.Scatter(
         x=data.index, y=data.values, line=dict(color='#1DB954', width=3)))

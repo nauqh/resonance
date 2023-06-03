@@ -90,13 +90,14 @@ if run:
 # TODO: General mood
     st.markdown("##")
     with st.container():
-        l, r = st.columns([1, 1])
+        l, r = st.columns([1, 1.5])
         with l:
             adj = ['frantic', 'mellow', 'ambient', 'melodious', 'breathy', 'calming', 'monophonic',
                    'harmonious', 'dainty', 'heartfelt', 'lyrical', 'uplifting', 'synthetic', 'soulful', 'rejuvenating']
             x, y, z = random.sample(adj, 3)
 
-            st.header(f"You have a {x}-{y}-{z} spotify")
+            st.header("Playlist mood")   
+            st.write(f"You have a `{x}-{y}-{z}` spotify")
 
             l, h = analysis(features)
             st.write(
@@ -105,9 +106,9 @@ if run:
                 f"They also have zero `{l[0]}` and little `{l[1]}`. I guess the important thing is that your music makes you feel good.")
 
         with r:
-            st.markdown("##")
             fig = graph_features(features)
-            st.pyplot(fig, True)
+            st.plotly_chart(fig, theme=None, use_container_width=True)
+
 
 # TODO: PLaylist update time
     with st.container():
