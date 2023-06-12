@@ -3,7 +3,6 @@ import pandas as pd
 from stqdm import stqdm
 import streamlit as st
 from requests import post, get
-from spotipy.util import prompt_for_user_token as pm
 
 
 # client_id = st.secrets["CID"]
@@ -14,27 +13,20 @@ client_secret = "62ceb3db85854f739c3fd9598504ecaf"
 # TODO: Authentication
 
 
-def get_token(auth: bool = None, redirect_uri="http://localhost:7777/callback"):
-    if auth:
-        scope = "user-library-read playlist-read-private user-read-private"
-        token = pm(scope=scope,
-                   client_id=client_id,
-                   client_secret=client_secret,
-                   redirect_uri=redirect_uri)
-    else:
-        auth_string = client_id + ":" + client_secret
-        auth_bytes = auth_string.encode("utf-8")
-        auth_base64 = str(base64.b64encode(auth_bytes), "utf-8")
+def get_token():
+    auth_string = client_id + ":" + client_secret
+    auth_bytes = auth_string.encode("utf-8")
+    auth_base64 = str(base64.b64encode(auth_bytes), "utf-8")
 
-        url = "https://accounts.spotify.com/api/token"
-        headers = {
-            "Authorization": "Basic " + auth_base64,
-            "Content-Type": "application/x-www-form-urlencoded"
-        }
-        data = {"grant_type": "client_credentials"}
+    url = "https://accounts.spotify.com/api/token"
+    headers = {
+        "Authorization": "Basic " + auth_base64,
+        "Content-Type": "application/x-www-form-urlencoded"
+    }
+    data = {"grant_type": "client_credentials"}
 
-        resp = post(url, headers=headers, data=data).json()
-        token = resp["access_token"]
+    resp = post(url, headers=headers, data=data).json()
+    token = resp["access_token"]
 
     return token
 
@@ -161,10 +153,8 @@ def extract_playlist(token: str, playlist_url: str) -> tuple[dict, pd.DataFrame,
 
 
 if __name__ == '__main__':
-    token = get_token(scope="user-library-read playlist-read-private user-read-private",
-                      auth=True)
-    print(token)
-    # playlist_url = 'https://open.spotify.com/playlist/4mih0AxheCVcIQaIMf1YAK?si=345baf5504f14e24'
-    # info, artists, features = extract_playlist(token, playlist_url)
-    # artists.to_csv('data/artists.csv', index=False)
-    # features.to_csv('data/playlist.csv', index=False)
+    token = get_token()
+    playlist_url = 'https://open.spotify.com/playlist/4mih0AxheCVcIQaIMf1YAK?si=345baf5504f14e24'
+    info, artists, features = extract_playlist(token, playlist_url)
+    artists.to_csv('data/artists.csv', index=False)
+    features.to_csv('data/playlist.csv', index=False)
