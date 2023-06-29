@@ -1,8 +1,9 @@
 # Resonance - A tiny recommendation system
 
-![Python](https://img.shields.io/badge/Made%20With-Python%203.8-blue.svg?style=for-the-badge&logo=Python)
-![Pandas](https://img.shields.io/badge/plotly%20-%2300416A.svg?&style=for-the-badge&logo=pandas&logoColor=white)
-![Plotly](https://img.shields.io/badge/pandas%20-%23150458.svg?&style=for-the-badge&logo=plotly&logoColor=white)
+![Python](https://img.shields.io/badge/Made%20With-Python%203.8-blue.svg?style=for-the-badge&logo=Python&logoColor=white)
+![Plotly](https://img.shields.io/badge/plotly%20-%2300416A.svg?&style=for-the-badge&logo=pandas&logoColor=white)
+![Spotify](https://img.shields.io/badge/Spotify-1ED760?style=for-the-badge&logo=spotify&logoColor=white)
+![PyTorch](https://img.shields.io/badge/PyTorch-%23EE4C2C.svg?style=for-the-badge&logo=PyTorch&logoColor=white)
 
 **Update** (15 December 2022): View the web application here at [Resonance](https://resonance.streamlit.app/)
 
@@ -57,7 +58,7 @@ python -m model
 - `preprocess.py`: Transform audio features, generate additional fields  and normalize numerical data
 - `recommend.py`: Perform recommendation
 
-## Data extract
+## Extraction
 
 ### Authentication
 
@@ -78,7 +79,7 @@ playlist_link = "https://open.spotify.com/playlist/37i9dQZEVXbNG2KDcFcKOF?si=133
 - Use Spotify API to request song features from playlist using playlist URI
 - Read json files and select song features
 
-## Data preprocess
+## Transformation
 
 ### Genre preprocess
 
