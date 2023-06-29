@@ -14,9 +14,7 @@ st.set_page_config(
 
 # TODO: Sidebar
 with st.sidebar:
-    st.info(
-        "📌 **NOTE**: A rate limit is set to 100 requests every 2 minutes! [Details](https://github.com/nauqh/Resonance-app)")
-    st.write("## About the project")
+    st.write("## 🗃️About the project")
     st.markdown(
         "Resonance lets you analyze your Spotify playlists to give you a deeper understanding of your music.")
     st.markdown(
@@ -24,7 +22,9 @@ with st.sidebar:
     st.markdown(
         "Status: `Beta`")
     st.markdown(
-        "Sever shutdown on: Tue, Feb 14th, 2023 @ 1:25am (PT)")
+        "Documentation: [`Github`](https://github.com/nauqh/Resonance-app)")
+    st.markdown(
+        "Sever shutdown on: Tue, Aug 14th, 2023 @ 1:25am (PT)")
     st.markdown("##")
 
 # TODO: Main
