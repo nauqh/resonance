@@ -50,7 +50,7 @@ url = st.text_input(
 run = st.button("Find out")
 
 if st.button("Try sample playlist"):
-    url = "https://open.spotify.com/playlist/4lJNViWxofd7yIZq6xqx0V?si=4db3c7b4272f40cd"
+    url = "https://open.spotify.com/playlist/6jmF5vVuDu97XsOC85oGmb?si=282d7c076f2747a6"
     run = True
 
 if run:
