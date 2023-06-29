@@ -77,7 +77,7 @@ if run:
                         unsafe_allow_html=True)
 
             if info['description']:
-                st.subheader(info['description'])
+                st.write(info['description'])
             else:
                 st.subheader("Yet to have description")
 
