@@ -16,7 +16,8 @@
 A dataset of 1 million playlists consisting of over 2 million unique tracks by nearly 300,000 artists. For simplicity, I will just extract the first 1000 playlists which contain approximately 60,000 tracks.
 
 ## Pipeline
-<img src="img/pipeline.png" alt="drawing"  height="500"/>
+
+![Pipeline](img/stack.png)
 
 ## Requirements
 
