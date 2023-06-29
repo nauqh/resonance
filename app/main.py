@@ -41,6 +41,7 @@ st.markdown("""<h3 style='
 """
 ![Python](https://img.shields.io/badge/Made%20With-Python%203.8-blue.svg?style=for-the-badge&logo=Python)
 ![Plotly](https://img.shields.io/badge/plotly%20-%2300416A.svg?&style=for-the-badge&logo=plotly&logoColor=white)
+![Spotify](https://img.shields.io/badge/Spotify-1ED760?style=for-the-badge&logo=spotify&logoColor=white)
 """
 st.markdown("##")
 st.image("img/shelf.jpeg")
