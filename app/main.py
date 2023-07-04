@@ -22,7 +22,7 @@ with st.sidebar:
     st.markdown(
         "Status: `Beta`")
     st.markdown(
-        "Documentation: [`Github`](https://github.com/nauqh/Resonance-app)")
+        "Documentation: **[Github](https://github.com/nauqh/Resonance-app)**")
     st.markdown(
         "Sever shutdown on: Tue, Aug 14th, 2023 @ 1:25am (PT)")
     st.markdown("##")
