@@ -5,7 +5,7 @@
 ![Spotify](https://img.shields.io/badge/Spotify-1ED760?style=for-the-badge&logo=spotify&logoColor=white)
 ![PyTorch](https://img.shields.io/badge/PyTorch-%23EE4C2C.svg?style=for-the-badge&logo=PyTorch&logoColor=white)
 
-**Update** (15 December 2022): View the web application here at [Resonance](https://resonance.streamlit.app/)
+**Update** (15 December 2022): View the web application here at [Resonance](https://resonances.streamlit.app/)
 
 ## About the project
 
