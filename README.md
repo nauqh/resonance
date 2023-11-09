@@ -8,7 +8,7 @@
 ![Pandas](https://img.shields.io/badge/pandas-%23150458.svg?style=for-the-badge&logo=pandas&logoColor=white&colorB=52b788)
 ![Spotify](https://img.shields.io/badge/Spotify-1ED760?style=for-the-badge&logo=spotify&logoColor=white)
 
-**Update** (9 November 2023): View the web application here at [Resonance](https://nauqh.github.io/error.html)
+**Update** (9 November 2023): View the web application here at [Resonance](https://resonances.streamlit.app/)
 
 ## Contents   
 - [What is Resonance?](#about-the-project)
