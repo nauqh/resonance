@@ -1,122 +1,127 @@
-# Resonance - A tiny recommendation system
+# 🎧Resonance - A music recommendation system
 
-![Python](https://img.shields.io/badge/Made%20With-Python%203.8-blue.svg?style=for-the-badge&logo=Python&logoColor=white)
-![Plotly](https://img.shields.io/badge/plotly%20-%2300416A.svg?&style=for-the-badge&logo=pandas&logoColor=white)
+![Python](https://img.shields.io/badge/Made%20With-Python%203.10-blue.svg?&style=for-the-badge&logo=python&logoColor=white&colorB=00b4d8)
+![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=white&&colorB=00b4d8)
+![Postgres](https://img.shields.io/badge/postgres-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white&colorB=0096c7)
+
+![ChatGPT](https://img.shields.io/badge/chatGPT-74aa9c?style=for-the-badge&logo=openai&logoColor=white)
+![Pandas](https://img.shields.io/badge/pandas-%23150458.svg?style=for-the-badge&logo=pandas&logoColor=white&colorB=52b788)
 ![Spotify](https://img.shields.io/badge/Spotify-1ED760?style=for-the-badge&logo=spotify&logoColor=white)
-![PyTorch](https://img.shields.io/badge/PyTorch-%23EE4C2C.svg?style=for-the-badge&logo=PyTorch&logoColor=white)
 
-**Update** (15 December 2022): View the web application here at [Resonance](https://resonances.streamlit.app/)
+**Update** (9 November 2023): View the web application here at [Resonance](https://nauqh.github.io/error.html)
+
+## Contents   
+- [What is Resonance?](#about-the-project)
+- [Spotify Million Playlist Dataset](#spotify-million-playlist-dataset)
+- [Data Management](#data-management)
+  - [Extraction](#1-extraction)
+  - [Storage](#2-storage)
+  - [Transformation](#3-transformation)
+    - [Data normalization](#data-normalization)
+    - [Categorical data encoding](#categorical-data-encoding)
+- [Recommendation Engine](#recommendation-engine)
+  - [Content-based Filtering](#1-content-based-filtering)
+  - [Data Pipeline](#2-data-pipeline)
+  - [Music Taste Analysis](#3-music-taste-analysis)
 
 ## About the project
 
-**Resonance** is a Content-based Recommendation System which suggests songs given user playlists. It has approximately *60,000* songs in its database, extracted and transformed using the **Spotify Million Playlist Dataset**.
+In the contemporary era of digital music consumption, music enthusiasts have unparalleled access to a vast ocean of musical content. However, within these expansive collections, the need to discover the ideal tunes can be simultaneously delightful and difficult. 
 
-### Spotify Million Playlist Dataset
+Our project since then was initiated from a keen aspiration to directly address this challenge by contructing an innovative and efficient Music Recommendation System which leverages both existing data provided by music streaming platform and contemporary technology of recommender engine and large language models.
 
-A dataset of 1 million playlists consisting of over 2 million unique tracks by nearly 300,000 artists. For simplicity, I will just extract the first 1000 playlists which contain approximately 60,000 tracks.
+<img  width="500" src="./img/shelf.jpeg">
 
-## Pipeline
+## Spotify Million Playlist Dataset
+The foundation of the recommendation engine will hinge upon the [Spotify Million Playlist](https://www.aicrowd.com/challenges/spotify-million-playlist-dataset-challenge) dataset, a substantial corpus curated for the purpose of advancing research in music recommendations. Sampled from the over 4 billion public playlists on Spotify, this dataset of 1 million playlists consist of over 2 million unique tracks by nearly 300,000 artists, and represents the largest public dataset of music playlists in the world. The dataset includes public playlists created by US Spotify users between January 2010 and November 2017. 
 
-![Pipeline](img/stack.png)
+The challenge ran from January to July 2018, and received 1,467 submissions from 410 teams. A summary of the challenge and the top scoring submissions was published in the [ACM Transactions on Intelligent Systems and Technology](https://dl.acm.org/doi/abs/10.1145/3344257).
 
-## Requirements
+## Data Management
 
-There are some general library requirements for the project and some which are specific to individual methods. The general requirements are as follows.
+<img  width="1000" src="./img/Components.png">
 
-- `spotipy`
-- `regex`
-- `plotly`
-- `sklearn`
-  
-Install requirements
+### 1. Extraction
 
-```sh
-pip3 install -r requirements.txt
-```
+Our project revolves around refining the Spotify Million Playlist Dataset. We achieve this by meticulously cleaning the data, resulting in approximately 600,000 unique track identifiers (URIs). These URIs form the bedrock for interfacing with the Spotify API, allowing us to retrieve both audio characteristics and associated metadata for each track. This, in turn, enables us to develop a recommendation system finely tuned to individual user preferences.
 
-**Note**: It is recommended to use ***Heroku*** for deploying the application.
+Rather than utilizing the complete original dataset for training our recommendation engine, we've chosen a different approach due to limitations and inconsistencies in the JSON format. Instead, we've crafted a comprehensive solution that revolves around creating a customized dataset, with the Million Playlist Dataset at its core. This process involves the initial extraction of all song URLs, followed by a meticulous data aggregation and cleaning process. The goal here is to isolate unique URIs while eliminating any duplications.
 
-## Usage
+Through this meticulous approach, we gather essential audio features and pertinent song metadata, which includes artist and album details. This carefully curated dataset will serve as the cornerstone of our recommendation engine, ensuring that users receive highly relevant results through our interface. 
 
-We will run the whole `model` package .
+Additional details about the data can be accessed via the [Spotify Developer](https://developer.spotify.com/documentation/web-api) platform. The code for the extraction process can be found in the associated [repository](https://github.com/nauqh/Resonance).
 
-```shell
-python -m model  
-```
+### 2. Storage 
 
-## Development
+<img  width="800" src="./img/storage.png">
 
-### Datasets
-- `songs.csv`: songs extracted using playlists from **Spotify 1 Million Dataset**
-- `features.csv`: normalized features only for recomendation system
+Following the extraction process, the acquired data will be subsequently loaded into a centralized database for further processing, which includes transformation into a machine-readable format. As outlined in the preceding section, the data obtained from the Spotify API comprises three primary categories:
+- **Artist data** encompasses comprehensive information pertaining to the performing artist, including but not limited to genres, popularity, images, and external urls.
+- **Song metadata** contains a diverse set of attributes related to the song, encompassing details such as genres, album information, release date, and popularity.
+- **Audio features** encapsulates audio-related metrics for a given song, encompassing factors such as valence, danceability, mode, loudness, and instrumentalness.
 
-### Scripts
-- `normalize.py`: Transform json into csv using `json_normalise()`
-- `scrap.py`: Extract song features from **Spotify API** 
+### 3. Transformation
 
-### Modules
-- `extract.py`: Extract playlist data and song features
-- `preprocess.py`: Transform audio features, generate additional fields  and normalize numerical data
-- `recommend.py`: Perform recommendation
+A critical aspect of preprocessing techniques employed in this procedure centers on two fundamental tasks: the normalization of numeric data and the computation of term frequencies for categorical data.
 
-## Extraction
+#### Data normalization
 
-### Authentication
+In the context of recommendation systems, data normalization plays a crucial role in ensuring that relevant variables are consistently scaled, thereby facilitating precise computations. Specifically, in the case of numeric audio features data, normalization is imperative to establish a uniform basis for comparisons and to prevent potential distortions in recommendation outcomes. To this end, we have harnessed the capabilities of the **MinMaxScaler()** function from the scikit-learn library, a highly potent tool adept at automatically standardizing values within a defined range of 0 to 1. 
 
-We need to create the `ClientID` and `SecretID` so that we can use to send our request to Spotify API. Remember to place them securedly in a `.env` file .
+#### Categorical data encoding
 
-We also need an URI to perform any function with the API referring to an object in Spotify. The URI of any Spotify object is contained in its shareable link.
+TF-IDF, also known as [Term Frequency-Inverse Document Frequency](https://en.wikipedia.org/wiki/Tf%E2%80%93idf), is a tool to quantify words in a set of documents. The goal of TF-IDF is to show the importance of a word in the documents and the corpus. The general formula for calculating TF-IDF score is:
+
+<img  width="800" src="./img/tfidf.webp">
+
+The motivation is to find words that are not only important in each document but also accounting for the entire corpus. The log value was taken to decrease the impact of a large N, which would lead to a very large IDF compared to TF. Term Frequency (TF) focuses on how crucial a word is within one document, while Inverse Document Frequency (IDF) looks at how important a word is across all the documents.
+
+## Recommendation Engine
+
+### 1. Content-based Filtering
+
+Content-based Filtering is a recommender technique that uses unique features of items to find similar ones. It assigns a similarity score based on these features to generate recommendations. In the case of Spotify playlists, this involves analyzing song characteristics to compute an aggregate score for a playlist. Then, it recommends top similar songs that closely align with this score but are not already in the playlist.
+
+The [K-Nearest Neighbor (KNN)](https://en.wikipedia.org/wiki/K-nearest_neighbors_algorithm) algorithm is commonly used in Content-based Filtering for music recommendation systems. It works by finding a specified number (K) of music tracks that closely match a user's current preferences. This is done by comparing features like genre, tempo, instrumentation, and user behavior patterns. By utilizing this similarity metric, KNN can make accurate predictions about which songs a user is likely to enjoy based on their past interactions with the platform.
+
+<img  width="800" src="./img/knn.webp">
+
+### 2. Data Pipeline
+
+A specialized data pipeline has been crafted to serve this objective, structured around two distinct use cases. In the scenario where users opt to furnish their own Spotify playlists as input, the pipeline initiates with the retrieval of diverse Spotify URIs within the user playlist, accompanied by their corresponding audio features and metadata. 
+
+<img  width="500" src="./img/input.png">
+
+Following this, the system engages in a filtering process to remove URIs that are already present within the database. Subsequently, user playlist undergoes transformation into a unified vector of quantitative values, achieved through the application of mean summarization.
+
+The resultant vector obtained here acts as a test point for the **K-Nearest Neighbors** algorithm. This allows us to calculate distances between the playlist vector and other songs in the dataset. The top neighbors are then chosen and ranked in ascending order. It's important to highlight that the data point closest to the input features receives the highest rank. If users provide specific audio features, the system will exclusively use these attributes for generating recommendations using the KNN algorithm.
 
 ```python
-playlist_link = "https://open.spotify.com/playlist/37i9dQZEVXbNG2KDcFcKOF?si=1333723a6eff4b7f"
+def recommendation(self, playlist_vector: list, feature_repo: pd.DataFrame) -> pd.DataFrame:
+        '''
+        Generated recommendation based on songs in a specific playlist.
+
+        Args: 
+            df (dataframe): spotify dataframe
+            playlist_vector (series): summarized playlist feature (single vector)
+            repository (dataframe): feature set of songs that are not in the selected playlist
+
+        Returns: 
+            Top 10 recommendations for the playlist
+        '''
+        suggest = pd.DataFrame(feature_repo['id'])
+        suggest['sim'] = cosine_similarity(feature_repo.drop('id', axis=1).values,
+                                           playlist_vector.values.reshape(1, -1))[:, 0]
+
+        result = suggest.sort_values('sim', ascending=False).head(10)
+        result = result.reset_index(drop=True)
+        return result
 ```
-**Note**: When working directly with Spotify API, the song URI has the format `spotify:track:[id]`
 
-### Scrapping
+### 3. Music Taste Analysis
 
-*The process including*:
+In addition to providing song recommendations tailored to the user preferences, we have implemented a text-based system that offers a comprehensive analysis of individualized music characteristics, drawing insights from the user's specific music taste. 
 
-- Extract URI from share link
-- Use Spotify API to request song features from playlist using playlist URI
-- Read json files and select song features
+The primary objective of the **Music Taste Analysis** engine is to evaluate user musical preferences based on their specified criteria. This assessment yields a comprehensive explanation of the user’s music tastes, accompanied by a thoughtfully curated selection of musical artists that align with these preferences. 
 
-## Transformation
-
-### Genre preprocess
-
-Due to the import format of a dataframe, we need to convert the `genres` columns into a list. This is done by using the `split()` function.
-
-### TF-IDF encoding
-
-TF-IDF, also known as Term Frequency-Inverse Document Frequency, is a tool to quantify words in a set of documents. The goal of TF-IDF is to show the importance of a word in the documents and the corpus. The general formula for calculating TF-IDF is:
-
-$$ \text{Term Frequency}\times\text{Inverse Document Frequency}$$
-
-- **Term Frequency (TF)**: The number of times a term appears in each document divided by the total word count in the document.
-- **Inverse Document Frequency (IDF)**: The log value of the document frequency. Document frequency is the total number of documents where one term is present.
-
-The motivation is to find words that are not only important in each document but also accounting for the entire corpus. The log value was taken to decrease the impact of a large N, which would lead a very large IDF compared to TF. TF is focused on importance of a word in a document, while IDF is focused on the importance of a word across documents.
-
-In this project, the documents are analogous to songs. Therefore, we are calculating the most prominent genre in each song and their prevelent across songs to determine the weight of the genre. This is much better than simply one-hot encoding since there is no weights to determine how important and widespread each genre is, leading to overweighting on uncommon genres.
-### Normalization
-
-Lastly, we need to normalize some variables. As shown below, the popularity variables are not normalized to 0 to 1, which would be problematic in the consine similarity function later on. In addition, the audio features are also not normalized. 
-
-To solve this problem, we used the `MinMaxScaler()` function from `scikit learn` which automatically scales all values from the min and max into a range of 0 to 1.
-
-## Recommendation model
-
-### 1. Generate playlist vector and repository
-
-#### Generate playlist vector
-  - Input: playlist (preprocessed)
-  - Method: create playlist vector by calculate the sum of each feature 
-  - Output: vector summarize playlist features
-#### Recommend repository
-  - We create a repository of songs which are not in the playlist, these will be our suggest candidates
-  - Method: select songs from `features.csv` which are not in user playlist using song ids
-
-### 2. Generate recommendation
-
-Find similarity between `playlist` and `repository` using cosine similarity. Extract top songs with highest similarity.
-<!--eof>
+<img  width="500" src="./img/musictaste.png">
