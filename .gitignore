@@ -2,4 +2,4 @@ app/__pycache__/
 .cache
 analysis.ipynb
 .ipynb_checkpoints
-venv
+env
