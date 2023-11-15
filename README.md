@@ -8,21 +8,7 @@
 ![Pandas](https://img.shields.io/badge/pandas-%23150458.svg?style=for-the-badge&logo=pandas&logoColor=white&colorB=52b788)
 ![Spotify](https://img.shields.io/badge/Spotify-1ED760?style=for-the-badge&logo=spotify&logoColor=white)
 
-**Update** (9 November 2023): View the web application here at [Resonance](https://resonances.streamlit.app/)
-
-## Contents   
-- [What is Resonance?](#about-the-project)
-- [Spotify Million Playlist Dataset](#spotify-million-playlist-dataset)
-- [Data Management](#data-management)
-  - [Extraction](#1-extraction)
-  - [Storage](#2-storage)
-  - [Transformation](#3-transformation)
-    - [Data normalization](#data-normalization)
-    - [Categorical data encoding](#categorical-data-encoding)
-- [Recommendation Engine](#recommendation-engine)
-  - [Content-based Filtering](#1-content-based-filtering)
-  - [Data Pipeline](#2-data-pipeline)
-  - [Music Taste Analysis](#3-music-taste-analysis)
+**Update** (9 November 2023): View the web application here at [Resonance](https://resonance.streamlit.app/)
 
 ## About the project
 
