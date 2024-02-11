@@ -13,23 +13,28 @@ st.set_page_config(
 
 _, m, _ = st.columns([0.2, 1, 0.2])
 with m:
-    st.markdown("""<h1 style='
-                font-family: Recoleta-Regular; font-weight: 400;
-                font-size: 3rem'>Resonance</h1>""",
+    st.markdown("""<h3 style='
+                font-family: "Inconsolata"; font-weight: 400;
+                text-align: center;
+                font-size: 3rem'>How sick is your music?</h3>""",
             unsafe_allow_html=True)
 
     st.markdown("""<h3 style='
-                font-family: Recoleta-Regular; font-weight: 400;
-                font-size: 1.5rem'>Our overtime service judges your awful taste in music</h3>""",
+                font-family: "Inconsolata"; font-weight: 400;
+                text-align: center;
+                font-size: 1.4rem'>Our overtime service judges your awful taste in music</h3>""",
             unsafe_allow_html=True)
-    
-    st.image("img/shelf.jpeg")
-    st.text_input("Input your Spotify playlist")
 
-    run = st.button("Find out")
-    if st.button("Try sample playlist"):
-        url = "https://open.spotify.com/playlist/2xukpbxolEK8C9HdpANzZu?si=b6f9f35f63f24089"
-        run = True
+    _, mid, _ = st.columns([1, 10, 1]) 
+    with mid:
+        st.image("img/shelf.jpeg")
+
+        st.text_input("Input your Spotify playlist")
+
+        run = st.button("Find out")
+        if st.button("Try sample playlist"):
+            url = "https://open.spotify.com/playlist/2xukpbxolEK8C9HdpANzZu?si=b6f9f35f63f24089"
+            run = True
 
 if run:
     token = get_token()
