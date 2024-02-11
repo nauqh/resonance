@@ -116,7 +116,6 @@ def get_audio_features(token: str, track_id: str) -> dict:
 
 
 # TODO: Utility
-@st.cache_resource
 def extract_playlist(token: str, playlist_url: str) -> tuple[dict, pd.DataFrame, pd.DataFrame]:
     playlist = get_playlist(token, playlist_url)
 
@@ -127,27 +126,29 @@ def extract_playlist(token: str, playlist_url: str) -> tuple[dict, pd.DataFrame,
     tracks = []
     features = []
 
-    st.write("Extracting tracks from playlist ..")
-    for i in stqdm(range(len(playlist['tracks']['items']))):
-        track = get_track_info(playlist, i)
-        track_id = track['track_id']
+    _, m, _ = st.columns([0.2, 1, 0.2])
+    with m:
+        st.write("Extracting tracks from playlist ..")
+        for i in stqdm(range(len(playlist['tracks']['items']))):
+            track = get_track_info(playlist, i)
+            track_id = track['track_id']
 
-        tracks.append(track)
-        features.append(get_audio_features(token, track_id))
-    st.success(
-        f"Extracted {len(playlist['tracks']['items'])} tracks from your playlist!", icon="✅")
-    track_df = pd.DataFrame(tracks)
-    feature_df = pd.DataFrame(features)
+            tracks.append(track)
+            features.append(get_audio_features(token, track_id))
+        st.success(
+            f"Extracted {len(playlist['tracks']['items'])} tracks from your playlist!", icon="✅")
+        track_df = pd.DataFrame(tracks)
+        feature_df = pd.DataFrame(features)
 
-    # Get artists info as dataframe
-    artist_set = set(track_df['artist_id'].tolist())
-    artists = []
-    st.write("Extracting artists from playlist ..")
-    for i in stqdm(range(len(list(artist_set)))):
-        artists.append(get_artist_info(token, list(artist_set)[i]))
-    artist_df = pd.DataFrame(artists)
-    st.success(
-        f"Extracted {len(list(artist_set))} artist from your playlist!", icon="✅")
+        # Get artists info as dataframe
+        artist_set = set(track_df['artist_id'].tolist())
+        artists = []
+        st.write("Extracting artists from playlist ..")
+        for i in stqdm(range(len(list(artist_set)))):
+            artists.append(get_artist_info(token, list(artist_set)[i]))
+        artist_df = pd.DataFrame(artists)
+        st.success(
+            f"Extracted {len(list(artist_set))} artist from your playlist!", icon="✅")
 
     return playlist_info, artist_df, pd.merge(track_df, feature_df, on='track_id')
 

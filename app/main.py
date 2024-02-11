@@ -6,74 +6,51 @@ import random
 import streamlit as st
 import streamlit.components.v1 as components
 
-
 st.set_page_config(
     page_title="Resonance",
     page_icon="img/favicon.png",
     layout="wide")
 
-# TODO: Sidebar
-with st.sidebar:
-    st.write("## 🗃️About the project")
-    st.markdown(
-        "Resonance lets you analyze your Spotify playlists to give you a deeper understanding of your music.")
-    st.markdown(
-        "Resonance gathers information about your playlists using the `Spotify API` and presents the findings in a stunning way. It also lets you create new custom made playlists based on your favourite tracks.")
-    st.markdown(
-        "Status: `Beta`")
-    st.markdown(
-        "Documentation: **[Github](https://github.com/nauqh/Resonance-app)**")
-    st.markdown(
-        "Sever shutdown on: Tue, Aug 14th, 2023 @ 1:25am (PT)")
-    st.markdown("##")
-
-# TODO: Main
-st.markdown("""<h1 style='
+_, m, _ = st.columns([0.2, 1, 0.2])
+with m:
+    st.markdown("""<h1 style='
                 font-family: Recoleta-Regular; font-weight: 400;
-                font-size: 3.5rem'>How Bad Is Your Spotify Playlist</h1>""",
+                font-size: 3rem'>Resonance</h1>""",
             unsafe_allow_html=True)
 
-st.markdown("""<h3 style='
+    st.markdown("""<h3 style='
                 font-family: Recoleta-Regular; font-weight: 400;
-                font-size: 1.55rem'>Our sophisticated A.I. judges your awful taste in music</h3>""",
+                font-size: 1.5rem'>Our overtime service judges your awful taste in music</h3>""",
             unsafe_allow_html=True)
+    
+    st.image("img/shelf.jpeg")
+    st.text_input("Input your Spotify playlist")
 
-"""
-![Python](https://img.shields.io/badge/Made%20With-Python%203.8-blue.svg?style=for-the-badge&logo=Python)
-![Plotly](https://img.shields.io/badge/plotly%20-%2300416A.svg?&style=for-the-badge&logo=pandas&logoColor=white)
-![Spotify](https://img.shields.io/badge/Spotify-1ED760?style=for-the-badge&logo=spotify&logoColor=white)
-"""
-st.markdown("##")
-st.image("img/shelf.jpeg")
-url = st.text_input(
-    "🌨️Please share your playlist URL (https://open.spotify.com/playlist/..)", "")
-run = st.button("Find out")
-
-if st.button("Try sample playlist"):
-    url = "https://open.spotify.com/playlist/6jmF5vVuDu97XsOC85oGmb?si=282d7c076f2747a6"
-    run = True
+    run = st.button("Find out")
+    if st.button("Try sample playlist"):
+        url = "https://open.spotify.com/playlist/2xukpbxolEK8C9HdpANzZu?si=b6f9f35f63f24089"
+        run = True
 
 if run:
     token = get_token()
     info, artists, features = extract_playlist(token, url)
+
     # artists.to_csv('data/artists.csv', index=False)
     # features.to_csv('data/playlist.csv', index=False)
 
 # TODO: General info
-    st.write("##")
-    with st.container():
+    _, m, _ = st.columns([0.2, 1, 0.2])
+    with m:
         l, r = st.columns([1, 1])
         with l:
             components.iframe(
                 f"https://open.spotify.com/embed/playlist/{info['id']}?utm_source=generator", height=500)
         with r:
             st.write("##")
-            st.markdown("""<span style=' 
-                font-weight: 200; font-size: 1rem'>PUBLIC PLAYLIST</span>""",
-                        unsafe_allow_html=True)
+            st.markdown("PUBLIC PLAYLIST")
             st.markdown(f"""<span style='
                 font-family: Recoleta-Regular; font-weight: 400;
-                font-size: 3rem'>{info['name']}</span>""",
+                font-size: 2rem'>{info['name']}</span>""",
                         unsafe_allow_html=True)
 
             if info['description']:
@@ -89,7 +66,8 @@ if run:
 
 
 # TODO: General mood
-    with st.container():
+    _, m, _ = st.columns([0.2, 1, 0.2])
+    with m:
         l, r = st.columns([1, 1])
         with l:
             adj = ['frantic', 'mellow', 'ambient', 'melodious', 'breathy', 'calming', 'monophonic',
@@ -112,8 +90,8 @@ if run:
 
 
 # TODO: PLaylist update time
-    st.header("Playlist timeline")
-    l, r = st.columns([1, 1])
+    _, l, r, _ = st.columns([0.5, 1.4, 1, 0.5])
+
     with l:
         tabl, tabr = st.tabs(["By decade", "By date"])
         with tabl:
@@ -124,65 +102,58 @@ if run:
             st.plotly_chart(fig, True)
     with r:
         st.markdown("##")
-        st.markdown("##")
-        st.subheader("Playlist by decades")
+        st.subheader("Playlist timeline")
         st.write("""
         You're a musical time traveler! You've been listening to music made from a whopping 6 decades.
 
         Your favorite decade of music is the 2020s.
-
         Check out songs you’ve been listening to in each decade.
         """)
-        st.subheader("Playlist by decades")
         st.write("""
-        You're a musical time traveler! You've been listening to music made from a whopping 6 decades.
-
         Your favorite decade of music is the 2020s.
-
         Check out songs you’ve been listening to in each decade.
         """)
-    
 
 
 # TODO: Genres
-    st.header("Your beloved genres")
-    with st.container():
+    _, m, _ = st.columns([0.2, 1, 0.2])
+    with m:
+        st.header("Your beloved genres")
         fig = graph_genres(artists)
-        st.pyplot(fig, True)
+        st.pyplot(fig, use_container_width=True)
 
 # TODO: Top artists
     st.markdown("##")
-    with st.container():
+    _, m, _ = st.columns([0.2, 1, 0.2])
+    with m:
         st.header("You stan these artists to an uncomfortable extent")
         cols = st.columns([1, 1, 1, 1])
         top_artists = get_top_artist(features, artists)
 
-    for i in range(len(top_artists)):
-        with cols[i]:
-            st.write(top_artists[i][0])
-            st.image(top_artists[i][1])
+        for i in range(len(top_artists)):
+            with cols[i]:
+                st.write(top_artists[i][0])
+                st.image(top_artists[i][1])
 
 # TODO: Obscurity
     fig = graph_popular_track(features, artists)
     st.markdown("##")
-    st.markdown("##")
-    st.header("You are too trendy for your own good")
-    with st.container():
+    _, m, _ = st.columns([0.2, 1, 0.2])
+    with m:
         l, r = st.columns([1, 2])
         with l:
-            st.markdown("##")
-
+            st.subheader("You are too trendy for your own good")
             h, m = convert_ms(features['duration_ms'].sum())
             st.write(
-                f"It will take `{h} hr {m} min` for someone to listen to all the songs")
+                f"""It will take `{h} hr {m} min` for someone to listen to all the songs.
+                The most popular artist in your playlist is `{get_popular_artist(artists)}`""")
 
-            st.write(
-                f"The most popular artist in your playlist is `{get_popular_artist(artists)}`")
             score, quote = get_obscurity(features)
             st.markdown(f"Your obscurity score is `{round(score, 2)}%`")
             st.markdown(quote)
 
         with r:
+            st.markdown("##")
             st.plotly_chart(fig, True)
 
 
@@ -194,8 +165,9 @@ if run:
         track = f"https://open.spotify.com/embed/track/{uri}?utm_source=generator"
         tracks.append(track)
 
-    st.header("Your music resonates with these tastes")
-    with st.container():
+    _, m, _ = st.columns([0.2, 1, 0.2])
+    with m:
+        st.header("Your music resonates with these tastes")
         col1, col2, col3 = st.columns([1, 1, 1])
         for i in range(1, len(tracks), 3):
             with col1:
@@ -205,13 +177,3 @@ if run:
             with col3:
                 components.iframe(tracks[i+2], height=352)
 
-
-# ---- HIDE STREAMLIT STYLE ----
-hide_st_style = """
-            <style>
-            #MainMenu {visibility: hidden;}
-            footer {visibility: hidden;}
-            header {visibility: hidden;}
-            </style>
-            """
-st.markdown(hide_st_style, unsafe_allow_html=True)

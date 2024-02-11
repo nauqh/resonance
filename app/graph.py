@@ -1,4 +1,5 @@
 import pandas as pd
+# from ast import literal_eval
 
 import matplotlib.pyplot as plt
 import plotly.graph_objects as go
@@ -41,7 +42,8 @@ def graph_features(df: pd.DataFrame) -> go.Figure:
             angularaxis=dict(direction="clockwise", color='black'),
             bgcolor='#adf7b6'
         ),
-        margin=dict(r=0)
+        margin=dict(t=20, b=20, l=0, r=0),
+        height= 400
     )
     return fig
 
@@ -85,10 +87,8 @@ def get_top_artist(features, artists):
     return tuple(zip(names, images))
 
 
+
 def graph_popular_track(df: pd.DataFrame, artists: pd.DataFrame) -> go.Figure:
-    """
-    Visualize popular tracks 
-    """
     popular = df.sort_values('track_pop', ascending=False)[
         ['name', 'artist_id', 'track_pop']][:5].reset_index(drop=True)
     popular.rename(columns={'name': 'track'}, inplace=True)
@@ -98,21 +98,19 @@ def graph_popular_track(df: pd.DataFrame, artists: pd.DataFrame) -> go.Figure:
     fig = go.Figure(go.Bar(
         x=most_popular['track_pop'],
         y=most_popular['track'],
-        text=most_popular['name'],
         orientation='h',
         name='',
         marker=dict(color='#80ed99'),
-        hovertemplate="%{y}<br>Popularity: %{x}"
+        hovertemplate="Popularity: %{x}"
     ))
 
     fig.update_layout(
         autosize=True,
-        title='Most popular tracks worldwide',
+        title='Most popular tracks worldwide', title_font_size=18,
         hoverlabel=dict(bgcolor='#000', font_color='#fff'),
-        margin=dict(l=30, r=30, t=40),
+        margin=dict(l=0, r=0, t=30),
         height=350)
 
-    fig.update_yaxes(title=None, showticklabels=False)
     fig.update_xaxes(title=None, range=[0, 100])
 
     return fig
@@ -154,9 +152,10 @@ def graph_timeline(df: pd.DataFrame):
         hoverinfo='y', hovertemplate="%{x} - %{y} tracks<extra></extra>")
 
     fig.update_layout(
+        title="Track added", title_font_size=20,
         autosize=True,
         hoverlabel=dict(bgcolor='#000', font_color='#fff'),
-        margin=dict(t=0, b=0, l=0, r=0),
+        margin=dict(t=30, b=10, l=0, r=0),
         height=400)
     fig.update_yaxes(title='Number of tracks')
     fig.update_xaxes(title='Date')
@@ -172,30 +171,28 @@ def to_1D(series):
 
 
 def graph_genres(df):
+    # df['genres'] = df['genres'].apply(literal_eval)
     genres_count = to_1D(df['genres']).value_counts().to_dict()
     if "alt z" in genres_count:
         genres_count['hip hop'] = genres_count.pop('alt z')
 
     # Generate wordcloud
     wordcloud = WordCloud(width=1600, height=800,
-                          background_color='white').generate_from_frequencies(genres_count)
+                          background_color='#fafafa').generate_from_frequencies(genres_count)
 
     # Plot the wordcloud
-    plt.figure(figsize=(20, 10))
+    plt.figure(figsize=(20, 10), frameon=False)
     plt.imshow(wordcloud)
     plt.axis('off')
     plt.tight_layout(pad=0)
+
     return plt
 
 
 def graph_decades(df):
-    release = df['release_date']
-    release = pd.to_datetime(release)
-    years = release.dt.year.to_list()
-
-    years_series = pd.Series(years)
-    years_series['Decade'] = years_series // 10 * 10
-    decade_counts = years_series['Decade'].value_counts().sort_index()
+    years_series = pd.to_datetime(df['release_date'], format='mixed')
+    decades = (years_series.dt.year // 10 * 10).astype(str)
+    decade_counts = decades.value_counts().sort_index()
 
     colors = ['#b9fbc0', '#98f5e1', '#8eecf5',
               '#90dbf4', '#a3c4f3', '#cfbaf0', 'f1c0e8']
@@ -205,21 +202,18 @@ def graph_decades(df):
                                  direction='clockwise', pull=[0.1]*len(decade_counts.index))])
 
     fig.update_traces(name='', textinfo='none',
-                      #   textinfo='percent', textposition='inside', textfont_size=15,
-                      hovertemplate='%{label} <br> Tracks by decade: %{value}',
+                      hovertemplate='Decade: %{label}<br>Tracks: %{value}',
                       marker=dict(colors=colors, line=dict(color='#000000', width=1)))
 
     fig.update_layout(
-        margin=dict(t=0, b=0, l=0, r=10),
+        title="Track by decades", title_font_size=18,
+        margin=dict(t=30, l=0, r=0),
         legend=dict(
-            x=0,
+            x=-0.1,
             y=1,
-            font=dict(
-                size=15,
-                color="black"
-            ),
-        )
-
+            font=dict(size=15)
+        ),
+        height= 400
     )
 
     return fig
