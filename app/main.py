@@ -158,7 +158,7 @@ if run:
     _, m, _ = st.columns([0.1, 1, 0.1])
     with m:
         st.header("You stan these artists to an uncomfortable extent")
-        cols = st.columns([1, 1, 1, 1])
+        cols = st.columns([1, 1, 1, 1, 1])
         top_artists = get_top_artist(features, artists)
 
         for i in range(len(top_artists)):

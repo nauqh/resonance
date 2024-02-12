@@ -79,7 +79,7 @@ def get_top_artist(features, artists):
     top_artist_id = features['artist_id'].value_counts().index.tolist()
     names = []
     images = []
-    for artist_id in top_artist_id[:4]:
+    for artist_id in top_artist_id[:5]:
         names.append(artists[artists['artist_id']
                      == artist_id]['name'].values[0])
         images.append(artists[artists['artist_id']
