@@ -22,10 +22,6 @@ with m:
                 font-family: "Inconsolata"; font-weight: 400;
                 font-size: 1.4rem'>Our overtime service refines your awful taste in music</h3>""",
                 unsafe_allow_html=True)
-
-    # _, mid, _ = st.columns([1, 10, 1])
-    # with mid:
-    # st.image("img/shelf.jpeg")
     """
     ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=fafafa)
     ![Plotly](https://img.shields.io/badge/plotly%20-%2300416A.svg?&style=for-the-badge&logo=pandas&logoColor=white)
