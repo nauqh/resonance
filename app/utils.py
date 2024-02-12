@@ -2,13 +2,13 @@ import base64
 import pandas as pd
 from stqdm import stqdm
 import streamlit as st
-from requests import post, get
+from requests import post, get, HTTPError
 
 
 # client_id = st.secrets["CID"]
 # client_secret = st.secrets["SECRETS"]
-client_id = "41ebc65d020d4aa8be24bd1f97cbd9ed"
-client_secret = "62ceb3db85854f739c3fd9598504ecaf"
+client_id = "2e4309e0daef4628b241b031f32cfd5a"
+client_secret = "6769cdbfca144a53b2394bd22f81fa10"
 
 # TODO: Authentication
 
@@ -43,8 +43,11 @@ def get_playlist(token: str, playlist_url: str) -> dict:
     url = f"https://api.spotify.com/v1/playlists/{playlist_id}"
     headers = get_header(token)
 
-    resp = get(url, headers=headers).json()
-    return resp
+    resp = get(url, headers=headers)
+
+    if resp.status_code == 429:
+        raise HTTPError("Rate limit")
+    return resp.json()
 
 
 def get_playlist_info(playlist: dict) -> dict:
@@ -95,7 +98,12 @@ def get_artist_info(token: str, artist_id: str) -> dict:
 def get_audio_features(token: str, track_id: str) -> dict:
     url = f"https://api.spotify.com/v1/audio-features/{track_id}"
     headers = get_header(token)
-    resp = get(url, headers=headers).json()
+    resp = get(url, headers=headers)
+
+    if resp.status_code == 429:
+        raise HTTPError("Rate limit")
+
+    resp = resp.json()
 
     features = {}
     features['track_id'] = track_id
@@ -126,7 +134,7 @@ def extract_playlist(token: str, playlist_url: str) -> tuple[dict, pd.DataFrame,
     tracks = []
     features = []
 
-    _, m, _ = st.columns([0.35, 1, 0.35])
+    _, m, _ = st.columns([0.1, 1, 0.1])
     with m:
         st.write("Extracting tracks from playlist ..")
         for i in stqdm(range(len(playlist['tracks']['items']))):

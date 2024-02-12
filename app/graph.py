@@ -96,7 +96,8 @@ def graph_popular_track(df: pd.DataFrame) -> go.Figure:
         orientation='h',
         marker=dict(
             color=['#8eecf5' if i == popular['track_pop'].idxmax(
-            ) else '#80ed99' for i in range(len(popular))]
+            ) else '#80ed99' for i in range(len(popular))],
+            line=dict(color='#000', width=0.5)
         ),
         hovertemplate="Popularity: %{x} <extra></extra>"
     ))
@@ -106,10 +107,13 @@ def graph_popular_track(df: pd.DataFrame) -> go.Figure:
         title='Popular Tracks Worldwide', title_font_size=20,
         hoverlabel=dict(bgcolor='#000', font_color='#fff'),
         margin=dict(l=0, r=0, t=30),
-        height=350)
+        height=350,
+        xaxis=dict(tickfont=dict(color='#000')),
+        yaxis=dict(tickfont=dict(color='#000')))
 
     fig.update_yaxes(showgrid=False, title=None)
-    fig.update_xaxes(title="Popularity (%)", range=[0, 100])
+    fig.update_xaxes(title="Popularity (%)", range=[
+                     0, 100], title_font_color="#000")
 
     return fig
 
@@ -201,13 +205,13 @@ def graph_decades(df):
 
     fig.update_traces(name='', textinfo='none',
                       hovertemplate='Decade: %{label}<br>Tracks: %{value}',
-                      marker=dict(colors=colors, line=dict(color='#000000', width=1)))
+                      marker=dict(colors=colors, line=dict(color='#000', width=1)))
 
     fig.update_layout(
         title="Track by decades", title_font_size=18,
         margin=dict(t=30, l=0, r=0),
         legend=dict(
-            x=-0.3,
+            x=0,
             y=1,
             font=dict(size=15)
         ),
@@ -238,7 +242,7 @@ def graph_audio_proportion(names, dances, energies, lives):
                 energies if type == 'Energy' else lives),
             name=type,
             orientation='h',
-            marker=dict(color=color, line=dict(color='#000', width=1)),
+            marker=dict(color=color, line=dict(color='#000', width=0.5)),
             hovertemplate='%{x:,.2f}'
         ))
 

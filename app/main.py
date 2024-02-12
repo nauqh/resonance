@@ -11,30 +11,35 @@ st.set_page_config(
     page_icon="img/favicon.png",
     layout="wide")
 
-_, m, _ = st.columns([0.2, 1, 0.2])
+_, m, _ = st.columns([0.1, 1, 0.1])
 with m:
     st.markdown("""<h3 style='
                 font-family: "Inconsolata"; font-weight: 400;
-                text-align: center;
                 font-size: 3rem'>How sick is your music?</h3>""",
                 unsafe_allow_html=True)
 
     st.markdown("""<h3 style='
                 font-family: "Inconsolata"; font-weight: 400;
-                text-align: center;
                 font-size: 1.4rem'>Our overtime service refines your awful taste in music</h3>""",
                 unsafe_allow_html=True)
 
-    _, mid, _ = st.columns([1, 10, 1])
-    with mid:
-        st.image("img/shelf.jpeg")
+    # _, mid, _ = st.columns([1, 10, 1])
+    # with mid:
+    # st.image("img/shelf.jpeg")
+    """
+    ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=fafafa)
+    ![Plotly](https://img.shields.io/badge/plotly%20-%2300416A.svg?&style=for-the-badge&logo=pandas&logoColor=white)
+    ![ChatGPT](https://img.shields.io/badge/chatGPT-74aa9c?style=for-the-badge&logo=openai&logoColor=white)
+    ![Spotify](https://img.shields.io/badge/Spotify-1ED760?style=for-the-badge&logo=spotify&logoColor=white)
+    """
+    st.markdown("##")
+    st.markdown("##")
+    st.text_input("Input your Spotify playlist")
 
-        st.text_input("Input your Spotify playlist")
-
-        run = st.button("Find out")
-        if st.button("Try sample playlist"):
-            url = "https://open.spotify.com/playlist/2xukpbxolEK8C9HdpANzZu?si=b6f9f35f63f24089"
-            run = True
+    run = st.button("Find out")
+    if st.button("Try sample playlist"):
+        url = "https://open.spotify.com/playlist/2xukpbxolEK8C9HdpANzZu?si=b6f9f35f63f24089"
+        run = True
 
 if run:
     token = get_token()
@@ -43,17 +48,13 @@ if run:
     # artists.to_csv('data/artists.csv', index=False)
     # features.to_csv('data/playlist.csv', index=False)
 
-    artists = pd.read_csv(
-        "D:\Laboratory\Projects\Resonance-app\data/artists.csv")
-    features = pd.read_csv(
-        "D:\Laboratory\Projects\Resonance-app\data/playlist.csv")
 
 # TODO: General info
     st.markdown("##")
     st.markdown("##")
-    _, m, _ = st.columns([0.2, 1, 0.2])
+    _, m, _ = st.columns([0.1, 1, 0.1])
     with m:
-        l, r = st.columns([1, 1])
+        l, r = st.columns([1.4, 1])
         with l:
             components.iframe(
                 f"https://open.spotify.com/embed/playlist/{info['id']}?utm_source=generator", height=500)
@@ -78,7 +79,7 @@ if run:
 
 
 # TODO: General mood
-    _, m, _ = st.columns([0.2, 1, 0.2])
+    _, m, _ = st.columns([0.1, 1, 0.1])
     with m:
         l, r = st.columns([1, 1])
         with l:
@@ -112,40 +113,41 @@ if run:
     dances = list(dance.values())
     energies = list(energy.values())
     lives = list(live.values())
-    _, m, _ = st.columns([0.2, 1, 0.2])
+
+    _, m, _ = st.columns([0.1, 1, 0.1])
     with m:
         fig = graph_audio_proportion(names, dances, energies, lives)
         st.plotly_chart(fig, True)
 
 
 # TODO: PLaylist update time
-    _, l, r, _ = st.columns([0.5, 1.4, 1, 0.5])
-
-    with l:
+    _, m, _ = st.columns([0.1, 1, 0.1])
+    with m:
         tabl, tabr = st.tabs(["By decade", "By date"])
         with tabl:
-            fig = graph_decades(features)
-            st.plotly_chart(fig, True)
+            l, r = st.columns([1, 1])
+            with l:
+                fig = graph_decades(features)
+                st.plotly_chart(fig, True)
+            with r:
+                st.subheader("Playlist timeline")
+                st.write("""
+                You're a musical time traveler! You've been listening to music made from a whopping 6 decades.
+
+                Your favorite decade of music is the 2020s.
+                Check out songs you’ve been listening to in each decade.
+                """)
+                st.write("""
+                Your favorite decade of music is the 2020s.
+                Check out songs you’ve been listening to in each decade.
+                """)
         with tabr:
             fig = graph_timeline(features)
             st.plotly_chart(fig, True)
-    with r:
-        st.markdown("##")
-        st.subheader("Playlist timeline")
-        st.write("""
-        You're a musical time traveler! You've been listening to music made from a whopping 6 decades.
-
-        Your favorite decade of music is the 2020s.
-        Check out songs you’ve been listening to in each decade.
-        """)
-        st.write("""
-        Your favorite decade of music is the 2020s.
-        Check out songs you’ve been listening to in each decade.
-        """)
 
 
 # TODO: Genres
-    _, m, _ = st.columns([0.2, 1, 0.2])
+    _, m, _ = st.columns([0.1, 1, 0.1])
     with m:
         st.header("Your beloved genres")
         fig = graph_genres(artists)
@@ -153,7 +155,7 @@ if run:
 
 # TODO: Top artists
     st.markdown("##")
-    _, m, _ = st.columns([0.2, 1, 0.2])
+    _, m, _ = st.columns([0.1, 1, 0.1])
     with m:
         st.header("You stan these artists to an uncomfortable extent")
         cols = st.columns([1, 1, 1, 1])
@@ -167,7 +169,7 @@ if run:
 # TODO: Obscurity
     fig = graph_popular_track(features)
     st.markdown("##")
-    _, m, _ = st.columns([0.2, 1, 0.2])
+    _, m, _ = st.columns([0.1, 1, 0.1])
     with m:
         l, r = st.columns([1, 3])
         with l:
@@ -194,7 +196,7 @@ if run:
         track = f"https://open.spotify.com/embed/track/{uri}?utm_source=generator"
         tracks.append(track)
 
-    _, m, _ = st.columns([0.2, 1, 0.2])
+    _, m, _ = st.columns([0.1, 1, 0.1])
     with m:
         st.header("Your music resonates with these tastes")
         col1, col2, col3 = st.columns([1, 1, 1])
