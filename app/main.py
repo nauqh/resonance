@@ -30,7 +30,7 @@ with m:
     """
     st.markdown("##")
     st.markdown("##")
-    st.text_input("Input your Spotify playlist")
+    url = st.text_input("Input your Spotify playlist")
 
     run = st.button("Find out")
     if st.button("Try sample playlist"):
