@@ -42,7 +42,7 @@ def graph_features(df: pd.DataFrame) -> go.Figure:
             angularaxis=dict(direction="clockwise", color='black'),
             bgcolor='#adf7b6'
         ),
-        margin=dict(t=20, b=20, l=0, r=0),
+        margin=dict(t=20, b=20, l=30, r=30),
         height=400
     )
     return fig
@@ -87,30 +87,29 @@ def get_top_artist(features, artists):
     return tuple(zip(names, images))
 
 
-def graph_popular_track(df: pd.DataFrame, artists: pd.DataFrame) -> go.Figure:
+def graph_popular_track(df: pd.DataFrame) -> go.Figure:
     popular = df.sort_values('track_pop', ascending=False)[
         ['name', 'artist_id', 'track_pop']][:5].reset_index(drop=True)
-    popular.rename(columns={'name': 'track'}, inplace=True)
-    artist_lookup = artists[['artist_id', 'name']]
-    most_popular = pd.merge(popular, artist_lookup, on='artist_id', how='left')
-
     fig = go.Figure(go.Bar(
-        x=most_popular['track_pop'],
-        y=most_popular['track'],
+        y=popular['name'],
+        x=popular['track_pop'],
         orientation='h',
-        name='',
-        marker=dict(color='#80ed99'),
-        hovertemplate="Popularity: %{x}"
+        marker=dict(
+            color=['#8eecf5' if i == popular['track_pop'].idxmax(
+            ) else '#80ed99' for i in range(len(popular))]
+        ),
+        hovertemplate="Popularity: %{x} <extra></extra>"
     ))
 
     fig.update_layout(
         autosize=True,
-        title='Most popular tracks worldwide', title_font_size=18,
+        title='Popular Tracks Worldwide', title_font_size=20,
         hoverlabel=dict(bgcolor='#000', font_color='#fff'),
         margin=dict(l=0, r=0, t=30),
         height=350)
 
-    fig.update_xaxes(title=None, range=[0, 100])
+    fig.update_yaxes(showgrid=False, title=None)
+    fig.update_xaxes(title="Popularity (%)", range=[0, 100])
 
     return fig
 
@@ -214,5 +213,41 @@ def graph_decades(df):
         ),
         height=400
     )
+
+    return fig
+
+
+def graph_audio_proportion(names, dances, energies, lives):
+    # Calculate the sum of danceability, energy, and liveness for each genre
+    sums = [d + e + l for d, e, l in zip(dances, energies, lives)]
+
+    # Sort names based on the sum of danceability, energy, and liveness
+    sorted_data = sorted(
+        zip(names, dances, energies, lives, sums), key=lambda x: x[4])
+    names, dances, energies, lives, _ = zip(*sorted_data)
+
+    fig = go.Figure()
+
+    types = ['Danceability', 'Energy', 'Liveness']
+    colors = ['#8eecf5', '#98f5e1',  '#b9fbc0']
+
+    for type, color in zip(types, colors):
+        fig.add_trace(go.Bar(
+            y=names,
+            x=dances if type == 'Danceability' else (
+                energies if type == 'Energy' else lives),
+            name=type,
+            orientation='h',
+            marker=dict(color=color, line=dict(color='#000', width=1)),
+            hovertemplate='%{x:,.2f}'
+        ))
+
+    fig.update_layout(title='Audio Features Proportion', barmode='stack', title_font_size=18,
+                      height=500,
+                      hoverlabel=dict(bgcolor='#161513', font_color='#fff'),
+                      legend=dict(orientation="h", yanchor="top",
+                                  xanchor="center", x=0.5, y=1.1),
+                      xaxis=dict(tickfont=dict(color='#000')),
+                      yaxis=dict(tickfont=dict(color='#000')))
 
     return fig

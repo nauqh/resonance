@@ -126,7 +126,7 @@ def extract_playlist(token: str, playlist_url: str) -> tuple[dict, pd.DataFrame,
     tracks = []
     features = []
 
-    _, m, _ = st.columns([0.2, 1, 0.2])
+    _, m, _ = st.columns([0.35, 1, 0.35])
     with m:
         st.write("Extracting tracks from playlist ..")
         for i in stqdm(range(len(playlist['tracks']['items']))):

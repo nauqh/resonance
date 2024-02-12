@@ -43,7 +43,14 @@ if run:
     # artists.to_csv('data/artists.csv', index=False)
     # features.to_csv('data/playlist.csv', index=False)
 
+    artists = pd.read_csv(
+        "D:\Laboratory\Projects\Resonance-app\data/artists.csv")
+    features = pd.read_csv(
+        "D:\Laboratory\Projects\Resonance-app\data/playlist.csv")
+
 # TODO: General info
+    st.markdown("##")
+    st.markdown("##")
     _, m, _ = st.columns([0.2, 1, 0.2])
     with m:
         l, r = st.columns([1, 1])
@@ -93,6 +100,23 @@ if run:
             fig = graph_features(features)
             st.plotly_chart(fig, True)
 
+# TODO: Audio features proportion
+    df = pd.merge(features, artists[['artist_id', 'genres']], on='artist_id')
+    df['genres'] = df['genres'].apply(lambda x: x[0] if x else None)
+
+    dance = df.groupby('genres')['danceability'].mean().to_dict()
+    energy = df.groupby('genres')['energy'].mean().to_dict()
+    live = df.groupby('genres')['liveness'].mean().to_dict()
+
+    names = list(dance.keys())
+    dances = list(dance.values())
+    energies = list(energy.values())
+    lives = list(live.values())
+    _, m, _ = st.columns([0.2, 1, 0.2])
+    with m:
+        fig = graph_audio_proportion(names, dances, energies, lives)
+        st.plotly_chart(fig, True)
+
 
 # TODO: PLaylist update time
     _, l, r, _ = st.columns([0.5, 1.4, 1, 0.5])
@@ -141,21 +165,21 @@ if run:
                 st.image(top_artists[i][1])
 
 # TODO: Obscurity
-    fig = graph_popular_track(features, artists)
+    fig = graph_popular_track(features)
     st.markdown("##")
     _, m, _ = st.columns([0.2, 1, 0.2])
     with m:
-        l, r = st.columns([1, 2])
+        l, r = st.columns([1, 3])
         with l:
-            st.subheader("You are too trendy for your own good")
+            st.markdown("##")
             h, m = convert_ms(features['duration_ms'].sum())
             st.write(
                 f"""It will take `{h} hr {m} min` for someone to listen to all the songs.
                 The most popular artist in your playlist is `{get_popular_artist(artists)}`""")
 
             score, quote = get_obscurity(features)
-            st.markdown(f"Your obscurity score is `{round(score, 2)}%`")
-            st.markdown(quote)
+            st.markdown(
+                f"Your obscurity score is `{round(score, 2)}%`. {quote}")
 
         with r:
             st.markdown("##")
