@@ -247,7 +247,7 @@ def graph_audio_proportion(names, dances, energies, lives):
         ))
 
     fig.update_layout(title='Audio Features Proportion', barmode='stack', title_font_size=18,
-                      height=500,
+                      height=550,
                       hoverlabel=dict(bgcolor='#161513', font_color='#fff'),
                       legend=dict(orientation="h", yanchor="top",
                                   xanchor="center", x=0.5, y=1.1),
