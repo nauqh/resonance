@@ -125,7 +125,7 @@ if run:
     with m:
         tabl, tabr = st.tabs(["By decade", "By date"])
         with tabl:
-            l, r = st.columns([1, 1])
+            l, r = st.columns([1.4, 1])
             with l:
                 fig = graph_decades(features)
                 st.plotly_chart(fig, True)
