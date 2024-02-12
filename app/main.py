@@ -50,7 +50,7 @@ if run:
     st.markdown("##")
     _, m, _ = st.columns([0.1, 1, 0.1])
     with m:
-        l, r = st.columns([1.4, 1])
+        l, r = st.columns([1, 1])
         with l:
             components.iframe(
                 f"https://open.spotify.com/embed/playlist/{info['id']}?utm_source=generator", height=500)
