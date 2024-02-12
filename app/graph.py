@@ -43,7 +43,7 @@ def graph_features(df: pd.DataFrame) -> go.Figure:
             bgcolor='#adf7b6'
         ),
         margin=dict(t=20, b=20, l=0, r=0),
-        height= 400
+        height=400
     )
     return fig
 
@@ -85,7 +85,6 @@ def get_top_artist(features, artists):
         images.append(artists[artists['artist_id']
                       == artist_id]['image'].values[0])
     return tuple(zip(names, images))
-
 
 
 def graph_popular_track(df: pd.DataFrame, artists: pd.DataFrame) -> go.Figure:
@@ -209,11 +208,11 @@ def graph_decades(df):
         title="Track by decades", title_font_size=18,
         margin=dict(t=30, l=0, r=0),
         legend=dict(
-            x=-0.1,
+            x=-0.3,
             y=1,
             font=dict(size=15)
         ),
-        height= 400
+        height=400
     )
 
     return fig
