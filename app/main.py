@@ -17,15 +17,15 @@ with m:
                 font-family: "Inconsolata"; font-weight: 400;
                 text-align: center;
                 font-size: 3rem'>How sick is your music?</h3>""",
-            unsafe_allow_html=True)
+                unsafe_allow_html=True)
 
     st.markdown("""<h3 style='
                 font-family: "Inconsolata"; font-weight: 400;
                 text-align: center;
-                font-size: 1.4rem'>Our overtime service judges your awful taste in music</h3>""",
-            unsafe_allow_html=True)
+                font-size: 1.4rem'>Our overtime service refines your awful taste in music</h3>""",
+                unsafe_allow_html=True)
 
-    _, mid, _ = st.columns([1, 10, 1]) 
+    _, mid, _ = st.columns([1, 10, 1])
     with mid:
         st.image("img/shelf.jpeg")
 
@@ -181,4 +181,3 @@ if run:
                 components.iframe(tracks[i+1], height=352)
             with col3:
                 components.iframe(tracks[i+2], height=352)
-
