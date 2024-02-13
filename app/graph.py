@@ -29,7 +29,7 @@ def graph_features(df: pd.DataFrame) -> go.Figure:
         theta=features,
         fill='toself',
         name='',
-        hovertemplate="%{r}",
+        hovertemplate="%{r:,.2f}",
         fillcolor='#1db954',
         line_color='#1ed760',
         opacity=0.5,
@@ -38,12 +38,13 @@ def graph_features(df: pd.DataFrame) -> go.Figure:
         template='seaborn',
         polar=dict(
             radialaxis=dict(showticklabels=True, ticks='',
-                            color='black', nticks=4),
-            angularaxis=dict(direction="clockwise", color='black'),
+                            color='#000', tickfont_size=10),
+            angularaxis=dict(direction="clockwise", color='#000'),
             bgcolor='#adf7b6'
         ),
-        margin=dict(t=20, b=20, l=30, r=30),
-        height=400
+        margin=dict(t=20, b=20, l=0, r=0),
+        hoverlabel=dict(bgcolor='#000', font_color='#fff'),
+        height=350
     )
     return fig
 
@@ -97,7 +98,7 @@ def graph_popular_track(df: pd.DataFrame) -> go.Figure:
         marker=dict(
             color=['#8eecf5' if i == popular['track_pop'].idxmax(
             ) else '#80ed99' for i in range(len(popular))],
-            line=dict(color='#000', width=0.5)
+            line=dict(color='#000', width=1)
         ),
         hovertemplate="Popularity: %{x} <extra></extra>"
     ))
@@ -242,7 +243,7 @@ def graph_audio_proportion(names, dances, energies, lives):
                 energies if type == 'Energy' else lives),
             name=type,
             orientation='h',
-            marker=dict(color=color, line=dict(color='#000', width=0.5)),
+            marker=dict(color=color, line=dict(color='#000', width=1)),
             hovertemplate='%{x:,.2f}'
         ))
 
