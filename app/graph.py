@@ -160,7 +160,7 @@ def graph_timeline(df: pd.DataFrame):
         hoverlabel=dict(bgcolor='#000', font_color='#fff'),
         margin=dict(t=30, b=10, l=0, r=0),
         height=400)
-    fig.update_yaxes(title='Number of tracks')
+    fig.update_yaxes(title='Number of tracks', showgrid=False)
     fig.update_xaxes(title='Date')
 
     return fig
