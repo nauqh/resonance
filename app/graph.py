@@ -1,9 +1,10 @@
 import pandas as pd
 # from ast import literal_eval
 
+from wordcloud import WordCloud
 import matplotlib.pyplot as plt
 import plotly.graph_objects as go
-from wordcloud import WordCloud
+from plotly.subplots import make_subplots
 
 
 def convert_ms(ms):
@@ -90,14 +91,14 @@ def get_top_artist(features, artists):
 
 def graph_popular_track(df: pd.DataFrame) -> go.Figure:
     popular = df.sort_values('track_pop', ascending=False)[
-        ['name', 'artist_id', 'track_pop']][:5].reset_index(drop=True)
+        ['name', 'artist_id', 'track_pop']][:6].reset_index(drop=True)
     fig = go.Figure(go.Bar(
         y=popular['name'],
         x=popular['track_pop'],
         orientation='h',
         marker=dict(
-            color=['#8eecf5' if i == popular['track_pop'].idxmax(
-            ) else '#80ed99' for i in range(len(popular))],
+            color=['#98f5e1' if i == popular['track_pop'].idxmax(
+            ) else '#b9fbc0' for i in range(len(popular))],
             line=dict(color='#000', width=1)
         ),
         hovertemplate="Popularity: %{x} <extra></extra>"
@@ -143,25 +144,36 @@ def get_popular_artist(df: pd.DataFrame):
 
 
 def graph_timeline(df: pd.DataFrame):
-    timeline = df['added_date']
+    df['added_date'] = pd.to_datetime(df['added_date']).dt.date
 
-    timeline = pd.to_datetime(timeline)
-    timeline = timeline.dt.date
-    data = timeline.value_counts().sort_index()
+    # Now you can perform your groupby operation
+    data = df.groupby('added_date').agg(
+        {'track_id': 'nunique', 'track_pop': 'mean'})
 
-    fig = go.Figure(data=go.Scatter(
-        x=data.index, y=data.values, line=dict(color='#1DB954', width=3)))
-    fig.update_traces(
-        hoverinfo='y', hovertemplate="Date: %{x}<br>Track added: %{y} <extra></extra>")
+    import plotly.graph_objects as go
+    from plotly.subplots import make_subplots
 
-    fig.update_layout(
-        title="Track added", title_font_size=20,
-        autosize=True,
-        hoverlabel=dict(bgcolor='#000', font_color='#fff'),
-        margin=dict(t=30, b=10, l=0, r=0),
-        height=400)
-    fig.update_yaxes(title='Number of tracks', showgrid=False)
-    fig.update_xaxes(title='Date')
+    fig = make_subplots(specs=[[{"secondary_y": True}]])
+
+    fig.add_trace(go.Scatter(x=data.index, y=data['track_id'], name="No of Tracks",
+                             line_width=3, hovertemplate='Tracks: %{y} <extra></extra>'), secondary_y=False)
+
+    fig.add_trace(go.Scatter(x=data.index, y=data['track_pop'], name="Track Pop",
+                             line_width=3, hovertemplate='Popularity: %{y:.1f} <extra></extra>'), secondary_y=True)
+
+    fig.update_layout(title="Popularity by Number of Track added", title_font_size=18,
+                      height=400,
+                      autosize=True,
+                      legend=dict(orientation="h", yanchor="top",
+                                  xanchor="center", x=0.5, y=1.1),
+                      margin=dict(t=30, b=10, l=0, r=0),
+                      hovermode='x unified')
+
+    fig.update_yaxes(title="No of Tracks", secondary_y=False,
+                     showgrid=False, zeroline=False)
+    fig.update_yaxes(title="Popularity", secondary_y=True,
+                     range=[0, 100], showgrid=False)
+    fig.update_xaxes(title=None, showgrid=False)
 
     return fig
 
@@ -247,11 +259,12 @@ def graph_audio_proportion(names, dances, energies, lives):
             hovertemplate='%{x:,.2f}'
         ))
 
-    fig.update_layout(title='Audio Features Proportion', barmode='stack', title_font_size=18,
-                      height=550,
+    fig.update_layout(title='Dancing Elements Proportion', barmode='stack', title_font_size=18,
+                      height=400,
                       hoverlabel=dict(bgcolor='#161513', font_color='#fff'),
                       legend=dict(orientation="h", yanchor="top",
                                   xanchor="center", x=0.5, y=1.1),
+                      margin=dict(t=30, b=10, l=0, r=0),
                       xaxis=dict(tickfont=dict(color='#000')),
                       yaxis=dict(tickfont=dict(color='#000')))
 
