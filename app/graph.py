@@ -269,3 +269,37 @@ def graph_audio_proportion(names, dances, energies, lives):
                       yaxis=dict(tickfont=dict(color='#000')))
 
     return fig
+
+
+def graph_decade_percent(df):
+    years_series = pd.to_datetime(df['release_date'], format='mixed')
+    decade_counts = (years_series.dt.year // 10 *
+                     10).astype(str).value_counts(normalize=True) * 100
+
+    # Data
+    categories = ['Others', decade_counts.idxmax() + 's']
+    values = [100 - decade_counts.max(), decade_counts.max()]
+
+    # Create figure
+    fig = go.Figure()
+
+    # Add horizontal bar trace
+    fig.add_trace(go.Bar(
+        y=categories,
+        x=values,
+        orientation='h',
+        hovertemplate="%{x}% <extra></extra>"
+    ))
+
+    # Update layout
+    fig.update_layout(
+        template='seaborn',
+        title='Most Listened Decade',
+        title_font_size=18,
+        height=200,
+        margin=dict(t=40, b=0, l=0, r=0),
+        xaxis=dict(title=None),
+        yaxis=dict(title=None, showgrid=False),
+    )
+
+    return fig, decade_counts.idxmax() + 's', len(decade_counts.index)

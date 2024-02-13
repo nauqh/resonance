@@ -15,7 +15,7 @@ _, m, _ = st.columns([0.1, 1, 0.1])
 with m:
     st.markdown("""<h3 style='
                 font-family: "Inconsolata"; font-weight: 400;
-                font-size: 3rem'>How sick is your music?</h3>""",
+                font-size: 3rem'>How Sick is Your Spotify Playlist?</h3>""",
                 unsafe_allow_html=True)
 
     st.markdown("""<h3 style='
@@ -141,20 +141,18 @@ if run:
     with m:
         tabl, tabr = st.tabs(["By decade", "By date"])
         with tabl:
-            l, r = st.columns([1.4, 1])
+            l, r = st.columns([1.2, 1])
             with l:
                 fig = graph_decades(features)
                 st.plotly_chart(fig, True)
             with r:
-                st.subheader("Playlist timeline")
-                st.write("""
-                You're a musical time traveler! You've been listening to music made from a whopping 6 decades. Your favorite decade of music is the 2020s.
+                fig, decade, decade_count = graph_decade_percent(features)
+                st.write(f"""
+                You're a musical time traveler! You've been listening to music made from a whopping {decade_count} decades. Your favorite decade of music is the {decade}.
                 Check out songs you’ve been listening to in each decade.
                 """)
-                st.write("""
-                Your favorite decade of music is the 2020s.
-                Check out songs you’ve been listening to in each decade.
-                """)
+                st.plotly_chart(fig, True)
+
         with tabr:
             fig = graph_timeline(features)
             st.plotly_chart(fig, True)
