@@ -152,7 +152,7 @@ def graph_timeline(df: pd.DataFrame):
     fig = go.Figure(data=go.Scatter(
         x=data.index, y=data.values, line=dict(color='#1DB954', width=3)))
     fig.update_traces(
-        hoverinfo='y', hovertemplate="%{x} - %{y} tracks<extra></extra>")
+        hoverinfo='y', hovertemplate="Date: %{x}<br>Track added: %{y} <extra></extra>")
 
     fig.update_layout(
         title="Track added", title_font_size=20,
