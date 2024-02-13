@@ -206,7 +206,7 @@ if run:
 
 
 # TODO: Footer
-_, m, _ = st.columns([0.2, 1, 0.2])
+_, m, _ = st.columns([0.1, 1, 0.1])
 with m:
     st.markdown("##")
     st.markdown(
