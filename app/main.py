@@ -15,7 +15,7 @@ _, m, _ = st.columns([0.1, 1, 0.1])
 with m:
     st.markdown("""<h3 style='
                 font-family: "Inconsolata"; font-weight: 400;
-                font-size: 3rem'>How Sick is Your Spotify Playlist?</h3>""",
+                font-size: 3rem'>How Sick Is Your Spotify Playlist?</h3>""",
                 unsafe_allow_html=True)
 
     st.markdown("""<h3 style='
@@ -148,7 +148,7 @@ if run:
             with r:
                 fig, decade, decade_count = graph_decade_percent(features)
                 st.write(f"""
-                You're a musical time traveler! You've been listening to music made from a whopping {decade_count} decades. Your favorite decade of music is the {decade}.
+                You're a musical time traveler! You've been listening to music made from a whopping `{decade_count} decades`. Your favorite decade of music is the `{decade}`.
                 Check out songs you’ve been listening to in each decade.
                 """)
                 st.plotly_chart(fig, True)
@@ -209,3 +209,5 @@ if run:
             "Further explore your music taste with our main clinice, [Musicotherapy](https://musiotherapy.vercel.app).")
         st.markdown(
             "Follow our latest updates on [Github](https://github.com/nauqh/resonance).")
+
+        st.markdown("A project by `[Nauqh](https://nauqh.github.io/)`")

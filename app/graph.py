@@ -294,7 +294,7 @@ def graph_decade_percent(df):
     # Update layout
     fig.update_layout(
         template='seaborn',
-        title='Most Listened Decade',
+        title='Most listened decade',
         title_font_size=18,
         height=200,
         margin=dict(t=40, b=0, l=0, r=0),
