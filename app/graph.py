@@ -230,7 +230,12 @@ def graph_decade_percent(df):
         y=categories,
         x=values,
         orientation='h',
-        hovertemplate="%{x}% <extra></extra>"
+        hovertemplate="%{x}% <extra></extra>",
+        marker=dict(
+            color=['#a3c4f3' if category ==
+                   "Others" else '#cfbaf0' for category in categories],
+            line=dict(color='#000', width=1)
+        ),
     ))
 
     # Update layout
