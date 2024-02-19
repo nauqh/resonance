@@ -67,12 +67,14 @@ def get_top_artist(features, artists):
     top_artist_id = features['artist_id'].value_counts().index.tolist()
     names = []
     images = []
-    for artist_id in top_artist_id[:5]:
-        names.append(artists[artists['artist_id']
-                     == artist_id]['name'].values[0])
-        images.append(artists[artists['artist_id']
-                      == artist_id]['image'].values[0])
-    return tuple(zip(names, images))
+    for artist_id in top_artist_id[:6]:
+        artist_name = artists[artists['artist_id']
+                              == artist_id]['name'].values[0]
+        if artist_name != "Various Artists":
+            names.append(artist_name)
+            images.append(artists[artists['artist_id'] ==
+                          artist_id]['image'].values[0])
+    return tuple(zip(names, images))[:5]
 
 # =============================================
 # TODO: Utils
