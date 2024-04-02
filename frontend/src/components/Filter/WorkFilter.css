@@ -1,0 +1,18 @@
+.work__filters {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	column-gap: 0.75rem;
+}
+
+.work__item {
+	cursor: pointer;
+	color: var(--text-color);
+	padding: 0.25rem 0.75rem;
+	border-radius: 0.5rem;
+}
+
+.active-work {
+	background-color: var(--secondary-color);
+	color: var(--primary-color);
+}

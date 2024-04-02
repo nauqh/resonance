@@ -1,0 +1,30 @@
+{
+    "Upbeat": {
+        "Danceability": 85,
+        "Energy": 92,
+        "Instrumentalness": 24,
+        "Loudness": -3.72,
+        "Valence": 88
+    },
+    "Ambient": {
+        "Danceability": 35,
+        "Energy": 23,
+        "Instrumentalness": 95,
+        "Loudness": -10.2,
+        "Valence": 12
+    },
+    "Anxious": {
+        "Danceability": 48,
+        "Energy": 75,
+        "Instrumentalness": 12,
+        "Loudness": -6.75,
+        "Valence": 32
+    },
+    "Inspiring": {
+        "Danceability": 78,
+        "Energy": 89,
+        "Instrumentalness": 5,
+        "Loudness": -3.12,
+        "Valence": 92
+    }
+}

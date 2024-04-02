@@ -1,0 +1,84 @@
+.loading__container {
+	display: grid;
+	justify-content: center;
+	padding: 1rem;
+}
+
+.loading__container h1 {
+	margin: 0;
+	padding: 0;
+}
+
+.loading {
+	margin-top: 2rem;
+	color: var(--text-color);
+	font-size: 1rem;
+}
+.loading__dots {
+	display: inline-flex;
+	margin-left: 0.5rem;
+	column-gap: 0.75rem;
+}
+.loading__dot {
+	position: relative;
+	width: 2.5px;
+	height: 2.5px;
+	background-color: var(--text-color);
+	border-radius: 50%;
+}
+.loading__dot:nth-child(1) {
+	position: absolute;
+	transform: scale(0);
+}
+.loading__dot:nth-child(4) {
+	background: transparent;
+}
+.loading__dot-down {
+	display: block;
+	width: 2.5px;
+	height: 2.5px;
+	background-color: var(--text-color);
+	border-radius: 50%;
+	transform: translate(0);
+}
+
+/* Add animated class */
+.animate .loading__dot:nth-child(1) {
+	animation: scale-dot 0.8s 0.2s forwards;
+}
+.animate .loading__dot:nth-child(2),
+.animate .loading__dot:nth-child(3) {
+	animation: move-right 0.6s forwards;
+}
+.animate .loading__dot-down {
+	animation: move-right-down 0.8s 0.2s forwards linear,
+		move-down 2.8s 0.3s forwards ease-in;
+}
+
+/* Animated dot 1 */
+@keyframes scale-dot {
+	100% {
+		transform: scale(1);
+	}
+}
+/* Animated dot 2 & 3*/
+@keyframes move-right {
+	100% {
+		transform: translateX(1.05rem);
+	}
+}
+/* Animated dot 4 */
+@keyframes move-right-down {
+	50% {
+		transform: translate(1.5rem, 0.25rem);
+	}
+	100% {
+		transform: translate(2rem, 0.5rem);
+	}
+}
+
+@keyframes move-down {
+	100% {
+		transform: translate(10rem, 80vh);
+	}
+}

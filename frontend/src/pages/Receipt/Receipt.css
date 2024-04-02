@@ -1,0 +1,115 @@
+.receipt__container {
+	width: 100%;
+	max-width: 380px;
+	padding: 25px;
+	margin: 20px auto 50px;
+	border-radius: 0.5rem;
+	box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+}
+
+.receipt_header h1 {
+	font-size: 2rem;
+	margin-bottom: 1rem;
+}
+
+.receipt_header h2,
+.receipt_body h2 {
+	font-size: 1rem;
+	font-weight: 400;
+	margin-bottom: 5px;
+}
+
+.receipt_body {
+	margin-top: 1rem;
+}
+
+.receipt_body a {
+	text-decoration: underline;
+	text-align: center;
+}
+
+.description {
+	font-size: 0.9rem;
+	margin-top: 1rem;
+}
+
+table {
+	width: 100%;
+}
+
+thead,
+tfoot {
+	position: relative;
+}
+
+thead th:not(:last-child) {
+	text-align: left;
+}
+
+thead th:last-child {
+	text-align: right;
+}
+
+thead::after,
+thead::before {
+	content: "";
+	width: 100%;
+	border-bottom: 1px dashed #000;
+	display: block;
+	position: absolute;
+}
+
+tbody td:not(:last-child),
+tfoot td:not(:last-child) {
+	text-align: left;
+}
+
+tbody td:last-child,
+tfoot td:last-child {
+	text-align: right;
+}
+
+tbody td:nth-child(2) {
+	width: 80%;
+}
+
+tfoot::before,
+tfoot::after {
+	content: "";
+	width: 100%;
+	border-top: 1px dashed #000;
+	display: block;
+	position: absolute;
+}
+
+.items {
+	margin-top: 10px;
+}
+
+.receipt__footer {
+	margin-top: 2rem;
+	text-align: center;
+	font-weight: 400;
+}
+
+.receipt__additional {
+	margin-top: 1rem;
+}
+
+.receipt__additional h2 {
+	font-size: 1rem;
+	font-weight: 400;
+	margin-bottom: 5px;
+}
+
+.receipt__button-container {
+	display: flex;
+	justify-content: center;
+	margin-bottom: 2rem;
+}
+
+.receipt__img {
+	display: block;
+	margin: 1rem auto 0;
+	width: 100px;
+}

@@ -1,0 +1,41 @@
+iframe {
+	height: 352px;
+	border-radius: 12px;
+}
+
+.track__container {
+	display: grid;
+	justify-content: center;
+	padding: 0 0 2rem;
+	grid-template-columns: repeat(3, 300px);
+	gap: 2rem;
+}
+
+@media screen and (max-width: 1000px) {
+	.track__container {
+		grid-template-columns: repeat(2, 300px);
+	}
+}
+
+@media screen and (max-width: 700px) {
+	.track__container {
+		grid-template-columns: repeat(2, 240px);
+		gap: 0;
+	}
+
+	iframe {
+		height: 100px;
+		width: 230px;
+	}
+}
+@media screen and (max-width: 500px) {
+	.track__container {
+		display: flex;
+		flex-direction: column;
+	}
+
+	iframe {
+		width: 100%;
+		padding: 0.6rem;
+	}
+}

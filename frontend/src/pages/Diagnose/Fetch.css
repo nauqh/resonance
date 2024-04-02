@@ -1,0 +1,32 @@
+.result__title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 2rem;
+	margin-bottom: 2rem;
+}
+
+.diagnose__button-container {
+	margin: 1rem 0 2rem;
+}
+
+.diagnose__toggle {
+	text-decoration: underline;
+}
+
+.diagnose__toggle:hover {
+	cursor: pointer;
+}
+
+@media screen and (max-width: 700px) {
+	.result__title,
+	.result__header {
+		padding: 1rem;
+	}
+}
+
+@media screen and (min-width: 700px) {
+	.result__header {
+		font-size: 1.8rem;
+		margin: 1rem 0;
+	}
+}

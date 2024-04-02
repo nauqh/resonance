@@ -1,0 +1,172 @@
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap");
+
+:root {
+	--primary-color: #fafafa;
+	--secondary-color: #5c4033;
+	--text-color: #161513;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	color: var(--text-color);
+	background-color: var(--primary-color);
+	font-family: "Inconsolata", monospace;
+}
+
+ul {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+	border-radius: 0.5rem;
+}
+
+h1 {
+	font-weight: 600;
+}
+
+p {
+	line-height: 1.3rem;
+}
+
+#result__title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	text-align: center;
+	margin-top: 2rem;
+	margin-bottom: 2rem;
+}
+
+.container {
+	max-width: 1024px;
+	display: grid;
+	place-content: center;
+	margin-bottom: 2rem;
+}
+
+.container-flex {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+	align-items: center;
+	padding: 1rem;
+}
+
+.container-grid {
+	margin: auto;
+	display: grid;
+	margin-bottom: 2rem;
+	place-content: center;
+	gap: 10px;
+	grid-template-columns: repeat(4, 1fr);
+}
+
+.grid-2 {
+	grid-column: span 2;
+}
+
+.grid-3 {
+	grid-column: span 3;
+}
+
+.button {
+	display: inline-block;
+	background-color: var(--text-color);
+	color: #fafafa;
+	padding: 0.5rem 1rem;
+	border-radius: 0.75rem;
+	font-size: 1.2rem;
+}
+
+.button-alter {
+	display: inline-block;
+	background-color: #fafafa;
+	color: var(--text-color);
+	border: solid 1px var(--text-color);
+	border-radius: 0.75rem;
+	padding: 0.5rem 1rem;
+}
+
+.button-brick {
+	padding: 0.5rem 1rem;
+	color: var(--text-color);
+	background-color: #fafafa;
+	font-size: 1.2rem;
+	text-align: center;
+	border: solid 1px #161513;
+	border-radius: 0.5rem;
+}
+
+.button:hover,
+.button-alter:hover,
+.button-brick:hover {
+	background-color: var(--secondary-color);
+	border-color: var(--secondary-color);
+	color: #fff;
+	transition: 0.2s;
+	cursor: pointer;
+}
+
+.button-brick:hover span {
+	background-color: var(--secondary-color);
+	border-color: var(--secondary-color);
+	color: #fff;
+	transition: 0.2s;
+	cursor: pointer;
+}
+
+@media screen and (max-width: 500px) {
+	h1 {
+		padding: 1rem;
+	}
+
+	#result__title {
+		font-size: 2rem;
+	}
+
+	.container-grid {
+		margin: 0 2rem;
+	}
+}
+
+@media screen and (min-width: 500px) {
+	.container-flex {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		padding: 1rem;
+	}
+	.container-grid {
+		width: 400px;
+	}
+}
+
+@media screen and (min-width: 600px) {
+	.footer__content {
+		width: 700px;
+	}
+}
+
+@media screen and (max-width: 1047px) {
+	.button-brick {
+		display: flex;
+	}
+
+	.button-brick span {
+		margin: auto;
+	}
+}
+
+@media screen and (min-width: 1048px) {
+	.container-grid {
+		width: 600px;
+	}
+}

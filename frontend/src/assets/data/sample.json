@@ -1,0 +1,755 @@
+{
+    "Korean Soft Indie": {
+        "genre": "Korean Indie Pop",
+        "mood": "eclectic - soothing - vibrant",
+        "color": "#9395D3",
+        "characteristics": [
+            "I think your music taste may leans a bit towards Korean Indie Pop, which is known for its diverse mix of styles and influences. This genre often features a blend of traditional Korean musical elements with modern pop sensibilities, creating a sound that's both familiar and fresh.",
+            "Korean Indie Pop is characterized by its use of electronic beats, smooth vocals, and catchy hooks. Artists in this genre are not afraid to experiment with different sounds and textures, often resulting in music that is highly expressive and emotionally resonant."
+        ],
+        "artists": [
+            {
+                "name": "Zion.T",
+                "img": "https://i.scdn.co/image/ab676161000051742399cb22b73eff59dcbc26d5",
+                "id": "5HenzRvMtSrgtvU16XAoby",
+                "content": "is known for his smooth vocal style and unique blend of R&B and hip-hop influences, all while maintaining the charm of Korean Indie Pop. His music typically features minimalist arrangements that allow his soulful voice to take center stage."
+            },
+            {
+                "name": "10cm",
+                "img": "https://i.scdn.co/image/ab67616100005174bf714b92064da5fd508c7806",
+                "id": "6zn0ihyAApAYV51zpXxdEp",
+                "content": "is a duo that has captivated fans with their acoustic sound and heartfelt lyrics. Their music often explores themes of love and everyday life, delivered through melodic guitar lines and emotive vocals, making them a standout act in the Korean Indie Pop scene."
+            }
+        ],
+        "tracks": [
+            "79cmYpry5DEPtK4KbmAUqj",
+            "7eS2empYaxaKIEYuuWXxpw",
+            "0BZj6AmUyA39EDPmfoEif4",
+            "5JpftUHeUzx3zWE6rZtki5",
+            "1ZnSDGtDDta9qFNGEVoZbo",
+            "4YJlv9lK1EsszlUZ4ekj7I",
+            "6slTRsKXks38DEsCxRgrVp",
+            "2j4wvCivrFmYCJdCVXnAeI",
+            "2Ghu1DdMwxS3VAyB7i38Wo"
+        ],
+        "playlist": {
+            "collaborative": false,
+            "description": "a mix of acoustic, indie, r&amp;b, ballad 한국 music u can vibe to when u’re tryna sleep or study or just relax.",
+            "external_urls": {
+                "spotify": "https://open.spotify.com/playlist/0d94FaVJFNNspToUDtZptD"
+            },
+            "href": "https://api.spotify.com/v1/playlists/0d94FaVJFNNspToUDtZptD",
+            "id": "0d94FaVJFNNspToUDtZptD",
+            "images": [
+                {
+                    "height": null,
+                    "url": "https://image-cdn-ak.spotifycdn.com/image/ab67706c0000bebb879236b038dc8dde49a75cac",
+                    "width": null
+                }
+            ],
+            "name": "soft & chill korean music",
+            "owner": {
+                "display_name": "pransya_",
+                "external_urls": {
+                    "spotify": "https://open.spotify.com/user/pransya_"
+                },
+                "href": "https://api.spotify.com/v1/users/pransya_",
+                "id": "pransya_",
+                "type": "user",
+                "uri": "spotify:user:pransya_"
+            },
+            "primary_color": null,
+            "public": null,
+            "snapshot_id": "MzMwLDBlODYzMzllZjBjZjAzMGYwN2JhNDk5ZjYxNGRiYmY1NmJjZDFmMDQ=",
+            "tracks": {
+                "href": "https://api.spotify.com/v1/playlists/0d94FaVJFNNspToUDtZptD/tracks",
+                "total": 92
+            },
+            "type": "playlist",
+            "uri": "spotify:playlist:0d94FaVJFNNspToUDtZptD"
+        }
+    },
+    "Mandopop": {
+        "genre": "Mandopop",
+        "mood": "melodic - sentimental - vibrant",
+        "color": "#284b63",
+        "characteristics": [
+            "Your music taste leans a bit towards Mandopop, which stands for 'Mandarin Popular Music'. This genre predominantly features Chinese-language pop songs and is heavily influenced by Western pop, R&B, and rock. Mandopop songs are known for their catchy melodies and wide range of emotional expressions.",
+            "Mandopop is marked by its use of Mandarin dialect, appealing to a vast audience across China, Taiwan, Singapore, and Malaysia, among others. Artists often focus on themes of love, friendship, and personal growth, with both upbeat numbers and touching ballads. The production quality is typically high, with a clear focus on the vocal performances."
+        ],
+        "artists": [
+            {
+                "name": "Eric Chou",
+                "img": "https://i.scdn.co/image/ab67616100005174f60f9b359ad44d9b796d5267",
+                "id": "5fEQLwq1BWWQNR8GzhOIvi",
+                "content": "is a Taiwanese singer-songwriter celebrated for his tender ballads and romantic lyrics. His voice is smooth and emotive, often accompanied by piano or acoustic guitar, which makes his music deeply resonant with audiences looking for heartfelt storytelling."
+            },
+            {
+                "name": "G.E.M.",
+                "img": "https://i.scdn.co/image/ab6761610000517422b67d7e8a5482991c7da510",
+                "id": "7aRC4L63dBn3CiLDuWaLSI",
+                "content": "is a Hong Kong singer-songwriter known for her powerful vocals and dynamic stage presence. She effortlessly blends pop with a touch of rock and electronic elements, creating anthemic songs that are both inspiring and relatable. G.E.M.'s music often explores themes of empowerment and self-reflection."
+            }
+        ],
+        "tracks": [
+            "5oL7vOxCz2eJKAX6G4Yluh",
+            "0VqSdtXseb9khdZrnYVyM1",
+            "5ocA068mvMpA2GFPYQo670",
+            "1n3TbqMfvALAI0BjtiF6Lt",
+            "6A4wVKbcg0mRriCFjZzX0Z",
+            "73Za3Ote9y5Y02GGjvzvXt"
+        ],
+        "playlist": {
+            "collaborative": false,
+            "description": "List of the most popular hits around Mandopop scene. Cover: Bestards (理想混蛋)",
+            "external_urls": {
+                "spotify": "https://open.spotify.com/playlist/37i9dQZF1DXahjk49z40fT"
+            },
+            "href": "https://api.spotify.com/v1/playlists/37i9dQZF1DXahjk49z40fT",
+            "id": "37i9dQZF1DXahjk49z40fT",
+            "images": [
+                {
+                    "height": null,
+                    "url": "https://i.scdn.co/image/ab67706f00000003f80abbdebeb3423793a41481",
+                    "width": null
+                }
+            ],
+            "name": "Mandopop Hits",
+            "owner": {
+                "display_name": "Spotify",
+                "external_urls": {
+                    "spotify": "https://open.spotify.com/user/spotify"
+                },
+                "href": "https://api.spotify.com/v1/users/spotify",
+                "id": "spotify",
+                "type": "user",
+                "uri": "spotify:user:spotify"
+            },
+            "primary_color": null,
+            "public": null,
+            "snapshot_id": "MTcwNjU0NDAwMCwwMDAwMDAwMDRiNDFiNDNiOTIxY2QyMjk5YmNhYjkyYjU0NWY0MDZm",
+            "tracks": {
+                "href": "https://api.spotify.com/v1/playlists/37i9dQZF1DXahjk49z40fT/tracks",
+                "total": 50
+            },
+            "type": "playlist",
+            "uri": "spotify:playlist:37i9dQZF1DXahjk49z40fT"
+        }
+    },
+    "Lo-fi": {
+        "genre": "Lo-fi Hip Hop",
+        "mood": "chill - mellow - soothing",
+        "color": "#3c6e71",
+        "characteristics": [
+            "Your music taste leans a bit towards Lo-fi Hip Hop, an aesthetic that combines elements of hip hop and electronic music, characterized by its laid-back vibe and dusty sound texture. It typically features a low-fidelity production, which gives it a warm and intimate feel, often accompanied by crackling vinyl sounds and ambient noises.",
+            "The genre is perfect for relaxation, studying, or working as it provides a non-intrusive, ambient soundscape. It's all about the atmosphere rather than complex lyricism or aggressive beats. Lo-fi Hip Hop is a haven for those seeking solace in the soft beats and repetitive melodic harmonies that offer a gentle escape from the hustle and bustle of daily life."
+        ],
+        "artists": [
+            {
+                "name": "Eevee",
+                "img": "https://i.scdn.co/image/ab676161000051742989c827d6916cefe08fe600",
+                "id": "4pwqNyMSvuv7VOhQBdjB6Q",
+                "content": "is a Dutch producer known for her eclectic approach to lo-fi music, blending hip hop rhythms with a wide range of samples and soundscapes. Her tracks often evoke a sense of nostalgia and are perfect for easy listening while maintaining a distinct beat-driven groove."
+            },
+            {
+                "name": "Tomppabeats",
+                "img": "https://i.scdn.co/image/ab67616100005174caa88f6b6c73e959f4fd5027",
+                "id": "0Q2Tc5yZFJpumLMc7Yz4e4",
+                "content": "is a Finnish artist who has carved out a niche in the lo-fi scene with his signature sound that combines old-school hip hop beats with jazzy samples. His music is characterized by its simplicity and emotive undertones, which makes it both relaxing and thought-provoking."
+            }
+        ],
+        "tracks": [
+            "0N0sMdNm1eHGgtGXfomwvu",
+            "0ujEoFZaMqhzMdqA8vNDtw",
+            "0WQyw4ThSosGaRonD8is5w",
+            "6KMg4ZI5ScAt0qWvHtE32D",
+            "3Al6YeRMLoTFwdoQciJTuX",
+            "4eoIIRUjD5p7V5X5RCpIna"
+        ],
+        "playlist": {
+            "collaborative": false,
+            "description": "A daily selection of chill beats - perfect to help you relax & study 📚  \"https: //bit.ly/lofi-sleep-spotify\". Click here if you need lofi to sleep 💤",
+            "external_urls": {
+                "spotify": "https://open.spotify.com/playlist/0vvXsWCC9xrXsKd4FyS8kM"
+            },
+            "href": "https://api.spotify.com/v1/playlists/0vvXsWCC9xrXsKd4FyS8kM",
+            "id": "0vvXsWCC9xrXsKd4FyS8kM",
+            "images": [
+                {
+                    "height": null,
+                    "url": "https://image-cdn-ak.spotifycdn.com/image/ab67706c0000bebbf396bdf13f6473f86bf4e2c0",
+                    "width": null
+                }
+            ],
+            "name": "Lofi Girl - lofi beats to relax/study to",
+            "owner": {
+                "display_name": "Lofi Girl",
+                "external_urls": {
+                    "spotify": "https://open.spotify.com/user/chilledcow"
+                },
+                "href": "https://api.spotify.com/v1/users/chilledcow",
+                "id": "chilledcow",
+                "type": "user",
+                "uri": "spotify:user:chilledcow"
+            },
+            "primary_color": null,
+            "public": null,
+            "snapshot_id": "NjgzNywxODA0M2QxYjg2OTllN2I4YjVlNWMyNjFkNTcyZGVlZDliMGY5ODdl",
+            "tracks": {
+                "href": "https://api.spotify.com/v1/playlists/0vvXsWCC9xrXsKd4FyS8kM/tracks",
+                "total": 500
+            },
+            "type": "playlist",
+            "uri": "spotify:playlist:0vvXsWCC9xrXsKd4FyS8kM"
+        }
+    },
+    "Rap Hip-hop": {
+        "genre": "Rap Hip-Hop",
+        "mood": "energetic - gritty - expressive",
+        "color": "#e29578",
+        "characteristics": [
+            "Your music taste leans a bit towards US-UK Rap Hip-Hop, a genre that thrives on its rhythmic flow and lyrical prowess. This sound is often rooted in the streets with beats that feature heavy bass, crisp snares, and a lyrical emphasis on wordplay, social issues, and personal experiences.",
+            "As a dynamic and influential genre, Rap Hip-Hop showcases a diverse range of styles, from the smooth and laid-back to the raw and aggressive. Artists in this genre are known for their ability to create anthems that resonate with a broad audience, often reflecting the complexities of urban life and the human condition."
+        ],
+        "artists": [
+            {
+                "name": "NF",
+                "img": "https://i.scdn.co/image/ab676161000051741cf142a710a2f3d9b7a62da1",
+                "id": "6fOMl44jA4Sp5b9PpYCkzz",
+                "content": "is recognized for his deeply personal and introspective lyrics, which he delivers with a rapid-fire flow that's both technically precise and emotionally charged. His music often explores themes of mental health, faith, and the struggles of everyday life, set to atmospheric beats and cinematic production."
+            },
+            {
+                "name": "Slowthai",
+                "img": "https://i.scdn.co/image/ab67616100005174d35231e23d5af811b8fdca7a",
+                "id": "3r1XkJ7vCs8kHBSzGvPLdP",
+                "content": "is known for his distinctive British accent and energetic delivery, which blends traditional grime with modern Hip-Hop. His lyrical content frequently addresses political and social issues, with a rawness and honesty that captures the voice of British youth culture. His beats often have a punk influence, reflecting his unique position in the UK music scene."
+            }
+        ],
+        "tracks": [
+            "6nDxePlQIyV1DoGVLVcRpv",
+            "1rOUmfzzwsIh346zCG5vPw",
+            "6Dil3bF8JebOMOeZMvnhY4",
+            "7ccC26pJ3aDG81sS4FwdXF",
+            "6FHwG0Acqd3MYvAIKlI36J",
+            "4mGdjNMo0RonTlOEb7cYg4"
+        ],
+        "playlist": {
+            "collaborative": false,
+            "description": "Rap &amp; HipHop Vibes from 2023 | Drake , Ye , Lil Pump, DYW",
+            "external_urls": {
+                "spotify": "https://open.spotify.com/playlist/65L8m2aO9wyYRHl6MOas9r"
+            },
+            "href": "https://api.spotify.com/v1/playlists/65L8m2aO9wyYRHl6MOas9r",
+            "id": "65L8m2aO9wyYRHl6MOas9r",
+            "images": [
+                {
+                    "height": null,
+                    "url": "https://image-cdn-ak.spotifycdn.com/image/ab67706c0000bebb3e35f8a308825f164c20a0e1",
+                    "width": null
+                }
+            ],
+            "name": "Rap & HipHop Vibes",
+            "owner": {
+                "display_name": "Good Vibes",
+                "external_urls": {
+                    "spotify": "https://open.spotify.com/user/31bs4gsrlikvfgcgxn3c3ztjybcy"
+                },
+                "href": "https://api.spotify.com/v1/users/31bs4gsrlikvfgcgxn3c3ztjybcy",
+                "id": "31bs4gsrlikvfgcgxn3c3ztjybcy",
+                "type": "user",
+                "uri": "spotify:user:31bs4gsrlikvfgcgxn3c3ztjybcy"
+            },
+            "primary_color": null,
+            "public": null,
+            "snapshot_id": "MjI1NCwzM2U4Zjg0Y2VjYzUzNDUxMTI1OGU5NTVmN2MzMTM5ZGI2M2IwY2Zl",
+            "tracks": {
+                "href": "https://api.spotify.com/v1/playlists/65L8m2aO9wyYRHl6MOas9r/tracks",
+                "total": 59
+            },
+            "type": "playlist",
+            "uri": "spotify:playlist:65L8m2aO9wyYRHl6MOas9r"
+        }
+    },
+    "Pop Punk": {
+        "genre": "Pop Punk",
+        "mood": "energetic - rebellious - nostalgic",
+        "color": "#e91e63",
+        "characteristics": [
+            "Your music taste leans a bit towards Pop Punk, characterized by its high-energy rhythms and catchy melodies blended with the raw, fast-paced edge of punk rock. This genre often features power chords, fast drumming, and lyrics that deal with themes of adolescence, relationships, and personal challenges.",
+            "Pop Punk bands typically deliver a spirited, youthful vibe that combines the angst and DIY ethic of punk with the polished production and accessibility of pop music. It's the kind of genre that incites spirited sing-alongs and can often be heard at skate parks and summer festivals."
+        ],
+        "artists": [
+            {
+                "name": "Neck Deep",
+                "img": "https://i.scdn.co/image/ab6761610000517438597d1ca49138767b0746d1",
+                "id": "2TM0qnbJH4QPhGMCdPt7fH",
+                "content": "is a Welsh band known for their vibrant and catchy tunes that encapsulate the essence of Pop Punk. Their music often revolves around themes of growing up and self-discovery, presented through anthemic choruses and memorable hooks that resonate with a sense of youthful exuberance."
+            },
+            {
+                "name": "State Champs",
+                "img": "https://i.scdn.co/image/ab67616100005174e7425b5afa1532c080bd6753",
+                "id": "1qqdO7xMptucPDMopsOdkr",
+                "content": "is an American band that has been making waves with their fresh take on Pop Punk. Their sound is characterized by upbeat tempos, emotionally charged lyrics, and a seamless blend of old-school punk elements with modern pop sensibilities. Their live performances are known for their infectious energy and connection with the audience."
+            }
+        ],
+        "tracks": [
+            "6KOFKEJxmmkQaVKEFQaN57",
+            "3OC8ZQhCA1P82xie7CqmO2",
+            "0UtBjb4YUMbbtIKNXUeCLx",
+            "0XSONcnJIcsQys61ZRv7g0",
+            "0cY6CAgB5wShSOTT3lQl2t",
+            "4oMKSL4c8UctYTSS2Fdu4b"
+        ],
+        "playlist": {
+            "collaborative": false,
+            "description": "All the best new songs from the pop punk scene. Cover: NOAHFINNCE",
+            "external_urls": {
+                "spotify": "https://open.spotify.com/playlist/37i9dQZF1DX1ewVhAJ17m4"
+            },
+            "href": "https://api.spotify.com/v1/playlists/37i9dQZF1DX1ewVhAJ17m4",
+            "id": "37i9dQZF1DX1ewVhAJ17m4",
+            "images": [
+                {
+                    "height": null,
+                    "url": "https://i.scdn.co/image/ab67706f00000003e425af7444cfdf8d8f266521",
+                    "width": null
+                }
+            ],
+            "name": "Pop Punk's Not Dead",
+            "owner": {
+                "display_name": "Spotify",
+                "external_urls": {
+                    "spotify": "https://open.spotify.com/user/spotify"
+                },
+                "href": "https://api.spotify.com/v1/users/spotify",
+                "id": "spotify",
+                "type": "user",
+                "uri": "spotify:user:spotify"
+            },
+            "primary_color": null,
+            "public": null,
+            "snapshot_id": "MTcwNTAyMjM2NiwwMDAwMDAwMDNiNWM1YWY1YzYxZTUwOGE2M2Q4OGI0MTUxMTliYzFj",
+            "tracks": {
+                "href": "https://api.spotify.com/v1/playlists/37i9dQZF1DX1ewVhAJ17m4/tracks",
+                "total": 88
+            },
+            "type": "playlist",
+            "uri": "spotify:playlist:37i9dQZF1DX1ewVhAJ17m4"
+        }
+    },
+    "Disney Soundtracks": {
+        "genre": "Disney Soundtracks",
+        "mood": "magical - nostalgic - uplifting",
+        "color": "#3a0ca3",
+        "characteristics": [
+            "Your music taste leans a bit towards Disney Soundtracks, which are often as enchanting as the movies they complement. These soundtracks feature a diverse range of songs, from soaring ballads to energetic ensemble numbers, each crafted to enhance the storytelling and emotional impact of the animated classics.",
+            "The genre is characterized by memorable melodies, grand orchestral arrangements, and often, a touch of whimsy. Lyrics are typically family-friendly, aiming to inspire and instill a sense of wonder. The voices of the characters, as portrayed by talented voice actors and singers, bring the music to life, ensuring each song's place in the hearts of listeners of all ages."
+        ],
+        "artists": [
+            {
+                "name": "Jodi Benson",
+                "img": "https://i.scdn.co/image/ab67616100005174583a4cf451be21040cfaa0a4",
+                "id": "4mmMtabvFCKA6HfmVmitNH",
+                "content": "is cherished for her role as the original voice of Ariel in Disney's 'The Little Mermaid.' Her rendition of 'Part of Your World' is iconic, showcasing her clear, emotive vocal style that perfectly captures the longing and dreams of her character."
+            },
+            {
+                "name": "Lea Salonga",
+                "img": "https://i.scdn.co/image/79cb9dd9630ff9e1224356bdab99d6594402eb19",
+                "id": "1GlMjIezcLwV3OFlX0uXOv",
+                "content": "is celebrated for providing the singing voice of Princess Jasmine in 'Aladdin' and the title role in 'Mulan.' Her powerful and expressive performances, including 'A Whole New World' and 'Reflection,' have made her an integral part of Disney's musical legacy."
+            }
+        ],
+        "tracks": [
+            "2HFMoVGfie1A3AtF2bASGG",
+            "75e1EYhLzB3mQZQBcRmklN",
+            "63Q9hAFTga7rqYRrAhwIyR",
+            "3QvZUbMhFBdUTmegQSkRH6",
+            "15mklBd59tQlB06vqpvJgo",
+            "58gMki4qBT7OT80fYdx4UZ"
+        ],
+        "playlist": {
+            "collaborative": false,
+            "description": "",
+            "external_urls": {
+                "spotify": "https://open.spotify.com/playlist/4TuSHffPUigwvlMPT2Mnc9"
+            },
+            "href": "https://api.spotify.com/v1/playlists/4TuSHffPUigwvlMPT2Mnc9",
+            "id": "4TuSHffPUigwvlMPT2Mnc9",
+            "images": [
+                {
+                    "height": null,
+                    "url": "https://image-cdn-ak.spotifycdn.com/image/ab67706c0000bebbb9512cec524fa8a339e50f5e",
+                    "width": null
+                }
+            ],
+            "name": "DISNEY MUSIC THAT GOES HARD🐭🏰✨",
+            "owner": {
+                "display_name": "Tess",
+                "external_urls": {
+                    "spotify": "https://open.spotify.com/user/4ql6teaepvumhsvp0ib6nzzk3"
+                },
+                "href": "https://api.spotify.com/v1/users/4ql6teaepvumhsvp0ib6nzzk3",
+                "id": "4ql6teaepvumhsvp0ib6nzzk3",
+                "type": "user",
+                "uri": "spotify:user:4ql6teaepvumhsvp0ib6nzzk3"
+            },
+            "primary_color": null,
+            "public": null,
+            "snapshot_id": "NjAsYmFlNTdmOGM2ZDkyNTUwMjBlZjMxZDAzOThiYjA2MTk4ODI5NGY5MQ==",
+            "tracks": {
+                "href": "https://api.spotify.com/v1/playlists/4TuSHffPUigwvlMPT2Mnc9/tracks",
+                "total": 56
+            },
+            "type": "playlist",
+            "uri": "spotify:playlist:4TuSHffPUigwvlMPT2Mnc9"
+        }
+    },
+    "EDM": {
+        "genre": "Electronic Dance Music (EDM)",
+        "mood": "energetic - vibrant - euphoric",
+        "color": "#ff6f00",
+        "characteristics": [
+            "Your music taste leans a bit towards Electronic Dance Music (EDM), a genre that thrives in the vibrant culture of nightclubs and festivals. It features synthesized beats, pulsating rhythms, and is often characterized by a relentless energy that commands you to move.",
+            "EDM is a sonic exploration of texture and tempo, often leading to climactic builds followed by thunderous drops. It serves as an escape into a world of heightened sensations, where each track is a journey through soundscapes designed to electrify the soul and invigorate the spirit."
+        ],
+        "artists": [
+            {
+                "name": "ILLENIUM",
+                "img": "https://i.scdn.co/image/ab6761610000517481a0ab3a9a4326929a01b0f1",
+                "id": "45eNHdiiabvmbp4erw26rg",
+                "content": "is known for their melodic bass-driven tracks that blend emotional storytelling with heavy-hitting drops. Their music often features collaborations with vocalists, creating a powerful dynamic between the lyrics and the electronic elements."
+            },
+            {
+                "name": "REZZ",
+                "img": "https://i.scdn.co/image/ab67616100005174cc758499cb4aa667c7923042",
+                "id": "4aKdmOXdUKX07HVd3sGgzw",
+                "content": "is recognized for their dark, genre-blending sound and hypnotic visual performances. Their music incorporates elements of bass-heavy genres with eerie and intense melodies, creating an immersive experience that captivates their audience."
+            }
+        ],
+        "tracks": [
+            "2xUvfzTPwPPMz6oifXCtUg",
+            "5bFuHlXKw66Uu2cHKn5bf8",
+            "17PYY5ja73jCMS9BuiakxQ",
+            "2UnHNWMm8B5Um8qv60xCFn",
+            "7lY0fJVuJMY790QoVaAxOT",
+            "383QSLpU6zuurrhV7C3WTV"
+        ],
+        "playlist": {
+            "collaborative": false,
+            "description": "Home is where the main stage is. 💗",
+            "external_urls": {
+                "spotify": "https://open.spotify.com/playlist/37i9dQZF1DX1kCIzMYtzum"
+            },
+            "href": "https://api.spotify.com/v1/playlists/37i9dQZF1DX1kCIzMYtzum",
+            "id": "37i9dQZF1DX1kCIzMYtzum",
+            "images": [
+                {
+                    "height": null,
+                    "url": "https://i.scdn.co/image/ab67706f00000003d726493b531d4e8f6910a969",
+                    "width": null
+                }
+            ],
+            "name": "EDM 2024",
+            "owner": {
+                "display_name": "Spotify",
+                "external_urls": {
+                    "spotify": "https://open.spotify.com/user/spotify"
+                },
+                "href": "https://api.spotify.com/v1/users/spotify",
+                "id": "spotify",
+                "type": "user",
+                "uri": "spotify:user:spotify"
+            },
+            "primary_color": null,
+            "public": null,
+            "snapshot_id": "MTcwNjg1MDAwMCwwMDAwMDAwMDhlYjc4ODI5MmI4MzY0ZjlmMjhmMjJmY2E5NDQ5MTVi",
+            "tracks": {
+                "href": "https://api.spotify.com/v1/playlists/37i9dQZF1DX1kCIzMYtzum/tracks",
+                "total": 100
+            },
+            "type": "playlist",
+            "uri": "spotify:playlist:37i9dQZF1DX1kCIzMYtzum"
+        }
+    },
+    "R&B": {
+        "genre": "R&B",
+        "mood": "sultry - smooth - soulful",
+        "color": "#343a40",
+        "characteristics": [
+            "Your music taste leans a bit towards R&B, a genre renowned for its rich vocal performances and smooth, groovy beats. It often incorporates elements from soul, funk, and hip-hop, creating a sound that's both contemporary and timeless.",
+            "The genre is known for its emotional depth, with lyrics that delve into themes of love, heartbreak, and personal struggle. R&B songs frequently feature lush harmonies, melodic piano, and silky guitar riffs, all underpinned by a steady, head-nodding rhythm."
+        ],
+        "artists": [
+            {
+                "name": "Giveon",
+                "img": "https://i.scdn.co/image/ab676161000051740219b6643b1ec449b0951bfe",
+                "id": "4fxd5Ee7UefO4CUXgwJ7IP",
+                "content": "is recognized for his deep, velvety baritone that glides over minimalist, atmospheric beats. His music is a fresh take on classic R&B, layering introspective lyrics over slow-burning tracks that resonate with authentic emotion and vulnerability."
+            },
+            {
+                "name": "Cleo Sol",
+                "img": "https://i.scdn.co/image/ab67616100005174e342e7294ed3dc27b167f47d",
+                "id": "3ETLPQkcEd7z4k3IbZmXMq",
+                "content": "is celebrated for her soulful voice and retro-inspired sound that harkens back to the golden age of soul and R&B. Her music is a blend of smooth, jazzy instrumentals and heartfelt lyrics, creating a timeless quality that appeals to fans of both old-school and modern R&B."
+            }
+        ],
+        "tracks": [
+            "2jrXrZdn5PoPsMw9W0T5sn",
+            "58dSdjfEYNSxte1aNVxuNf",
+            "6mqXhNpg539WTUFewKQz62",
+            "0wcN45fKhDGWAd0GrWjdYM",
+            "3PPD1wg591kQnsws16mlkS",
+            "5NijSs5dAwaIybq1GaRTIe"
+        ],
+        "playlist": {
+            "collaborative": false,
+            "description": "𖤐₊࿐ keywords: brent faiyaz, bryson tiller, sza, her, lucky daye, the internet, sir, etc &#x2F;&#x2F; neo-soul,, r&amp;b,, and more!",
+            "external_urls": {
+                "spotify": "https://open.spotify.com/playlist/7yubzVn0vRMHIURJYtJD0M"
+            },
+            "href": "https://api.spotify.com/v1/playlists/7yubzVn0vRMHIURJYtJD0M",
+            "id": "7yubzVn0vRMHIURJYtJD0M",
+            "images": [
+                {
+                    "height": null,
+                    "url": "https://image-cdn-ak.spotifycdn.com/image/ab67706c0000bebba8d752915e2e13139cd32b64",
+                    "width": null
+                }
+            ],
+            "name": "|| ₊˚.༄ - POT AND R&B!",
+            "owner": {
+                "display_name": "reya💞",
+                "external_urls": {
+                    "spotify": "https://open.spotify.com/user/22iorbhsdsvlmmj5xppojftga"
+                },
+                "href": "https://api.spotify.com/v1/users/22iorbhsdsvlmmj5xppojftga",
+                "id": "22iorbhsdsvlmmj5xppojftga",
+                "type": "user",
+                "uri": "spotify:user:22iorbhsdsvlmmj5xppojftga"
+            },
+            "primary_color": null,
+            "public": null,
+            "snapshot_id": "MTAyLGZjNjljMDc2MzIwN2UwMzkxMjE4ZGI0MDY1MjNjNDUwMjhhZTI1ZDg=",
+            "tracks": {
+                "href": "https://api.spotify.com/v1/playlists/7yubzVn0vRMHIURJYtJD0M/tracks",
+                "total": 68
+            },
+            "type": "playlist",
+            "uri": "spotify:playlist:7yubzVn0vRMHIURJYtJD0M"
+        }
+    },
+    "Latin Trap Raggaeton": {
+        "genre": "Latin Trap/Reggaeton",
+        "mood": "vibrant - sensual - energetic",
+        "color": "#E65100",
+        "characteristics": [
+            "Your music taste leans a bit towards Latin Trap/Reggaeton, a music style that blends infectious rhythms with gritty trap influences. The genre is known for its use of dembow rhythm, heavy bass, and often includes rap or spoken verses in Spanish.",
+            "Reggaeton typically features catchy, repetitive melodies that make it irresistible for dancing. Latin Trap, on the other hand, often has a darker, moodier sound with deep, resonant basslines and slower tempos, creating a groove that's both seductive and intense."
+        ],
+        "artists": [
+            {
+                "name": "Sech",
+                "img": "https://i.scdn.co/image/ab67616100005174e6399502553c796f40e11017",
+                "id": "77ziqFxp5gaInVrF2lj4ht",
+                "content": "is a Panamanian singer who has made waves in the Latin music scene with his smooth vocals and catchy reggaeton beats. His music often explores themes of love, partying, and the street life, blending melodic hooks with relatable lyrics."
+            },
+            {
+                "name": "Myke Towers",
+                "img": "https://i.scdn.co/image/ab676161000051749e35c3c5de877f99a8f6192f",
+                "id": "7iK8PXO48WeuP03g8YR51W",
+                "content": "is a Puerto Rican artist known for his versatile flow and lyricism, which merges Latin Trap and Reggaeton. His music captures the essence of urban life, combining hard-hitting beats with narratives that reflect the highs and lows of his experiences."
+            }
+        ],
+        "tracks": [
+            "3CIl8hlnMcULSIIhUMmB1Z",
+            "1Azwf82ufiNf6lQAXAty0v",
+            "5O3cRP4ZHC9vvVIHtET1f0",
+            "2PyuytS9WHUXcqzR1lJYV0",
+            "7MkylDYvKTSuWgrsBhHlsG",
+            "3mEuWQDngXevBTZLf48XDx"
+        ],
+        "playlist": {
+            "collaborative": false,
+            "description": "The best of Latin Trap. Cover: Lyanno, Anubiis & Hades66",
+            "external_urls": {
+                "spotify": "https://open.spotify.com/playlist/37i9dQZF1DXde9tuMHuIsj"
+            },
+            "href": "https://api.spotify.com/v1/playlists/37i9dQZF1DXde9tuMHuIsj",
+            "id": "37i9dQZF1DXde9tuMHuIsj",
+            "images": [
+                {
+                    "height": null,
+                    "url": "https://i.scdn.co/image/ab67706f0000000368f36b1a5b4a7ec3e0d3763b",
+                    "width": null
+                }
+            ],
+            "name": "Trap Land",
+            "owner": {
+                "display_name": "Spotify",
+                "external_urls": {
+                    "spotify": "https://open.spotify.com/user/spotify"
+                },
+                "href": "https://api.spotify.com/v1/users/spotify",
+                "id": "spotify",
+                "type": "user",
+                "uri": "spotify:user:spotify"
+            },
+            "primary_color": null,
+            "public": null,
+            "snapshot_id": "MTcwNjI0NTIwMCwwMDAwMDAwMGQ0NzM4MGQzZGIzMmNjZTA4NzNlZTk3OTk0MzBkMmFl",
+            "tracks": {
+                "href": "https://api.spotify.com/v1/playlists/37i9dQZF1DXde9tuMHuIsj/tracks",
+                "total": 100
+            },
+            "type": "playlist",
+            "uri": "spotify:playlist:37i9dQZF1DXde9tuMHuIsj"
+        }
+    },
+    "Pop Ballad": {
+        "genre": "Pop Ballad",
+        "mood": "emotional - soulful - intimate",
+        "color": "#9c786c",
+        "characteristics": [
+            "Your music taste leans a bit towards Pop Ballad, a genre that thrives on emotional storytelling and powerful vocal performances. The songs typically feature slow tempos, soft piano or guitar accompaniments, and build to big, dramatic climaxes.",
+            "With an emphasis on romantic, wistful, or nostalgic themes, Pop Ballads often serve as the emotional centerpiece of an artist's repertoire. The lyrics are designed to connect deeply with the listener's own experiences, evoking a sense of shared humanity and vulnerability."
+        ],
+        "artists": [
+            {
+                "name": "Adele",
+                "img": "https://i.scdn.co/image/ab6761610000517468f6e5892075d7f22615bd17",
+                "id": "4dpARuHxo51G3z768sgnrY",
+                "content": "is recognized for her deep, resonant voice and her ability to convey complex emotions through her music. Her ballads often tell stories of love, heartbreak, and redemption, connecting with audiences around the world thanks to her timeless songwriting and soul-stirring performances."
+            },
+            {
+                "name": "Sam Smith",
+                "img": "https://i.scdn.co/image/ab67616100005174a8eef8322e55fc49ab436eea",
+                "id": "2wY79sveU1sp5g7SokKOiI",
+                "content": "is known for their stirring vocal tone and poignant songwriting. Their music often explores themes of love, loss, and longing, delivered with a vulnerability that has resonated with a diverse fanbase. Their ballads are rich with emotional depth and have become anthems for those dealing with the intricacies of personal relationships."
+            }
+        ],
+        "tracks": [
+            "5orgNSDieTvLBDZBCZMzvS",
+            "50kpGaPAhYJ3sGmk6vplg0",
+            "3FYqKyAKIB4mCygIFc1IYn",
+            "7vRriwrloYVaoAe3a9wJHe",
+            "23khhseCLQqVMCIT1WMAns",
+            "37sINbJZcFdHFAsVNsPq1i",
+            "6w8pFOKn42O418qwcQElZ3",
+            "4G92yYrUs0cvY7G41YRI0z",
+            "1s7oOCT8vauUh01PbJD6ps"
+        ],
+        "playlist": {
+            "collaborative": false,
+            "description": "An easy-listening playlist from our digital consultant’s head. Keywords: Acoustics, Nu-Soul, Soft Pop, R&amp;B, chill beats, etc.",
+            "external_urls": {
+                "spotify": "https://open.spotify.com/playlist/21nC1A3Vp8e4QWMK7Su3B4"
+            },
+            "href": "https://api.spotify.com/v1/playlists/21nC1A3Vp8e4QWMK7Su3B4",
+            "id": "21nC1A3Vp8e4QWMK7Su3B4",
+            "images": [
+                {
+                    "height": 640,
+                    "url": "https://mosaic.scdn.co/640/ab67616d0000b273415785288945d691d0a893b6ab67616d0000b27395998c6ca2c759356eee3c3bab67616d0000b273c820bb3e9df32f2503a5e7caab67616d0000b273ff7664dccb448f7272786b1c",
+                    "width": 640
+                },
+                {
+                    "height": 300,
+                    "url": "https://mosaic.scdn.co/300/ab67616d0000b273415785288945d691d0a893b6ab67616d0000b27395998c6ca2c759356eee3c3bab67616d0000b273c820bb3e9df32f2503a5e7caab67616d0000b273ff7664dccb448f7272786b1c",
+                    "width": 300
+                },
+                {
+                    "height": 60,
+                    "url": "https://mosaic.scdn.co/60/ab67616d0000b273415785288945d691d0a893b6ab67616d0000b27395998c6ca2c759356eee3c3bab67616d0000b273c820bb3e9df32f2503a5e7caab67616d0000b273ff7664dccb448f7272786b1c",
+                    "width": 60
+                }
+            ],
+            "name": "Soleil: Lundi",
+            "owner": {
+                "display_name": "Olen Riyanto",
+                "external_urls": {
+                    "spotify": "https://open.spotify.com/user/12171091585"
+                },
+                "href": "https://api.spotify.com/v1/users/12171091585",
+                "id": "12171091585",
+                "type": "user",
+                "uri": "spotify:user:12171091585"
+            },
+            "primary_color": null,
+            "public": null,
+            "snapshot_id": "MTc3LDY0MDg4MDRhYzNlODVkNjIwOTRjZTAwNzlmZDU1YTFhMDkwMzM4MzM=",
+            "tracks": {
+                "href": "https://api.spotify.com/v1/playlists/21nC1A3Vp8e4QWMK7Su3B4/tracks",
+                "total": 71
+            },
+            "type": "playlist",
+            "uri": "spotify:playlist:21nC1A3Vp8e4QWMK7Su3B4"
+        }
+    },
+    "Classical": {
+        "genre": "Classical",
+        "mood": "elegant - timeless - sophisticated",
+        "color": "#f7dc6f",
+        "characteristics": [
+            "Your music taste leans a bit towards Classical, which is steeped in a rich heritage of orchestral and operatic traditions. This genre is known for its complex compositions, often weaving intricate melodies and harmonies through a full range of orchestral instruments.",
+            "Classical music is largely instrumental and can be both grand and intimate, transporting listeners through a spectrum of emotions. From the dramatic crescendos of a symphony to the delicate subtlety of a solo piano piece, the genre offers an unparalleled depth of expression and technical mastery."
+        ],
+        "artists": [
+            {
+                "name": "Sheku Kanneh-Mason",
+                "img": "https://i.scdn.co/image/ab6761610000517495b7e039c00b43cc7c0c364f",
+                "id": "6OTr0YwLwGdv7mlmX27hRX",
+                "content": "is a celebrated cellist who has captivated audiences with his expressive performances and exceptional musicality. His repertoire spans from baroque to contemporary, and his ability to communicate the nuanced emotions of classical compositions has earned him international acclaim."
+            },
+            {
+                "name": "Hilary Hahn",
+                "img": "https://i.scdn.co/image/ab6761610000517435f3c2e54e1a83659203b437",
+                "id": "5JdT0LYJdlPbTC58p60WTX",
+                "content": "is a virtuoso violinist known for her brilliant technique and profound interpretations of classical works. Her performances are characterized by a remarkable precision and clarity, along with a deep understanding of the intricate language of classical music."
+            }
+        ],
+        "tracks": [
+            "577QmKtVNwqjIQbmLMR5hv",
+            "3Skb5tgiaToqEg5RdDcflG",
+            "3IdW6st6jx43pE391FgW9A",
+            "1t5Ffg3mJHeJP0bPkljCdk",
+            "6xhVf7SgpsCDV0im95XTe3",
+            "0cSaAscEx6Ei4XPupVvdy5"
+        ],
+        "playlist": {
+            "collaborative": false,
+            "description": "Relaxing classical piano.",
+            "external_urls": {
+                "spotify": "https://open.spotify.com/playlist/37i9dQZF1DWUqIzZNMSCv3"
+            },
+            "href": "https://api.spotify.com/v1/playlists/37i9dQZF1DWUqIzZNMSCv3",
+            "id": "37i9dQZF1DWUqIzZNMSCv3",
+            "images": [
+                {
+                    "height": null,
+                    "url": "https://i.scdn.co/image/ab67706f0000000395e6e1249f3389ee0547a82d",
+                    "width": null
+                }
+            ],
+            "name": "Classical Piano",
+            "owner": {
+                "display_name": "Spotify",
+                "external_urls": {
+                    "spotify": "https://open.spotify.com/user/spotify"
+                },
+                "href": "https://api.spotify.com/v1/users/spotify",
+                "id": "spotify",
+                "type": "user",
+                "uri": "spotify:user:spotify"
+            },
+            "primary_color": null,
+            "public": null,
+            "snapshot_id": "MTcwNjgwNjA1NCwwMDAwMDAwMDg0ZGFjZWMzZTlhNmE0Y2M1NjkyYTk2Y2NlYWJkZjY5",
+            "tracks": {
+                "href": "https://api.spotify.com/v1/playlists/37i9dQZF1DWUqIzZNMSCv3/tracks",
+                "total": 67
+            },
+            "type": "playlist",
+            "uri": "spotify:playlist:37i9dQZF1DWUqIzZNMSCv3"
+        }
+    }
+}
