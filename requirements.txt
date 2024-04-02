@@ -1,0 +1,6 @@
+fastapi[all]
+pandas
+tqdm
+requests
+langchain
+langchain-openai
