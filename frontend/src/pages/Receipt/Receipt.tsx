@@ -1,4 +1,5 @@
 import { useRef } from "react";
+import { useNavigate } from "react-router-dom";
 import ReceiptItems from "./ReceiptItems";
 import html2canvas from "html2canvas";
 
@@ -30,6 +31,8 @@ interface ReceiptProps {
 
 const Receipt = (data: ReceiptProps) => {
 	const containerRef = useRef(null);
+
+	const navigate = useNavigate();
 
 	const handleScreenshot = () => {
 		const container = containerRef.current;
@@ -105,10 +108,13 @@ const Receipt = (data: ReceiptProps) => {
 			</div>
 			<div className="receipt__button-container">
 				<button className="button-alter" onClick={handleScreenshot}>
-					View more
-				</button>
-				<button className="button-alter" onClick={handleScreenshot}>
 					Download prescription
+				</button>
+				<button
+					className="button-alter"
+					onClick={() => navigate("/home")}
+				>
+					Back to home
 				</button>
 			</div>
 		</div>
