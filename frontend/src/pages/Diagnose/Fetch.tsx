@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
-import { fetchData, fetchJson, Data } from "../../api";
+import { fetchData, fetchJson, Data, BASE } from "../../api";
 
 import Loading from "../../components/Loading/Loading";
 import Typewriter from "../../components/Typewriter/Typewriter";
@@ -10,8 +10,6 @@ import Artist from "../../components/Artist/Artist";
 import Playlist from "../../components/Playlist/Playlist";
 
 import "./Fetch.css";
-
-const BASE: string = "http://127.0.0.1:8000/";
 
 const Fetch = () => {
 	const location = useLocation();
