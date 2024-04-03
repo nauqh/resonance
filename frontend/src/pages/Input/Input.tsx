@@ -48,7 +48,7 @@ const Input = () => {
 		console.log(features);
 		console.log(notes);
 		console.log(genre);
-		window.location.href = "https://nauqh.github.io/error";
+		// window.location.href = "https://nauqh.github.io/error";
 		navigate("/fetch", {
 			state: {
 				description: notes ? notes : "soft korean pop indie",

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
+import { fetchData, fetchJson, Data } from "../../api";
 
 import Loading from "../../components/Loading/Loading";
 import Typewriter from "../../components/Typewriter/Typewriter";
@@ -12,37 +13,6 @@ import "./Fetch.css";
 
 const BASE: string = "http://127.0.0.1:8000/";
 
-interface Artist {
-	name: string;
-	img: string;
-	id: string;
-	content: string;
-}
-
-interface Data {
-	genre: string;
-	mood: string;
-	color: string;
-	characteristics: string[];
-	artists: Artist[];
-	tracks: string[];
-}
-
-const getBody = (data: any) => {
-	return {
-		method: "POST",
-		headers: {
-			"Content-Type": "application/json",
-		},
-		body: JSON.stringify(data),
-	};
-};
-
-const fetchJson = async (url: string, data: any) => {
-	const response = await fetch(url, getBody(data));
-	return response.json();
-};
-
 const Fetch = () => {
 	const location = useLocation();
 	const [data, setData] = useState<Data>();
@@ -52,35 +22,16 @@ const Fetch = () => {
 	const [secondWriterComplete, setSecondWriterComplete] = useState(false);
 
 	useEffect(() => {
-		const fetchData = async () => {
+		const fetchDataAndSetData = async () => {
+			const analysis = await fetchData(location.state.description);
+			setData(analysis);
 			const playlist = await fetchJson(BASE + "playlist", {
 				keyword: location.state.description,
 			});
 			setPlaylist(playlist);
-
-			const analysis = await fetchJson(BASE + "analysis", {
-				description: location.state.description,
-			});
-
-			const artists = await fetchJson(BASE + "artist", {
-				names: analysis.artists,
-			});
-
-			analysis.artists = artists.map((artist: any, index: any) => ({
-				...artist,
-				content: analysis.content[index],
-			}));
-			delete analysis.content;
-
-			const songs = await fetchJson(BASE + "recommendation", {
-				ids: analysis.artists.map((artist: any) => artist.id),
-			});
-
-			analysis.tracks = songs.map((song: any) => song.id);
-			setData(analysis);
 		};
 
-		fetchData();
+		fetchDataAndSetData();
 	}, [location.state.description]);
 
 	return (
