@@ -21,7 +21,7 @@ const Diagnose = () => {
 
 	const [loadingComplete, setLoadingComplete] = useState(true);
 
-	const text = location.state ? location.state.text : "Raggaeton";
+	const text = location.state ? location.state.text : "Korean Soft Indie";
 
 	const sample = Sample[text as keyof typeof Sample];
 

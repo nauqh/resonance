@@ -44,7 +44,7 @@ const Receipt = (data: ReceiptProps) => {
 	};
 
 	return (
-		<>
+		<div className="receipt__flex">
 			<div className="receipt__container" ref={containerRef}>
 				<div className="receipt_header">
 					<h1>Musicotherapy</h1>
@@ -104,11 +104,14 @@ const Receipt = (data: ReceiptProps) => {
 				<img className="receipt__img" src="/spotify_logo.png" alt="" />
 			</div>
 			<div className="receipt__button-container">
-				<div className="button-alter" onClick={handleScreenshot}>
+				<button className="button-alter" onClick={handleScreenshot}>
+					View more
+				</button>
+				<button className="button-alter" onClick={handleScreenshot}>
 					Download prescription
-				</div>
+				</button>
 			</div>
-		</>
+		</div>
 	);
 };
 
