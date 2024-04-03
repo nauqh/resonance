@@ -87,11 +87,11 @@ const Receipt = ({ data }: ReceiptProps) => {
 				<table>
 					<tfoot>
 						<tr>
-							<td>ITEMS COUNT:</td>
+							<td>TREATMENTS:</td>
 							<td>9</td>
 						</tr>
 						<tr>
-							<td>TOTAL:</td>
+							<td>SESSION DURATION:</td>
 							<td>{calculateDuration(tracks)}</td>
 						</tr>
 					</tfoot>
