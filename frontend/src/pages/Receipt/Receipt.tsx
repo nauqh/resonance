@@ -69,7 +69,7 @@ const Receipt = ({ data }: ReceiptProps) => {
 							{playlist.name}
 						</a>
 					</h2>
-					<h2>RECOMMENDATION: </h2>
+					<h2>PRESCRIPTION: </h2>
 					<div className="items">
 						<table>
 							<thead>
