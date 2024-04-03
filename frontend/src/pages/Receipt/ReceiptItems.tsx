@@ -10,6 +10,18 @@ interface ReceiptItemsProps {
 	items: Item[];
 }
 
+export const calculateDuration = (items: Item[]): string => {
+	const totalSeconds = items.reduce((total, item) => {
+		const [minutes, seconds] = item.duration.split(":").map(Number);
+		return total + minutes * 60 + seconds;
+	}, 0);
+
+	const minutes = Math.floor(totalSeconds / 60);
+	const formattedSeconds = (totalSeconds % 60).toString().padStart(2, "0");
+
+	return `${minutes}:${formattedSeconds}`;
+};
+
 const ReceiptItems = ({ items }: ReceiptItemsProps) => {
 	return (
 		<tbody>

@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import { useNavigate } from "react-router-dom";
-import ReceiptItems from "./ReceiptItems";
+import ReceiptItems, { calculateDuration } from "./ReceiptItems";
 import html2canvas from "html2canvas";
 
 import "./Receipt.css";
@@ -29,7 +29,7 @@ interface ReceiptProps {
 	};
 }
 
-const Receipt = (data: ReceiptProps) => {
+const Receipt = ({ data }: ReceiptProps) => {
 	const containerRef = useRef(null);
 
 	const navigate = useNavigate();
@@ -46,29 +46,27 @@ const Receipt = (data: ReceiptProps) => {
 		});
 	};
 
+	const { genre, mood, characteristics, artists, tracks, playlist } = data;
+
 	return (
 		<div className="receipt__flex">
 			<div className="receipt__container" ref={containerRef}>
 				<div className="receipt_header">
 					<h1>Musicotherapy</h1>
-					<h2>GENRE: {data.data.genre}</h2>
-					<h2>MOOD: {data.data.mood}</h2>
+					<h2>GENRE: {genre}</h2>
+					<h2>MOOD: {mood}</h2>
 					<h2>
 						ARTISTS:{" "}
-						{data.data.artists
-							.map((artist) => artist.name)
-							.join(", ")}
+						{artists.map((artist) => artist.name).join(", ")}
 					</h2>
-					<p className="description">
-						{data.data.characteristics[0]}
-					</p>
+					<p className="description">{characteristics[0]}</p>
 				</div>
 
 				<div className="receipt_body">
 					<h2>
 						ALBUM:{" "}
-						<a href={data.data.playlist.external_urls.spotify}>
-							{data.data.playlist.name}
+						<a href={playlist.external_urls.spotify}>
+							{playlist.name}
 						</a>
 					</h2>
 					<h2>RECOMMENDATION: </h2>
@@ -81,7 +79,7 @@ const Receipt = (data: ReceiptProps) => {
 									<th>AMT</th>
 								</tr>
 							</thead>
-							<ReceiptItems items={data.data.tracks} />
+							<ReceiptItems items={tracks} />
 						</table>
 					</div>
 				</div>
@@ -90,11 +88,11 @@ const Receipt = (data: ReceiptProps) => {
 					<tfoot>
 						<tr>
 							<td>ITEMS COUNT:</td>
-							<td>32.1</td>
+							<td>9</td>
 						</tr>
 						<tr>
 							<td>TOTAL:</td>
-							<td>32.1</td>
+							<td>{calculateDuration(tracks)}</td>
 						</tr>
 					</tfoot>
 				</table>
