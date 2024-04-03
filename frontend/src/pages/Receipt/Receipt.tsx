@@ -105,7 +105,7 @@ const Receipt = (data: ReceiptProps) => {
 			</div>
 			<div className="receipt__button-container">
 				<div className="button-alter" onClick={handleScreenshot}>
-					Download receipt
+					Download prescription
 				</div>
 			</div>
 		</>
