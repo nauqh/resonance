@@ -106,13 +106,13 @@ const Receipt = ({ data }: ReceiptProps) => {
 			</div>
 			<div className="receipt__button-container">
 				<button className="button-alter" onClick={handleScreenshot}>
-					Download prescription
+					Download receipt
 				</button>
 				<button
 					className="button-alter"
 					onClick={() => navigate("/home")}
 				>
-					Back to home
+					Attend another session
 				</button>
 			</div>
 		</div>

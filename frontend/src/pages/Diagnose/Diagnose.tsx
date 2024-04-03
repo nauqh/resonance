@@ -162,10 +162,10 @@ const Diagnose = () => {
 									className="diagnose__button-container"
 									onClick={handleClick}
 								>
-									Do you need a prescription?{" "}
+									Do you need a receipt?{" "}
 									<a className="diagnose__toggle">
 										{showReceipt
-											? "Close presciption"
+											? "Close receipt"
 											: "Yes, send me!"}
 									</a>
 								</div>
