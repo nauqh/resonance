@@ -21,10 +21,11 @@ const Diagnose = () => {
 
 	const [loadingComplete, setLoadingComplete] = useState(true);
 
-	const text = location.state ? location.state.text : "Korean Soft Indie";
+	const text = location.state ? location.state.text : "Raggaeton";
 
-	const { color, mood, characteristics, artists, tracks, playlist } =
-		Sample[text as keyof typeof Sample];
+	const sample = Sample[text as keyof typeof Sample];
+
+	const { color, mood, characteristics, artists, tracks, playlist } = sample;
 
 	const [firstWriterComplete, setFirstWriterComplete] = useState(false);
 	const [secondWriterComplete, setSecondWriterComplete] = useState(false);
@@ -131,7 +132,9 @@ const Diagnose = () => {
 								<h1 className="result__header">
 									Here are the songs that are tailored for you
 								</h1>
-								<Frame trackIds={tracks} />
+								<Frame
+									trackIds={tracks.map((track) => track.id)}
+								/>
 							</section>
 
 							<section
@@ -167,7 +170,7 @@ const Diagnose = () => {
 									</a>
 								</div>
 
-								{showReceipt && <Receipt />}
+								{showReceipt && <Receipt data={sample} />}
 
 								<p className="footer__content">
 									This is a satirical project that leverages

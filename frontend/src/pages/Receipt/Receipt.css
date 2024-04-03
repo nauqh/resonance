@@ -2,7 +2,7 @@
 	width: 100%;
 	max-width: 380px;
 	padding: 25px;
-	margin: 20px auto 50px;
+	margin: 20px 0 50px;
 	border-radius: 0.5rem;
 	box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
 }
@@ -104,7 +104,6 @@ tfoot::after {
 
 .receipt__button-container {
 	display: flex;
-	justify-content: center;
 	margin-bottom: 2rem;
 }
 
