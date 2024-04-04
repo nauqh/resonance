@@ -46,9 +46,10 @@ const Input = () => {
 			])
 		);
 		console.log(features);
-		console.log(notes);
-		console.log(genre);
-		window.location.href = "https://nauqh.github.io/error";
+		const prompt: string = `${notes}. With ${genre} mood`;
+		console.log(prompt);
+
+		// window.location.href = "https://nauqh.github.io/error";
 		// navigate("/fetch", {
 		// 	state: {
 		// 		description: notes ? notes : "soft korean pop indie",
@@ -124,7 +125,7 @@ const Input = () => {
 				/>
 				<Slider
 					name="Instrumentalness"
-					description="Predicts whether a track contains no vocals. 'Ooh' and 'aah' sounds are treated as instrumental in this context."
+					description="Instrumentalness predicts whether a track contains no vocals. 'Ooh' and 'aah' sounds are treated as instrumental in this context."
 					onSliderChange={(value) =>
 						handleSliderChange("Instrumentalness", value)
 					}
@@ -152,15 +153,19 @@ const Input = () => {
 					value={sliderValues.Valence}
 				/>
 				<SelectBox
-					labell="Choose an option:"
+					labell="How do you want your diagnosis?"
 					labelr="Year range"
-					options={["Option 1", "Option 2", "Option 3", "Option 4"]}
+					options={[
+						"Be gentle 🤵",
+						"Light and elegant 🪶",
+						"Roast me 🔥",
+					]}
 					onChange={(selectedOption) => {
 						setSelectedOption(selectedOption);
 					}}
 				/>
 				<TextInput
-					label="Notes"
+					label="Describe your kind of music"
 					placeholder="E.g. Some soft chill korean indie"
 					value={notes}
 					onChange={(text: string) => {
