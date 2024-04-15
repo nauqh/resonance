@@ -50,12 +50,12 @@ const Input = () => {
 		console.log(prompt);
 
 		// window.location.href = "https://nauqh.github.io/error";
-		// navigate("/fetch", {
-		// 	state: {
-		// 		description: notes ? notes : "soft korean pop indie",
-		// 		genre: genre,
-		// 	},
-		// });
+		navigate("/fetch", {
+			state: {
+				description: notes ? notes : "soft korean pop indie",
+				genre: genre,
+			},
+		});
 	};
 
 	const handleDiagnoseSelect = (text: string) => {
