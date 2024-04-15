@@ -1,4 +1,4 @@
-export const BASE: string = "https://musicotherapyapi.onrender.com";
+export const BASE: string = "https://musicotherapyapi.onrender.com/";
 
 interface Artist {
 	name: string;
