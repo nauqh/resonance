@@ -121,7 +121,11 @@ const Fetch = () => {
 								<h1 className="result__header">
 									Here are the songs that are tailored for you
 								</h1>
-								<Frame trackIds={data.tracks} />
+								<Frame
+									trackIds={data.tracks.map(
+										(track) => track.id
+									)}
+								/>
 							</section>
 
 							<section

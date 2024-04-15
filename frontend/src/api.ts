@@ -13,7 +13,12 @@ export interface Data {
 	color: string;
 	characteristics: string[];
 	artists: Artist[];
-	tracks: string[];
+	tracks: {
+		id: string;
+		name: string;
+		artist: string;
+		duration: string;
+	}[];
 }
 
 const getBody = (data: any) => {
@@ -46,10 +51,9 @@ export const fetchData = async (description: string) => {
 	}));
 	delete analysis.content;
 
-	const songs = await fetchJson(BASE + "recommendation", {
+	analysis.tracks = await fetchJson(BASE + "recommendation", {
 		ids: analysis.artists.map((artist: any) => artist.id),
 	});
 
-	analysis.tracks = songs.map((song: any) => song.id);
 	return analysis;
 };
