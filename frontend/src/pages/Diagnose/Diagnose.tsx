@@ -163,7 +163,7 @@ const Diagnose = () => {
 									onClick={handleClick}
 								>
 									Do you need a receipt?{" "}
-									<a className="diagnose__toggle">
+									<a className="button-alter">
 										{showReceipt
 											? "Close receipt"
 											: "Yes, send me!"}

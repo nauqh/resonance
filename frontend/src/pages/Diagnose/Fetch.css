@@ -9,14 +9,6 @@
 	margin: 1rem 0 2rem;
 }
 
-.diagnose__toggle {
-	text-decoration: underline;
-}
-
-.diagnose__toggle:hover {
-	cursor: pointer;
-}
-
 @media screen and (max-width: 700px) {
 	.result__title,
 	.result__header {
