@@ -3,12 +3,15 @@ import { useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
 import { fetchData, fetchJson, Data, BASE } from "../../api";
 
+// Components
 import Loading from "../../components/Loading/Loading";
 import Typewriter from "../../components/Typewriter/Typewriter";
 import Frame from "../../components/Frame/Frame";
 import Artist from "../../components/Artist/Artist";
 import Playlist from "../../components/Playlist/Playlist";
+import Receipt from "../Receipt/Receipt";
 
+// Style
 import "./Fetch.css";
 
 const Fetch = () => {
@@ -135,6 +138,23 @@ const Fetch = () => {
 									marginBottom: "6rem",
 								}}
 							>
+								<p className="footer__content">
+									Thank you ever so much for choosing our
+									musicotherapy service. Your decision has
+									undoubtedly left us speechless, or perhaps
+									just slightly bemused. We can only imagine
+									the profound impact our tunes will have on
+									your soul.
+								</p>
+								<br />
+								<p className="footer__content">
+									Farewell, dear patron, may your sarcasm be
+									as melodious as our melodies. Cheers to your
+									journey of sonic enlightenment!
+								</p>
+
+								<Receipt data={sample} />
+
 								<p className="footer__content">
 									This is a satirical project that leverages
 									large language model for music taste
