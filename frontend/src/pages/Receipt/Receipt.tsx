@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 import ReceiptItems, { calculateDuration } from "./ReceiptItems";
 import html2canvas from "html2canvas";
 
@@ -25,14 +25,14 @@ interface ReceiptProps {
 			artist: string;
 			duration: string;
 		}[];
-		playlist: any;
 	};
+	playlist: any;
 }
 
-const Receipt = ({ data }: ReceiptProps) => {
+const Receipt = ({ data, playlist }: ReceiptProps) => {
 	const containerRef = useRef(null);
 
-	const navigate = useNavigate();
+	// const navigate = useNavigate();
 
 	const handleScreenshot = () => {
 		const container = containerRef.current;
@@ -46,7 +46,7 @@ const Receipt = ({ data }: ReceiptProps) => {
 		});
 	};
 
-	const { genre, mood, characteristics, artists, tracks, playlist } = data;
+	const { genre, mood, characteristics, artists, tracks } = data;
 
 	return (
 		<div className="receipt__flex">
@@ -110,7 +110,10 @@ const Receipt = ({ data }: ReceiptProps) => {
 				</button>
 				<button
 					className="button-alter"
-					onClick={() => navigate("/home")}
+					onClick={() =>
+						(window.location.href =
+							"https://musicotherapy.vercel.app/")
+					}
 				>
 					Attend another session
 				</button>

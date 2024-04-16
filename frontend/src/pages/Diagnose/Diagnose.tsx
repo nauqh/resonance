@@ -170,7 +170,12 @@ const Diagnose = () => {
 									</a>
 								</div>
 
-								{showReceipt && <Receipt data={sample} />}
+								{showReceipt && (
+									<Receipt
+										data={sample}
+										playlist={sample.playlist}
+									/>
+								)}
 
 								<p className="footer__content">
 									This is a satirical project that leverages

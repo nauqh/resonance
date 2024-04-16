@@ -22,6 +22,12 @@ const Fetch = () => {
 	const [firstWriterComplete, setFirstWriterComplete] = useState(false);
 	const [secondWriterComplete, setSecondWriterComplete] = useState(false);
 
+	const [showReceipt, setShowReceipt] = useState(false);
+
+	const handleClick = () => {
+		setShowReceipt(!showReceipt);
+	};
+
 	useEffect(() => {
 		const fetchDataAndSetData = async () => {
 			const analysis = await fetchData(location.state.description);
@@ -153,7 +159,21 @@ const Fetch = () => {
 									journey of sonic enlightenment!
 								</p>
 
-								<Receipt data={sample} />
+								<div
+									className="diagnose__button-container"
+									onClick={handleClick}
+								>
+									Do you need a receipt?{" "}
+									<a className="button-alter">
+										{showReceipt
+											? "Close receipt"
+											: "Yes, send me!"}
+									</a>
+								</div>
+
+								{showReceipt && (
+									<Receipt data={data} playlist={playlist} />
+								)}
 
 								<p className="footer__content">
 									This is a satirical project that leverages
