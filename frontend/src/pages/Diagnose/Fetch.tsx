@@ -30,16 +30,18 @@ const Fetch = () => {
 
 	useEffect(() => {
 		const fetchDataAndSetData = async () => {
-			const analysis = await fetchData(location.state.description);
-			setData(analysis);
-			const playlist = await fetchJson(BASE + "playlist", {
-				keyword: location.state.description,
-			});
-			setPlaylist(playlist);
+			if (!data) {
+				const analysis = await fetchData(location.state.description);
+				setData(analysis);
+				const playlist = await fetchJson(BASE + "playlist", {
+					keyword: location.state.description,
+				});
+				setPlaylist(playlist);
+			}
 		};
 
 		fetchDataAndSetData();
-	}, [location.state.description]);
+	}, [data, location.state.description]);
 
 	return (
 		<>
