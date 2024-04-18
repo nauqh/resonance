@@ -19,7 +19,7 @@ import "./Fetch.css";
 const Diagnose = () => {
 	const location = useLocation();
 
-	const [loadingComplete, setLoadingComplete] = useState(true);
+	const [loadingComplete, setLoadingComplete] = useState(false);
 
 	const text = location.state ? location.state.text : "Korean Soft Indie";
 

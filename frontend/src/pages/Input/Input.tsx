@@ -24,7 +24,7 @@ const Input = () => {
 	});
 	const [notes, setNotes] = useState("");
 	const [genre, setGenre] = useState<FilterKey>();
-	const [_, setSelectedOption] = useState("");
+	const [selectOption, setSelectedOption] = useState("");
 
 	const handleFilterChange = (filter: FilterKey) => {
 		setSliderValues(Features[filter]);
@@ -46,13 +46,16 @@ const Input = () => {
 			])
 		);
 		console.log(features);
-		const prompt: string = `${notes}. With ${genre} mood`;
+		const prompt: string = `${
+			notes || "soft korean pop indie"
+		}. With ${genre} mood and analysis tone is: ${
+			selectOption || "neutral"
+		}`;
 		console.log(prompt);
 
-		// window.location.href = "https://nauqh.github.io/error";
 		navigate("/fetch", {
 			state: {
-				description: notes ? notes : "soft korean pop indie",
+				description: prompt,
 				genre: genre,
 			},
 		});
