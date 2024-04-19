@@ -17,24 +17,15 @@ import Sample from "../../assets/data/sample.json";
 import "./Fetch.css";
 
 const Diagnose = () => {
-	const location = useLocation();
+	const sample = Sample[useLocation().state.text as keyof typeof Sample];
 
 	const [loadingComplete, setLoadingComplete] = useState(false);
-
-	const text = location.state ? location.state.text : "Korean Soft Indie";
-
-	const sample = Sample[text as keyof typeof Sample];
 
 	const { color, mood, characteristics, artists, tracks, playlist } = sample;
 
 	const [firstWriterComplete, setFirstWriterComplete] = useState(false);
 	const [secondWriterComplete, setSecondWriterComplete] = useState(false);
-
 	const [showReceipt, setShowReceipt] = useState(false);
-
-	const handleClick = () => {
-		setShowReceipt(!showReceipt);
-	};
 
 	useEffect(() => {
 		// Loading completion after 10 seconds
@@ -160,7 +151,7 @@ const Diagnose = () => {
 								</p>
 								<div
 									className="diagnose__button-container"
-									onClick={handleClick}
+									onClick={() => setShowReceipt(!showReceipt)}
 								>
 									Do you need a receipt?{" "}
 									<a className="button-alter">

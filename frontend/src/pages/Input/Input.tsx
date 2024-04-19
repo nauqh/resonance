@@ -62,6 +62,7 @@ const Input = () => {
 	};
 
 	const handleDiagnoseSelect = (text: string) => {
+		text = text || "Korean Soft Indie";
 		navigate("/diagnose", { state: { text } });
 	};
 
