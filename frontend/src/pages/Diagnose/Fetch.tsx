@@ -24,10 +24,6 @@ const Fetch = () => {
 
 	const [showReceipt, setShowReceipt] = useState(false);
 
-	const handleClick = () => {
-		setShowReceipt(!showReceipt);
-	};
-
 	useEffect(() => {
 		const fetchDataAndSetData = async () => {
 			if (!data) {
@@ -163,7 +159,7 @@ const Fetch = () => {
 
 								<div
 									className="diagnose__button-container"
-									onClick={handleClick}
+									onClick={() => setShowReceipt(!showReceipt)}
 								>
 									Do you need a receipt?{" "}
 									<a className="button-alter">

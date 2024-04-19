@@ -28,12 +28,10 @@ const Diagnose = () => {
 	const [showReceipt, setShowReceipt] = useState(false);
 
 	useEffect(() => {
-		// Loading completion after 10 seconds
 		const loadingTimer = setTimeout(() => {
 			setLoadingComplete(true);
 		}, 20000);
 
-		// Cleanup the timer to avoid memory leaks
 		return () => clearTimeout(loadingTimer);
 	}, []);
 
