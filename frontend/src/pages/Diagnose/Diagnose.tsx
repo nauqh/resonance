@@ -9,6 +9,7 @@ import Frame from "../../components/Frame/Frame";
 import Artist from "../../components/Artist/Artist";
 import Playlist from "../../components/Playlist/Playlist";
 import Receipt from "../Receipt/Receipt";
+import Footer from "../../components/Footer";
 
 // Data
 import Sample from "../../assets/data/sample.json";
@@ -201,33 +202,7 @@ const Diagnose = () => {
 								</p>
 							</section>
 
-							<footer className="home__footer">
-								<div>
-									A project by{" "}
-									<span
-										style={{
-											fontSize: "2rem",
-											fontWeight: 700,
-										}}
-									>
-										<a href="https://nauqh.github.io">
-											nauqh
-										</a>
-									</span>
-								</div>
-								<span
-									style={{
-										alignSelf: "flex-end",
-										textAlign: "right",
-										width: 200,
-									}}
-								>
-									Powered by{" "}
-									<a href="https://openai.com/blog/new-embedding-models-and-api-updates">
-										OpenAI GPT-4
-									</a>
-								</span>
-							</footer>
+							<Footer />
 						</motion.div>
 					)}
 				</>
