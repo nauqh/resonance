@@ -57,3 +57,14 @@ export const fetchData = async (description: string) => {
 
 	return analysis;
 };
+
+
+// Test
+const description = "Korean Soft Indie";
+fetchData(description)
+    .then((result) => {
+        console.log(result);
+    })
+    .catch((error) => {
+        console.error("Error fetching data:", error);
+    });
