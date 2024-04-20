@@ -12,15 +12,15 @@ def send_email(recipients, image_path):
     msg['From'] = sender
     msg['To'] = ', '.join(recipients)
 
-    text_part = MIMEText("""Hi there,
+    text_part = MIMEText("""Hi there! 👋🎵
 
 Thank you for participating in a music therapy session with us. We are delighted to inform you that your personalized results are ready for review. Your musical preferences are as unique as you are, and our team has meticulously analyzed them to provide you with tailored insights and recommendations.
 
-Please anticipate receiving your personalized analysis in your inbox shortly. Should you have any questions or wish to further discuss the nuances of your musical taste, please do not hesitate to reach out to us. We are here to assist you.
+Please anticipate receiving your personalized analysis in your inbox shortly. Should you have any questions or wish to further discuss the nuances of your musical taste, please do not hesitate to reach out to us. We are here to assist you. ✉️📫
 
-Looking forward to connecting with you soon,
+Looking forward to connecting with you soon! 
 
-The Resonance Team
+The Resonance Team 📻
 """)
     msg.attach(text_part)
 

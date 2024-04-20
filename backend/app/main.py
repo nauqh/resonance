@@ -2,6 +2,7 @@ from fastapi import FastAPI, status
 from fastapi.middleware.cors import CORSMiddleware
 from ..src.utils.utils import search_artist, search_playlist, get_recommendation
 from ..src.llm import LLM
+from ..src.receipt import send_email
 import os
 
 
@@ -51,4 +52,5 @@ def create_recommendation(data: dict):
 
 @app.post("/receipt", status_code=status.HTTP_201_CREATED)
 def send_receipt(data: dict):
-    ...
+    send_email(data['recipients'], data['attachment'])
+    return f"Sent email to {', '.join(data['recipients'])}"
