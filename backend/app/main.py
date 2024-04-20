@@ -47,3 +47,8 @@ def create_artist(data: dict):
 @app.post("/recommendation", status_code=status.HTTP_201_CREATED)
 def create_recommendation(data: dict):
     return get_recommendation(data['ids'])
+
+
+@app.post("/receipt", status_code=status.HTTP_201_CREATED)
+def send_receipt(data: dict):
+    ...

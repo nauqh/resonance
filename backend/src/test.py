@@ -12,15 +12,15 @@ def send_email(recipients, image_path):
     msg['From'] = sender
     msg['To'] = ', '.join(recipients)
 
-    text_part = MIMEText("""
-Hi there,
+    text_part = MIMEText("""Hi there,
 
-You recently used our Music Taste Analysis app, and we're excited to share your personalized results with you. Your music taste is as unique as you are, and we've carefully analyzed your preferences to provide you with insights and recommendations tailored just for you.
+Thank you for participating in a music therapy session with us. We are delighted to inform you that your personalized results are ready for review. Your musical preferences are as unique as you are, and our team has meticulously analyzed them to provide you with tailored insights and recommendations.
 
-Keep an eye on your inbox for your personal analysis – it's heading your way soon. And hey, feel free to drop us a line if you're itching to discuss the intricacies of your music taste. We're all ears.
+Please anticipate receiving your personalized analysis in your inbox shortly. Should you have any questions or wish to further discuss the nuances of your musical taste, please do not hesitate to reach out to us. We are here to assist you.
 
-Catch you on the flip side,
-Resonance Team
+Looking forward to connecting with you soon,
+
+The Resonance Team
 """)
     msg.attach(text_part)
 
@@ -36,7 +36,7 @@ Resonance Team
 
 
 if __name__ == "__main__":
-    recipients = ["quan.do@coderschool.vn"]
-    image_path = "D:/Laboratory/Projects/resonance/assets/img/Components.png"
+    recipients = ["quan.do@coderschool.vn", "tnklinh6969@gmail.com"]
+    image_path = "C:/Users/user/Downloads/receipt.png"
 
     send_email(recipients, image_path)
