@@ -2,8 +2,6 @@
   <img src="./assets/img/logo.png">
 </div>
 
-<iframe width="560" height="315" src='https://dbdiagram.io/e/6624cb9803593b6b61893057/6624d2ca03593b6b618986e1'> </iframe>
-
 <p align="center">
 <a href=""><img src="https://img.shields.io/badge/Latest%20Version-V2.0.0-blue.svg?&style=for-the-badge&logo=git&logoColor=white&colorB=7289DA"></a> <br>
 <a href=""><img src="https://img.shields.io/badge/Python%203.10-blue.svg?&style=for-the-badge&logo=python&logoColor=white&colorB=00b4d8"></a>
