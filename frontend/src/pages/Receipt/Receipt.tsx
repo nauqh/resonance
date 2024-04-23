@@ -60,12 +60,8 @@ const Receipt = ({ data, playlist }: ReceiptProps) => {
 					"Content-Type": "application/json",
 				},
 				body: JSON.stringify(postData),
-			}).then((response) => {
-				if (!response.ok) {
-					throw new Error("Failed to send receipt.");
-				}
-				toast.success("Receipt has been sent");
 			});
+			toast.success("Receipt has been sent");
 		});
 	};
 
