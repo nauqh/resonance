@@ -92,7 +92,9 @@ const Receipt = ({ data, playlist }: ReceiptProps) => {
 							{playlist.name}
 						</a>
 					</h2>
+
 					<h2>PRESCRIPTION: </h2>
+
 					<div className="items">
 						<table>
 							<thead>
@@ -129,20 +131,28 @@ const Receipt = ({ data, playlist }: ReceiptProps) => {
 				<h3 className="receipt__footer">THANK YOU FOR VISITING</h3>
 				<img className="receipt__img" src="/spotify_logo.png" alt="" />
 			</div>
+
 			<div className="receipt__button-container">
-				<button className="button-alter" onClick={handleScreenshot}>
-					Download receipt
-				</button>
 				<button
 					className="button-alter"
+					style={{ fontSize: "1rem" }}
+					onClick={handleScreenshot}
+				>
+					Download receipt
+				</button>
+
+				<button
+					className="button-alter"
+					style={{ fontSize: "1rem" }}
 					onClick={() =>
 						(window.location.href =
 							"https://musicotherapy.vercel.app/")
 					}
 				>
-					Attend another session
+					New Diagnosis
 				</button>
 			</div>
+
 			<Toaster
 				toastOptions={{
 					style: { background: "#fafafa" },

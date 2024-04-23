@@ -111,7 +111,7 @@ tfoot::after {
 .receipt__button-container {
 	display: flex;
 	flex-direction: column;
-	justify-content: flex-end;
+	justify-content: flex-start;
 	row-gap: 1rem;
 	max-width: 200px;
 	margin: auto;

@@ -156,7 +156,7 @@ const Diagnose = () => {
 									<a className="button-alter">
 										{showReceipt
 											? "Close receipt"
-											: "Yes, send me!"}
+											: "Yes, show me!"}
 									</a>
 								</div>
 
