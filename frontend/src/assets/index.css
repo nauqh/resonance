@@ -90,7 +90,7 @@ p {
 	display: inline-block;
 	background-color: #fafafa;
 	color: var(--text-color);
-	border: solid 1px var(--text-color);
+	border: solid 1px grey;
 	border-radius: 0.75rem;
 	padding: 0.5rem 1rem;
 }

@@ -178,6 +178,7 @@ const Diagnose = () => {
 									API.
 								</p>
 								<br />
+
 								<p className="footer__content">
 									Further explore your music taste with
 									Musicotherapy's overtime service,{" "}
