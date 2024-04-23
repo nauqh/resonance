@@ -1,7 +1,7 @@
 import { useRef } from "react";
-// import { useNavigate } from "react-router-dom";
 import ReceiptItems, { calculateDuration } from "./ReceiptItems";
 import html2canvas from "html2canvas";
+import { Toaster, toast } from "sonner";
 
 import "./Receipt.css";
 
@@ -32,17 +32,41 @@ interface ReceiptProps {
 const Receipt = ({ data, playlist }: ReceiptProps) => {
 	const containerRef = useRef(null);
 
-	// const navigate = useNavigate();
-
 	const handleScreenshot = () => {
 		const container = containerRef.current;
 		if (!container) return;
 
 		html2canvas(container).then((canvas) => {
-			const link = document.createElement("a");
-			link.href = canvas.toDataURL("image/png");
-			link.download = "receipt.png";
-			link.click();
+			const a = document.createElement("a");
+			a.href = canvas.toDataURL("image/png");
+			a.download = "receipt.png";
+			a.click();
+		});
+	};
+
+	const handleEmailReceipt = () => {
+		const container = containerRef.current;
+		if (!container) return;
+
+		html2canvas(container).then((canvas) => {
+			const postData = {
+				recipients: ["quan.do@coderschool.vn"],
+				attachment: canvas.toDataURL("image/png"),
+			};
+
+			// Perform the POST request
+			fetch("http://127.0.0.1:8000/receipt", {
+				method: "POST",
+				headers: {
+					"Content-Type": "application/json",
+				},
+				body: JSON.stringify(postData),
+			}).then((response) => {
+				if (!response.ok) {
+					throw new Error("Failed to send receipt.");
+				}
+				toast.success("Receipt has been sent");
+			});
 		});
 	};
 
@@ -118,6 +142,12 @@ const Receipt = ({ data, playlist }: ReceiptProps) => {
 					Attend another session
 				</button>
 			</div>
+			<Toaster
+				toastOptions={{
+					style: { background: "#fafafa" },
+				}}
+				position="bottom-center"
+			/>
 		</div>
 	);
 };
