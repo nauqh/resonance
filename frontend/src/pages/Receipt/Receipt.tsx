@@ -54,7 +54,6 @@ const Receipt = ({ data, playlist }: ReceiptProps) => {
 				attachment: canvas.toDataURL("image/png"),
 			};
 
-			// Perform the POST request
 			fetch("http://127.0.0.1:8000/receipt", {
 				method: "POST",
 				headers: {
@@ -122,7 +121,9 @@ const Receipt = ({ data, playlist }: ReceiptProps) => {
 				</table>
 
 				<div className="receipt__additional">
-					<h2>CARD NAME: **** **** **** 2024</h2>
+					<h2>
+						CARD NAME: **** **** **** {new Date().getFullYear()}
+					</h2>
 				</div>
 
 				<h3 className="receipt__footer">THANK YOU FOR VISITING</h3>
