@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import ReceiptItems, { calculateDuration } from "./ReceiptItems";
 import html2canvas from "html2canvas";
 import { Toaster, toast } from "sonner";
@@ -31,6 +31,7 @@ interface ReceiptProps {
 
 const Receipt = ({ data, playlist }: ReceiptProps) => {
 	const containerRef = useRef(null);
+	const [email, setEmail] = useState("");
 
 	const handleScreenshot = () => {
 		const container = containerRef.current;
@@ -47,10 +48,14 @@ const Receipt = ({ data, playlist }: ReceiptProps) => {
 	const handleEmailReceipt = () => {
 		const container = containerRef.current;
 		if (!container) return;
+		if (!email) {
+			toast.error("Please enter your email");
+			return;
+		}
 
 		html2canvas(container).then((canvas) => {
 			const postData = {
-				recipients: ["quan.do@coderschool.vn"],
+				recipients: [email],
 				attachment: canvas.toDataURL("image/png"),
 			};
 
@@ -150,7 +155,7 @@ const Receipt = ({ data, playlist }: ReceiptProps) => {
 								"https://musicotherapy.vercel.app/")
 						}
 					>
-						New Diagnosis
+						New diagnosis
 					</button>
 				</div>
 
@@ -158,7 +163,7 @@ const Receipt = ({ data, playlist }: ReceiptProps) => {
 					toastOptions={{
 						style: { background: "#fafafa" },
 					}}
-					position="bottom-center"
+					position="top-center"
 				/>
 			</div>
 
@@ -172,6 +177,9 @@ const Receipt = ({ data, playlist }: ReceiptProps) => {
 				<input
 					type="text"
 					placeholder="Enter your email"
+					onChange={(event) => {
+						setEmail(event.target.value);
+					}}
 					style={{
 						width: 300,
 						borderRadius: "0.2rem",
