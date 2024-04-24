@@ -1,12 +1,15 @@
 from fastapi import FastAPI, status
 from fastapi.middleware.cors import CORSMiddleware
+from .schema import *
 from ..src.utils.utils import search_artist, search_playlist, get_recommendation
 from ..src.llm import LLM
 from ..src.receipt import send_email
 import os
 
 
-app = FastAPI(title='Resonance', version='2.0.0')
+app = FastAPI(title='Resonance',
+              summary="Music taste analysis and recommendation system",
+              version='2.0.0')
 
 app.add_middleware(
     CORSMiddleware,
@@ -27,15 +30,15 @@ def create_analysis(description: dict):
 
 
 @app.post("/playlist", status_code=status.HTTP_201_CREATED)
-def create_playlist(data: dict):
-    return search_playlist(data['keyword'])
+def create_playlist(playlist: Playlist):
+    return search_playlist(playlist.keyword)
 
 
 @app.post("/artist", status_code=status.HTTP_201_CREATED)
-def create_artist(data: dict):
+def create_artist(data: ArtistList):
     artists = []
 
-    for name in data['names']:
+    for name in data.names:
         resp = search_artist(name)
         artist = {
             "name": name,
