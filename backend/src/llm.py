@@ -10,7 +10,7 @@ load_dotenv()
 class LLM():
     def __init__(self, key) -> None:
         self.llm = ChatOpenAI(
-            openai_api_key=key, model="gpt-4-1106-preview")
+            openai_api_key=key, model="gpt-3.5-turbo-0125")
 
     def __get_parser(self):
         schema = [
