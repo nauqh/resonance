@@ -38,7 +38,7 @@ const Home = () => {
 
 	const handleButtonClick = () => {
 		if (playlistLink.startsWith("https://")) {
-			window.location.href = "https://resonance.streamlit.app/";
+			window.location.href = "https://resonances.streamlit.app/";
 		} else {
 			navigate("/input", {
 				state: { link: playlistLink },
