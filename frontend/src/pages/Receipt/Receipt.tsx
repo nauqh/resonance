@@ -150,10 +150,14 @@ const Receipt = ({ data, playlist }: ReceiptProps) => {
 					<button
 						className="button-alter"
 						style={{ fontSize: "1rem" }}
-						onClick={() =>
-							(window.location.href =
-								"https://musicotherapy.vercel.app/")
-						}
+						onClick={() => {
+							// Clear cache data and states
+							localStorage.clear();
+							sessionStorage.clear();
+							// Navigate to the new page
+							window.location.href =
+								"https://musicotherapy.vercel.app/";
+						}}
 					>
 						New diagnosis
 					</button>
