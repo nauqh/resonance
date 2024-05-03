@@ -188,7 +188,7 @@ const Receipt = ({ data, playlist }: ReceiptProps) => {
 						width: 300,
 						borderRadius: "0.2rem",
 						border: "1px solid grey",
-						padding: "0.5rem",
+						padding: "0 0.5rem",
 					}}
 				/>
 				<button className="button-alter" onClick={handleEmailReceipt}>

@@ -81,9 +81,8 @@ p {
 	display: inline-block;
 	background-color: var(--text-color);
 	color: #fafafa;
-	padding: 0.5rem 1rem;
+	padding: 0.3rem 1rem;
 	border-radius: 0.75rem;
-	font-size: 1.2rem;
 }
 
 .button-alter {
@@ -92,11 +91,11 @@ p {
 	color: var(--text-color);
 	border: solid 1px grey;
 	border-radius: 0.75rem;
-	padding: 0.5rem 1rem;
+	padding: 0.3rem 1rem;
 }
 
 .button-brick {
-	padding: 0.5rem 1rem;
+	padding: 0.3rem 1rem;
 	color: var(--text-color);
 	background-color: #fafafa;
 	font-size: 1.2rem;
