@@ -59,13 +59,13 @@ const Home = () => {
 						</p>
 
 						<div className="button-container">
-							<div className="button" onClick={handleButtonClick}>
+							<a className="button" onClick={handleButtonClick}>
 								Find out
-							</div>
+							</a>
 							<a
 								href="https://github.com/nauqh/resonance"
 								target="_blank"
-								className="button button-alter"
+								className="button-alter"
 							>
 								Learn more
 							</a>

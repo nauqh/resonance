@@ -7,7 +7,7 @@ import Home from "./pages/Landing/Home";
 import Fetch from "./pages/Diagnose/Fetch";
 import Input from "./pages/Input/Input";
 import Diagnose from "./pages/Diagnose/Diagnose";
-import User from "./pages/User";
+import User from "./pages/User/User";
 
 import "./assets/index.css";
 
