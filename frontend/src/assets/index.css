@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap");
 
 :root {
-	--primary-color: #fafafa;
+	--primary-color: #fff;
 	--secondary-color: #5c4033;
 	--text-color: #161513;
 }
@@ -80,14 +80,14 @@ p {
 .button {
 	display: inline-block;
 	background-color: var(--text-color);
-	color: #fafafa;
+	color: #fff;
 	padding: 0.3rem 1rem;
 	border-radius: 0.75rem;
 }
 
 .button-alter {
 	display: inline-block;
-	background-color: #fafafa;
+	background-color: #fff;
 	color: var(--text-color);
 	border: solid 1px grey;
 	border-radius: 0.75rem;
@@ -97,7 +97,7 @@ p {
 .button-brick {
 	padding: 0.3rem 1rem;
 	color: var(--text-color);
-	background-color: #fafafa;
+	background-color: #fff;
 	font-size: 1.2rem;
 	text-align: center;
 	border: solid 1px #161513;
