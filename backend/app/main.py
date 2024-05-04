@@ -1,10 +1,28 @@
-from fastapi import FastAPI, status
+from fastapi import FastAPI, status, Depends
 from fastapi.middleware.cors import CORSMiddleware
+import os
+import json
+
+# Database
+from . import models
+from .database import SessionLocal, engine
+from sqlalchemy.orm import Session
 from .schema import *
+
+# Utils
 from ..src.utils.utils import search_artist, search_playlist, get_recommendation
 from ..src.llm import LLM
 from ..src.receipt import send_email
-import os
+
+models.Base.metadata.create_all(bind=engine)
+
+
+def get_db():
+    db = SessionLocal()
+    try:
+        yield db
+    finally:
+        db.close()
 
 
 app = FastAPI(title='Resonance',
@@ -57,3 +75,21 @@ def create_recommendation(data: dict):
 def send_receipt(data: dict):
     send_email(data['recipients'], data['attachment'])
     return f"Sent email to {', '.join(data['recipients'])}"
+
+# TODO: User profile
+
+
+@app.post("/user", status_code=status.HTTP_201_CREATED)
+def create_diagnose(data: dict, db: Session = Depends(get_db)):
+    diagnose = models.Diagnose(content=json.dumps(data))
+    db.add(diagnose)
+    db.commit()
+    return data
+
+
+@app.get("/user", status_code=status.HTTP_200_OK)
+def get_diagnoses(db: Session = Depends(get_db)):
+    diagnoses = db.query(models.Diagnose).all()
+    for diagnosis in diagnoses:
+        diagnosis.content = json.loads(diagnosis.content)
+    return diagnoses
