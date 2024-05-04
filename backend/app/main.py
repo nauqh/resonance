@@ -7,7 +7,7 @@ import json
 from . import models
 from .database import SessionLocal, engine
 from sqlalchemy.orm import Session
-from .schema import *
+from .schema import Playlist, ArtistList
 
 # Utils
 from ..src.utils.utils import search_artist, search_playlist, get_recommendation
@@ -76,7 +76,7 @@ def send_receipt(data: dict):
     send_email(data['recipients'], data['attachment'])
     return f"Sent email to {', '.join(data['recipients'])}"
 
-# TODO: User profile
+# TODO: USER
 
 
 @app.post("/user", status_code=status.HTTP_201_CREATED)

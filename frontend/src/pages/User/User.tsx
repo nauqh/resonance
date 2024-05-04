@@ -28,16 +28,16 @@ const User = () => {
 							<DisplayCard
 								genre="Korean Soft Indie"
 								mood="soothing - soft - smooth"
+								color="#9395D3"
 								artists="Justin Bieber, Charlie Puth"
-								treatment="9"
-								duration="31:50"
+								playlist="soft & chill korean music"
 							/>
 							<DisplayCard
 								genre="Lo-fi Hip Hop"
 								mood="chill - mellow - soothing"
+								color="#3c6e71"
 								artists="Eevee, Tomppabeats"
-								treatment="9"
-								duration="23:30"
+								playlist="lofi beats to relax/study to"
 							/>
 
 							{/* <DisplayCard /> */}

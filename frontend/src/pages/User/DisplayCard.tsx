@@ -5,17 +5,17 @@ import { ExternalLinkIcon } from "@chakra-ui/icons";
 interface DisplayCardProps {
 	genre: string;
 	mood: string;
+	color: string;
 	artists: string;
-	treatment: string;
-	duration: string;
+	playlist: string;
 }
 
 const DisplayCard = ({
 	genre,
 	mood,
+	color,
 	artists,
-	treatment,
-	duration,
+	playlist,
 }: DisplayCardProps) => {
 	return (
 		<Card
@@ -30,7 +30,7 @@ const DisplayCard = ({
 				src="/homepage.png"
 			/>
 			<Flex direction={"column"} rowGap={"0.2rem"}>
-				<Heading size={"md"} mb={"0.5rem"}>
+				<Heading size={"md"} mb={"0.5rem"} color={color}>
 					<Link href="http://localhost:5173">
 						{genre}
 						<ExternalLinkIcon mx="5px" mb="5px" />
@@ -38,8 +38,8 @@ const DisplayCard = ({
 				</Heading>
 				<Text>Mood: {mood}</Text>
 				<Text>Artists: {artists}</Text>
-				<Text>Treatment: {treatment}</Text>
-				<Text>Duration: {duration}</Text>
+				<Text>Playlist: {playlist}</Text>
+				<Text>Songs: 9</Text>
 			</Flex>
 		</Card>
 	);
