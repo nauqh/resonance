@@ -1,16 +1,9 @@
 import { useNavigate } from "react-router-dom";
+import { Tabs, TabList, TabPanels, Tab, TabPanel } from "@chakra-ui/react";
 
 // Components
 import DisplayCard from "./DisplayCard";
 import UserProfile from "./UserProfile";
-import {
-	Tabs,
-	TabList,
-	TabPanels,
-	Tab,
-	TabPanel,
-	Card,
-} from "@chakra-ui/react";
 
 // Styles
 import "./User.css";
