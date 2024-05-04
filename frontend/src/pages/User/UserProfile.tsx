@@ -1,6 +1,11 @@
 import { Text, Avatar, Flex, Box } from "@chakra-ui/react";
 
-const UserProfile = () => {
+interface UserProfileProps {
+	name: string;
+	subtitle?: string;
+}
+
+const UserProfile = ({ name, subtitle }: UserProfileProps) => {
 	return (
 		<Flex columnGap={{ base: "5rem", md: "10rem", lg: "15rem" }} mt="5rem">
 			<Box>
@@ -9,9 +14,9 @@ const UserProfile = () => {
 					fontWeight="800"
 					margin="1rem 0"
 				>
-					Dan Abrahmov
+					{name}
 				</Text>
-				<Text fontSize="0.9rem"> In love with React & Next</Text>
+				<Text>{subtitle}</Text>
 			</Box>
 			<Avatar
 				src="https://bit.ly/dan-abramov"

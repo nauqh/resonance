@@ -33,7 +33,11 @@ const router = createBrowserRouter([
 		element: <Fetch />,
 	},
 	{
-		path: "/user",
+		path: "/profile",
+		element: "Please specify your username!",
+	},
+	{
+		path: "/profile/:username",
 		element: <User />,
 	},
 ]);

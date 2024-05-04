@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { Tabs, TabList, TabPanels, Tab, TabPanel } from "@chakra-ui/react";
 
 // Components
@@ -10,11 +10,12 @@ import "./User.css";
 
 const User = () => {
 	const navigate = useNavigate();
+	const params = useParams();
 
 	return (
 		<>
 			<section className="container">
-				<UserProfile />
+				<UserProfile name="Dan Abrahmov" subtitle={params.username} />
 
 				<Tabs colorScheme="gray" minHeight="480px">
 					<TabList>
