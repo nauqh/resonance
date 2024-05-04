@@ -2,7 +2,21 @@ import { Text, Heading, Flex, Link } from "@chakra-ui/react";
 import { Card, Image } from "@chakra-ui/react";
 import { ExternalLinkIcon } from "@chakra-ui/icons";
 
-const DisplayCard = () => {
+interface DisplayCardProps {
+	genre: string;
+	mood: string;
+	artists: string;
+	treatment: string;
+	duration: string;
+}
+
+const DisplayCard = ({
+	genre,
+	mood,
+	artists,
+	treatment,
+	duration,
+}: DisplayCardProps) => {
 	return (
 		<Card
 			marginBottom={"1rem"}
@@ -17,15 +31,15 @@ const DisplayCard = () => {
 			/>
 			<Flex direction={"column"} rowGap={"0.2rem"}>
 				<Heading size={"md"} mb={"0.5rem"}>
-					<Link href="http://localhost:5173/user" isExternal>
-						Korean Soft Indie
+					<Link href="http://localhost:5173">
+						{genre}
 						<ExternalLinkIcon mx="5px" mb="5px" />
 					</Link>
 				</Heading>
-				<Text>Mood: soothing - soft - smooth</Text>
-				<Text>Artists: Justin Bieber, Charlie Puth</Text>
-				<Text>Treatment: 9</Text>
-				<Text>Duration:31:50</Text>
+				<Text>Mood: {mood}</Text>
+				<Text>Artists: {artists}</Text>
+				<Text>Treatment: {treatment}</Text>
+				<Text>Duration: {duration}</Text>
 			</Flex>
 		</Card>
 	);

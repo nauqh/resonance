@@ -1,14 +1,19 @@
 .user__button {
-	position: absolute;
 	padding: 0.8rem 1.5rem;
 	border-radius: 2rem;
 	font-size: 1.1rem;
 	font-weight: 500;
 	box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-	align-self: end;
 	transition: font-size 0.2s;
 }
 
 .user__button:hover {
 	font-size: 1.2rem;
+}
+
+@media screen and (min-width: 1000px) {
+	.user__button {
+		position: absolute;
+		align-self: end;
+	}
 }
