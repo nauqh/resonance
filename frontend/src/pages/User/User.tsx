@@ -23,7 +23,7 @@ const User = () => {
 			<section className="container">
 				<UserProfile />
 
-				<Tabs colorScheme="gray">
+				<Tabs colorScheme="gray" minHeight="480px">
 					<TabList>
 						<Tab>Diagnosis</Tab>
 						<Tab>Receipt</Tab>
@@ -51,9 +51,7 @@ const User = () => {
 						</TabPanel>
 
 						{/* Receipt cards */}
-						<TabPanel>
-							<Card marginBottom={"1rem"} padding={"1rem"}></Card>
-						</TabPanel>
+						<TabPanel></TabPanel>
 					</TabPanels>
 				</Tabs>
 
