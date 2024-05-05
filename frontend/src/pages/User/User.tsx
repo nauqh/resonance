@@ -9,20 +9,18 @@ import UserProfile from "./UserProfile";
 // Styles
 import "./User.css";
 
-interface Artist {
-	name: string;
-	img: string;
-	id: string;
-	content: string;
-}
-
 interface Data {
 	content: {
 		genre: string;
 		mood: string;
 		color: string;
 		characteristics: string[];
-		artists: Artist[];
+		artists: {
+			name: string;
+			img: string;
+			id: string;
+			content: string;
+		}[];
 		tracks: {
 			id: string;
 			name: string;
