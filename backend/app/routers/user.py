@@ -1,8 +1,7 @@
-from fastapi import FastAPI, Response, status, HTTPException, Depends, APIRouter
+from fastapi import status, HTTPException, Depends, APIRouter
 from sqlalchemy.orm import Session
 import json
-from .. import models
-from ..schemas import User, DiagnosisOut
+from .. import models, schemas
 from ..database import get_db
 
 router = APIRouter(
@@ -14,7 +13,7 @@ router = APIRouter(
 
 
 @router.post("/", status_code=status.HTTP_201_CREATED)
-def create_user(data: User, db: Session = Depends(get_db)):
+def create_user(data: schemas.User, db: Session = Depends(get_db)):
     user = models.User(**data.model_dump())
     db.add(user)
     db.commit()
@@ -40,7 +39,7 @@ def create_diagnose(owner_id: int, data: dict, db: Session = Depends(get_db)):
     return diagnose
 
 
-@router.get("/{email}/diagnoses", status_code=status.HTTP_200_OK, response_model=list[DiagnosisOut])
+@router.get("/{email}/diagnoses", status_code=status.HTTP_200_OK, response_model=list[schemas.DiagnosisOut])
 def get_diagnoses(email: str, db: Session = Depends(get_db)):
     user = db.query(models.User).filter(models.User.email == email).first()
     if not user:
