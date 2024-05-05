@@ -46,30 +46,23 @@ const User = () => {
 	useEffect(() => {
 		const fetchData = async () => {
 			if (!data) {
-				const resp = await fetch(
+				const dataResp = await fetch(
 					`http://127.0.0.1:8000/users/${params.username}@gmail.com/diagnoses`
 				);
-				const jsonData = await resp.json();
-				setData(jsonData);
-			}
-		};
-
-		fetchData();
-	}, [data]);
-
-	useEffect(() => {
-		const fetchUser = async () => {
-			if (!user) {
-				const resp = await fetch(
+				const userDataResp = await fetch(
 					`http://127.0.0.1:8000/users/${params.username}@gmail.com`
 				);
-				const jsonUser = await resp.json();
+
+				const jsonData = await dataResp.json();
+				const jsonUser = await userDataResp.json();
+
+				setData(jsonData);
 				setUser(jsonUser);
 			}
 		};
 
-		fetchUser();
-	}, [user]);
+		fetchData();
+	}, [data, user]);
 
 	return (
 		<>
