@@ -68,7 +68,7 @@ const User = () => {
 
 						<TabPanels>
 							{/* Diagnosis cards */}
-							<TabPanel>
+							<TabPanel display={"flex"} flexDir={"column"}>
 								{data.map((item, index) => (
 									<DisplayCard
 										key={index}
