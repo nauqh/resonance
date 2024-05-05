@@ -1,12 +1,10 @@
-from fastapi import FastAPI, status, Depends
+from fastapi import FastAPI, status
 from fastapi.middleware.cors import CORSMiddleware
 import os
-import json
 
 # Database
 from . import models
-from .database import engine, get_db
-from sqlalchemy.orm import Session
+from .database import engine
 from .schemas import Playlist, ArtistList
 
 # Utils
