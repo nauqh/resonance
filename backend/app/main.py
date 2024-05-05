@@ -5,24 +5,19 @@ import json
 
 # Database
 from . import models
-from .database import SessionLocal, engine
+from .database import engine, get_db
 from sqlalchemy.orm import Session
-from .schema import Playlist, ArtistList, User
+from .schemas import Playlist, ArtistList
 
 # Utils
 from ..src.utils.utils import search_artist, search_playlist, get_recommendation
 from ..src.llm import LLM
 from ..src.receipt import send_email
 
+# Routers
+from .routers import user
+
 models.Base.metadata.create_all(bind=engine)
-
-
-def get_db():
-    db = SessionLocal()
-    try:
-        yield db
-    finally:
-        db.close()
 
 
 app = FastAPI(title='Resonance',
@@ -35,6 +30,8 @@ app.add_middleware(
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"])
+
+app.include_router(user.router)
 
 
 @app.get("/")
@@ -76,16 +73,6 @@ def send_receipt(data: dict):
     send_email(data['recipients'], data['attachment'])
     return f"Sent email to {', '.join(data['recipients'])}"
 
-# TODO: USER
-
-
-@app.post("/user", status_code=status.HTTP_201_CREATED)
-def create_user(data: User, db: Session = Depends(get_db)):
-    user = models.User(**data.model_dump())
-    db.add(user)
-    db.commit()
-    db.refresh(user)
-    return user
 
 # TODO: DIAGNOSE
 
