@@ -1,5 +1,5 @@
-import { Text, Heading, Flex, Link, Card } from "@chakra-ui/react";
-// import { Card, Image } from "@chakra-ui/react";
+import { Text, Heading, Flex, Link } from "@chakra-ui/react";
+import { Card, Image } from "@chakra-ui/react";
 import { ExternalLinkIcon } from "@chakra-ui/icons";
 
 interface DisplayCardProps {
@@ -7,7 +7,7 @@ interface DisplayCardProps {
 	mood: string;
 	color: string;
 	artists: string;
-	playlist: string;
+	playlist: any;
 }
 
 const DisplayCard = ({
@@ -24,11 +24,11 @@ const DisplayCard = ({
 			direction={{ base: "column", sm: "row" }}
 			columnGap={"2rem"}
 		>
-			{/* <Image
+			<Image
 				boxSize={{ base: "100px", lg: "150px" }}
 				objectFit="cover"
-				src="/homepage.png"
-			/> */}
+				src={playlist.images[0].url}
+			/>
 			<Flex direction={"column"} rowGap={"0.2rem"}>
 				<Heading size={"md"} mb={"0.5rem"} color={color}>
 					<Link href="http://localhost:5173">
@@ -38,7 +38,7 @@ const DisplayCard = ({
 				</Heading>
 				<Text>Mood: {mood}</Text>
 				<Text>Artists: {artists}</Text>
-				<Text>Playlist: {playlist}</Text>
+				<Text>Playlist: {playlist.name}</Text>
 				<Text>Songs: 9</Text>
 			</Flex>
 		</Card>

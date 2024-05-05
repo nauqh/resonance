@@ -13,7 +13,8 @@
 
 @media screen and (min-width: 1000px) {
 	.user__button {
-		position: absolute;
-		align-self: end;
+		position: fixed;
+		top: 85%;
+		left: 10rem;
 	}
 }

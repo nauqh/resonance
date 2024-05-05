@@ -68,7 +68,7 @@ const User = () => {
 
 						<TabPanels>
 							{/* Diagnosis cards */}
-							<TabPanel display={"flex"} flexDir={"column"}>
+							<TabPanel>
 								{data.map((item, index) => (
 									<DisplayCard
 										key={index}
@@ -78,7 +78,7 @@ const User = () => {
 										artists={item.content.artists
 											.map((artist) => artist.name)
 											.join(", ")}
-										playlist={item.content.playlist.name}
+										playlist={item.content.playlist}
 									/>
 								))}
 							</TabPanel>
