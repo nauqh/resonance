@@ -3,9 +3,11 @@ import { Text, Avatar, Flex, Box } from "@chakra-ui/react";
 interface UserProfileProps {
 	name: string;
 	subtitle?: string;
+	joined_at: string;
 }
 
-const UserProfile = ({ name, subtitle }: UserProfileProps) => {
+const UserProfile = ({ name, subtitle, joined_at }: UserProfileProps) => {
+	const parsedDate = new Date(joined_at);
 	return (
 		<Flex
 			justifyContent={"space-between"}
@@ -21,6 +23,10 @@ const UserProfile = ({ name, subtitle }: UserProfileProps) => {
 					{name}
 				</Text>
 				<Text>{subtitle}</Text>
+				<Text mt={"2rem"} fontSize={"0.9rem"}>
+					Joined in: {parsedDate.getDate()}/{parsedDate.getMonth()}/
+					{parsedDate.getFullYear()}
+				</Text>
 			</Box>
 			<Avatar
 				src="https://bit.ly/dan-abramov"

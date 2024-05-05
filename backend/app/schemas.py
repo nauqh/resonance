@@ -1,4 +1,5 @@
 from pydantic import BaseModel, EmailStr
+from datetime import datetime
 
 
 class Playlist(BaseModel):
@@ -28,6 +29,7 @@ class User(BaseModel):
 class UserOut(BaseModel):
     email: EmailStr
     name: str
+    created_at: datetime
 
 
 class Content(BaseModel):

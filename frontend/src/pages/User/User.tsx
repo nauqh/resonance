@@ -34,6 +34,7 @@ interface Data {
 interface User {
 	email: string;
 	name: string;
+	created_at: string;
 }
 
 const User = () => {
@@ -68,7 +69,11 @@ const User = () => {
 		<>
 			{data && user ? (
 				<section className="container">
-					<UserProfile name={user.name} subtitle={params.username} />
+					<UserProfile
+						name={user.name}
+						subtitle={params.username}
+						joined_at={user.created_at}
+					/>
 
 					<Tabs colorScheme="gray" minHeight="480px">
 						<TabList>
