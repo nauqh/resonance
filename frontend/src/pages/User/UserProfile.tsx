@@ -7,7 +7,11 @@ interface UserProfileProps {
 
 const UserProfile = ({ name, subtitle }: UserProfileProps) => {
 	return (
-		<Flex columnGap={{ base: "5rem", md: "10rem", lg: "15rem" }} mt="5rem">
+		<Flex
+			justifyContent={"space-between"}
+			width={{ base: "320px", md: "500px", lg: "580px" }}
+			mt="5rem"
+		>
 			<Box>
 				<Text
 					fontSize={{ base: "1.8rem", md: "2rem", lg: "2.5rem" }}

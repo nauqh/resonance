@@ -25,6 +25,11 @@ class User(BaseModel):
     name: str
 
 
+class UserOut(BaseModel):
+    email: EmailStr
+    name: str
+
+
 class Content(BaseModel):
     genre: str
     mood: str

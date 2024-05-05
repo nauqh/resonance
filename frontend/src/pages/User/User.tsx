@@ -31,14 +31,20 @@ interface Data {
 	};
 }
 
+interface User {
+	email: string;
+	name: string;
+}
+
 const User = () => {
 	const navigate = useNavigate();
 	const params = useParams();
 
 	const [data, setData] = useState<Data[]>();
+	const [user, setUser] = useState<User>();
 
 	useEffect(() => {
-		const fetchDataAndSetData = async () => {
+		const fetchData = async () => {
 			if (!data) {
 				const resp = await fetch(
 					`http://127.0.0.1:8000/users/${params.username}@gmail.com/diagnoses`
@@ -48,17 +54,28 @@ const User = () => {
 			}
 		};
 
-		fetchDataAndSetData();
+		fetchData();
 	}, [data]);
+
+	useEffect(() => {
+		const fetchUser = async () => {
+			if (!user) {
+				const resp = await fetch(
+					`http://127.0.0.1:8000/users/${params.username}@gmail.com`
+				);
+				const jsonUser = await resp.json();
+				setUser(jsonUser);
+			}
+		};
+
+		fetchUser();
+	}, [user]);
 
 	return (
 		<>
-			{data ? (
+			{data && user ? (
 				<section className="container">
-					<UserProfile
-						name="Dan Abrahmov"
-						subtitle={params.username}
-					/>
+					<UserProfile name={user.name} subtitle={params.username} />
 
 					<Tabs colorScheme="gray" minHeight="480px">
 						<TabList>

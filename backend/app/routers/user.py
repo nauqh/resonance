@@ -21,7 +21,7 @@ def create_user(data: schemas.User, db: Session = Depends(get_db)):
     return user
 
 
-@router.get("/{email}", status_code=status.HTTP_200_OK)
+@router.get("/{email}", status_code=status.HTTP_200_OK, response_model=schemas.UserOut)
 def get_user(email: str, db: Session = Depends(get_db)):
     user = db.query(models.User).filter(models.User.email == email).first()
     if not user:
