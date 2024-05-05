@@ -72,23 +72,3 @@ def create_recommendation(data: dict):
 def send_receipt(data: dict):
     send_email(data['recipients'], data['attachment'])
     return f"Sent email to {', '.join(data['recipients'])}"
-
-
-# # TODO: DIAGNOSE
-
-
-# @app.post("/diagnose", status_code=status.HTTP_201_CREATED)
-# def create_diagnose(data: dict, db: Session = Depends(get_db)):
-#     diagnose = models.Diagnose(content=json.dumps(data))
-#     db.add(diagnose)
-#     db.commit()
-#     db.refresh(diagnose)
-#     return data
-
-
-# @app.get("/diagnose", status_code=status.HTTP_200_OK)
-# def get_diagnoses(db: Session = Depends(get_db)):
-#     diagnoses = db.query(models.Diagnose).all()
-#     for diagnosis in diagnoses:
-#         diagnosis.content = json.loads(diagnosis.content)
-#     return diagnoses
