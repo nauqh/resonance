@@ -23,3 +23,7 @@ class User(BaseModel):
     email: EmailStr
     password: str
     name: str
+
+
+class DiagnosisOut(BaseModel):
+    content: dict

@@ -2,7 +2,7 @@ from fastapi import FastAPI, Response, status, HTTPException, Depends, APIRouter
 from sqlalchemy.orm import Session
 import json
 from .. import models
-from ..schemas import User
+from ..schemas import User, DiagnosisOut
 from ..database import get_db
 
 router = APIRouter(
@@ -22,10 +22,30 @@ def create_user(data: User, db: Session = Depends(get_db)):
     return user
 
 
-@router.post("/{owner_id}/diagnoses/", status_code=status.HTTP_201_CREATED)
+@router.get("/{email}", status_code=status.HTTP_200_OK)
+def get_user(email: str, db: Session = Depends(get_db)):
+    user = db.query(models.User).filter(models.User.email == email).first()
+    if not user:
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND,
+                            detail=f"User with email: {email} does not exist")
+    return user
+
+
+@router.post("/{owner_id}/diagnoses", status_code=status.HTTP_201_CREATED)
 def create_diagnose(owner_id: int, data: dict, db: Session = Depends(get_db)):
     diagnose = models.Diagnose(owner_id=owner_id, content=json.dumps(data))
     db.add(diagnose)
     db.commit()
     db.refresh(diagnose)
     return diagnose
+
+
+@router.get("/{email}/diagnoses", status_code=status.HTTP_200_OK, response_model=list[DiagnosisOut])
+def get_diagnoses(email: str, db: Session = Depends(get_db)):
+    user = db.query(models.User).filter(models.User.email == email).first()
+    if not user:
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND,
+                            detail=f"User with email: {email} does not exist")
+    for diagnosis in user.diagnoses:
+        diagnosis.content = json.loads(diagnosis.content)
+    return user.diagnoses
