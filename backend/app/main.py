@@ -7,7 +7,7 @@ import json
 from . import models
 from .database import SessionLocal, engine
 from sqlalchemy.orm import Session
-from .schema import Playlist, ArtistList
+from .schema import Playlist, ArtistList, User
 
 # Utils
 from ..src.utils.utils import search_artist, search_playlist, get_recommendation
@@ -80,14 +80,26 @@ def send_receipt(data: dict):
 
 
 @app.post("/user", status_code=status.HTTP_201_CREATED)
+def create_user(data: User, db: Session = Depends(get_db)):
+    user = models.User(**data.model_dump())
+    db.add(user)
+    db.commit()
+    db.refresh(user)
+    return user
+
+# TODO: DIAGNOSE
+
+
+@app.post("/diagnose", status_code=status.HTTP_201_CREATED)
 def create_diagnose(data: dict, db: Session = Depends(get_db)):
     diagnose = models.Diagnose(content=json.dumps(data))
     db.add(diagnose)
     db.commit()
+    db.refresh(diagnose)
     return data
 
 
-@app.get("/user", status_code=status.HTTP_200_OK)
+@app.get("/diagnose", status_code=status.HTTP_200_OK)
 def get_diagnoses(db: Session = Depends(get_db)):
     diagnoses = db.query(models.Diagnose).all()
     for diagnosis in diagnoses:

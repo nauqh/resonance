@@ -1,4 +1,4 @@
-from pydantic import BaseModel
+from pydantic import BaseModel, EmailStr
 
 
 class Playlist(BaseModel):
@@ -18,12 +18,8 @@ class Playlist(BaseModel):
 class ArtistList(BaseModel):
     names: list[str]
 
-    model_config = {
-        "json_schema_extra": {
-            "examples": [
-                {
-                    "names": ["Zion.T", "10cm", "J_ust"]
-                }
-            ]
-        }
-    }
+
+class User(BaseModel):
+    email: EmailStr
+    password: str
+    name: str
