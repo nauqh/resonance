@@ -25,5 +25,15 @@ class User(BaseModel):
     name: str
 
 
+class Content(BaseModel):
+    genre: str
+    mood: str
+    color: str
+    characteristics: list[str]
+    artists: list[dict]
+    tracks: list[dict]
+    playlist: dict
+
+
 class DiagnosisOut(BaseModel):
-    content: dict
+    content: Content
