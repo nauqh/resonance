@@ -1,4 +1,4 @@
-import { Text, Heading, Flex, Link } from "@chakra-ui/react";
+import { Text, Heading, Flex } from "@chakra-ui/react";
 import { Card, Image } from "@chakra-ui/react";
 import { ExternalLinkIcon } from "@chakra-ui/icons";
 
@@ -8,6 +8,7 @@ interface DisplayCardProps {
 	color: string;
 	artists: string;
 	playlist: any;
+	onClick?: () => void;
 }
 
 const DisplayCard = ({
@@ -16,6 +17,7 @@ const DisplayCard = ({
 	color,
 	artists,
 	playlist,
+	onClick,
 }: DisplayCardProps) => {
 	return (
 		<Card
@@ -23,6 +25,8 @@ const DisplayCard = ({
 			padding={"1rem"}
 			direction={{ base: "column", sm: "row" }}
 			columnGap={"2rem"}
+			cursor={onClick ? "pointer" : "default"}
+			onClick={onClick}
 		>
 			<Image
 				boxSize={{ base: "100px", lg: "150px" }}
@@ -31,10 +35,8 @@ const DisplayCard = ({
 			/>
 			<Flex direction={"column"} rowGap={"0.2rem"}>
 				<Heading size={"md"} mb={"0.5rem"} color={color}>
-					<Link href="http://localhost:5173">
-						{genre}
-						<ExternalLinkIcon mx="5px" mb="5px" />
-					</Link>
+					{genre}
+					<ExternalLinkIcon mx="5px" mb="5px" />
 				</Heading>
 				<Text>Mood: {mood}</Text>
 				<Text>Artists: {artists}</Text>

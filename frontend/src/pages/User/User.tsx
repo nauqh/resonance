@@ -9,7 +9,7 @@ import UserProfile from "./UserProfile";
 // Styles
 import "./User.css";
 
-interface Data {
+export interface Data {
 	content: {
 		genre: string;
 		mood: string;
@@ -94,6 +94,16 @@ const User = () => {
 											.map((artist) => artist.name)
 											.join(", ")}
 										playlist={item.content.playlist}
+										onClick={() => {
+											navigate(
+												`/profile/${params.username}/diagnose`,
+												{
+													state: {
+														data: data[index],
+													},
+												}
+											);
+										}}
 									/>
 								))}
 							</TabPanel>

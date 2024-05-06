@@ -7,6 +7,7 @@ import Fetch from "./pages/Diagnose/Fetch";
 import Input from "./pages/Input/Input";
 import Diagnose from "./pages/Diagnose/Diagnose";
 import User from "./pages/User/User";
+import ViewDiagnose from "./pages/Diagnose/ViewDiagnose";
 
 import "./assets/index.css";
 
@@ -38,6 +39,10 @@ const router = createBrowserRouter([
 	{
 		path: "/profile/:username",
 		element: <User />,
+	},
+	{
+		path: "/profile/:username/diagnose",
+		element: <ViewDiagnose />,
 	},
 ]);
 
