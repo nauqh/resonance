@@ -1,3 +1,29 @@
+.header {
+	width: 1024px;
+	justify-content: space-between;
+	justify-self: center;
+	display: none;
+	height: fit-content;
+}
+
+.nav__logo {
+	font-size: 1.5rem;
+	font-weight: 700;
+}
+
+.nav__list {
+	display: flex;
+	column-gap: 2rem;
+}
+
+.nav__item {
+	font-size: 1.1rem;
+}
+
+.nav__item:hover {
+	text-decoration: underline;
+}
+
 .home {
 	padding: 9rem 0 2rem;
 	height: 100vh;
@@ -128,6 +154,9 @@
 }
 
 @media screen and (min-width: 1024px) {
+	.header {
+		display: flex;
+	}
 	.home {
 		padding-top: 2rem;
 	}

@@ -1,8 +1,11 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import ScrollReveal from "scrollreveal";
+
+// Components
 import Footer from "../../components/Footer";
 
+// Styles
 import "./Home.css";
 
 const sr = ScrollReveal({
@@ -49,6 +52,33 @@ const Home = () => {
 	return (
 		<>
 			<section className="home">
+				<header className="header">
+					<a href="/home" className="nav__logo">
+						Musicotherapy
+					</a>
+
+					<div className="nav__menu" id="nav-menu">
+						<ul className="nav__list">
+							<li className="nav__item">
+								<a href="#" className="nav__link">
+									About
+								</a>
+							</li>
+							<li className="nav__item">
+								<a
+									href="#"
+									className="nav__link"
+									onClick={() => {
+										navigate("/profile/nauqh");
+									}}
+								>
+									Login
+								</a>
+							</li>
+						</ul>
+					</div>
+				</header>
+
 				<div className="home__container container">
 					<div className="home__data">
 						<h1 className="home__title">{title}</h1>
