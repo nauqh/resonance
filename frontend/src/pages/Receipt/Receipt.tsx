@@ -163,12 +163,7 @@ const Receipt = ({ data, playlist }: ReceiptProps) => {
 					</button>
 				</div>
 
-				<Toaster
-					toastOptions={{
-						style: { background: "#fafafa" },
-					}}
-					position="top-center"
-				/>
+				<Toaster position="top-center" />
 			</div>
 
 			<div

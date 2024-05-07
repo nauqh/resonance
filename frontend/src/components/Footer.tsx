@@ -4,7 +4,7 @@ const Footer = () => {
 			<div>
 				A project by{" "}
 				<span style={{ fontSize: "2rem", fontWeight: 700 }}>
-					<a href="https://nauqh.github.io">nauqh</a>
+					<a href="https://nauqh.github.io">Team 1</a>
 				</span>
 			</div>
 			<span
