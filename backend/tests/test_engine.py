@@ -1,4 +1,10 @@
-from src.utils.utils import get_artist, search_artist, get_playlist, search_playlist, get_recommendation
+from src.utils.utils import (
+    get_artist,
+    search_artist,
+    get_playlist,
+    search_playlist,
+    get_recommendation
+)
 
 
 def test_get_artist():
