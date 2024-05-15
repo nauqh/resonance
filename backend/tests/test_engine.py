@@ -29,28 +29,28 @@ def test_get_artist():
     assert artist['name'] == "Justin Bieber"
 
 
-# def test_get_playlist():
-#     """
-#     Get playlist given url
-#     """
-#     playlist = get_playlist(
-#         "https://open.spotify.com/playlist/2xukpbxolEK8C9HdpANzZu?si=bbe1304cc2f74b31")
-#     assert playlist['type'] == 'playlist'
+def test_get_playlist():
+    """
+    Get playlist given url
+    """
+    playlist = get_playlist(
+        "https://open.spotify.com/playlist/2xukpbxolEK8C9HdpANzZu?si=bbe1304cc2f74b31")
+    assert playlist['type'] == 'playlist'
 
 
-# def test_search_playlist():
-#     """
-#     Search playlist with keyword
-#     """
-#     playlist = search_playlist("korean soft indie")
-#     assert "korean" in playlist['name']
+def test_search_playlist():
+    """
+    Search playlist with keyword
+    """
+    playlist = search_playlist("korean soft indie")
+    assert "korean" in playlist['name']
 
 
-# def test_get_recommendation():
-#     artist_ids = ['1uNFoZAHBGtllmzznpCI3s', '5IH6FPUwQTxPSXurCrcIov']
-#     data = get_recommendation(artist_ids)
+def test_get_recommendation():
+    artist_ids = ['1uNFoZAHBGtllmzznpCI3s', '5IH6FPUwQTxPSXurCrcIov']
+    data = get_recommendation(artist_ids)
 
-#     # Check each track data has the same structure
-#     keys = data[0].keys()
-#     for item in data[1:]:
-#         assert item.keys() == keys
+    # Check each track data has the same structure
+    keys = data[0].keys()
+    for item in data[1:]:
+        assert item.keys() == keys
