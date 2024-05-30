@@ -129,7 +129,7 @@ const Input = () => {
 					marginBottom: 0,
 				}}
 			>
-				<Popover>
+				<Popover placement="top-start">
 					<PopoverTrigger>
 						<Text
 							m={"8px auto"}
