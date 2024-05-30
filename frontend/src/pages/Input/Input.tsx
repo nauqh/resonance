@@ -141,7 +141,7 @@ const Input = () => {
 								},
 							}}
 						>
-							Enter your OpenAI API
+							Enter your OpenAI API key
 						</Text>
 					</PopoverTrigger>
 					<PopoverContent>
