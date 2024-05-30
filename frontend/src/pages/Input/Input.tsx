@@ -1,6 +1,17 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
+import { Toaster, toast } from "sonner";
+
+import { Text, Input as ChakraInput, Box } from "@chakra-ui/react";
+import {
+	Popover,
+	PopoverTrigger,
+	PopoverContent,
+	PopoverBody,
+	PopoverArrow,
+	PopoverCloseButton,
+} from "@chakra-ui/react";
 
 // Components
 import TextInput from "../../components/TextInput/TextInput";
@@ -25,6 +36,7 @@ const Input = () => {
 	const [notes, setNotes] = useState("");
 	const [genre, setGenre] = useState<FilterKey>();
 	const [selectOption, setSelectedOption] = useState("");
+	const [apiKey, setApiKey] = useState("");
 
 	const handleFilterChange = (filter: FilterKey) => {
 		setSliderValues(Features[filter]);
@@ -53,10 +65,18 @@ const Input = () => {
 		}`;
 		console.log(prompt);
 
+		if (!apiKey) {
+			toast.error(
+				"Please enter your OpenAI key when customizing music preference"
+			);
+			return;
+		}
+
 		navigate("/fetch", {
 			state: {
 				description: prompt,
 				genre: genre,
+				apiKey: apiKey,
 			},
 		});
 	};
@@ -111,6 +131,38 @@ const Input = () => {
 					marginBottom: 0,
 				}}
 			>
+				<Popover>
+					<PopoverTrigger>
+						<Text
+							m={"8px auto"}
+							fontWeight={600}
+							sx={{
+								_hover: {
+									textDecoration: "underline",
+									cursor: "pointer",
+								},
+							}}
+						>
+							Enter your OpenAI API
+						</Text>
+					</PopoverTrigger>
+					<PopoverContent>
+						<PopoverArrow />
+						<PopoverCloseButton />
+						<PopoverBody>
+							Are you sure you want to have that milkshake?
+						</PopoverBody>
+					</PopoverContent>
+				</Popover>
+				<Toaster position="top-center" />
+				<Box w={{ base: "100%", sm: "75%" }} m={"0 auto 2rem"}>
+					<ChakraInput
+						placeholder="sk-..."
+						value={apiKey}
+						onChange={(e) => setApiKey(e.target.value)}
+					/>
+				</Box>
+
 				<Slider
 					name="Danceability"
 					description="Danceability describes how suitable a track is for dancing based on a combination of musical elements"
@@ -168,6 +220,7 @@ const Input = () => {
 						setSelectedOption(selectedOption);
 					}}
 				/>
+
 				<TextInput
 					label="Describe your kind of music"
 					placeholder="E.g. Some soft chill korean indie"
