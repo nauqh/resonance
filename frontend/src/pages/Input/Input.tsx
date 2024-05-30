@@ -63,7 +63,7 @@ const Input = () => {
 		}`;
 		console.log(prompt);
 
-		if (!apiKey.startsWith("sk") || apiKey.length == 50) {
+		if (!apiKey.startsWith("sk") || !(apiKey.length == 50)) {
 			toast.error(
 				"Please enter your OpenAI key when customizing music preference"
 			);
