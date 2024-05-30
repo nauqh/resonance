@@ -9,8 +9,6 @@ import {
 	PopoverTrigger,
 	PopoverContent,
 	PopoverBody,
-	PopoverArrow,
-	PopoverCloseButton,
 } from "@chakra-ui/react";
 
 // Components
@@ -147,10 +145,11 @@ const Input = () => {
 						</Text>
 					</PopoverTrigger>
 					<PopoverContent>
-						<PopoverArrow />
-						<PopoverCloseButton />
-						<PopoverBody>
-							Are you sure you want to have that milkshake?
+						<PopoverBody fontSize={"0.9rem"}>
+							Due to model pricing, we have to limit the use of
+							our music taste analysis feature. To access this
+							functionality, please enter your own OpenAI key or
+							select one of the predefined diagnoses listed above.
 						</PopoverBody>
 					</PopoverContent>
 				</Popover>
