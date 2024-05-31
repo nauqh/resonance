@@ -28,17 +28,17 @@ const Fetch = () => {
 	useEffect(() => {
 		const fetchDataAndSetData = async () => {
 			if (!data) {
-				const analysis = await fetchData(location.state.description);
+				const analysis = await fetchData(location.state.data);
 				setData(analysis);
 				const playlist = await fetchJson(BASE + "playlist", {
-					keyword: location.state.description,
+					keyword: location.state.data.description,
 				});
 				setPlaylist(playlist);
 			}
 		};
 
 		fetchDataAndSetData();
-	}, [data, location.state.description]);
+	}, [data, location.state.data]);
 
 	return (
 		<>

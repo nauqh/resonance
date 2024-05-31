@@ -63,7 +63,7 @@ const Input = () => {
 		}`;
 		console.log(prompt);
 
-		if (!apiKey.startsWith("sk") || !(apiKey.length == 50)) {
+		if (!apiKey.startsWith("sk")) {
 			toast.error(
 				"Please enter your OpenAI key when customizing music preference"
 			);
@@ -72,9 +72,11 @@ const Input = () => {
 
 		navigate("/fetch", {
 			state: {
-				description: prompt,
+				data: {
+					description: prompt,
+					key: apiKey,
+				},
 				genre: genre,
-				apiKey: apiKey,
 			},
 		});
 	};

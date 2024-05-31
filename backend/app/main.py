@@ -1,6 +1,5 @@
-from fastapi import FastAPI, status
+from fastapi import FastAPI, status, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
-import os
 
 # Database
 from . import models
@@ -38,8 +37,13 @@ def root():
 
 
 @app.post("/analysis", status_code=status.HTTP_201_CREATED)
-def create_analysis(description: dict):
-    return LLM(os.environ['API_KEY']).analyze(description)
+def create_analysis(data: dict):
+    try:
+        response = LLM(data['key']).analyze(data['description'])
+    except Exception:
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST, detail="Invalid API key")
+    return response
 
 
 @app.post("/playlist", status_code=status.HTTP_201_CREATED)

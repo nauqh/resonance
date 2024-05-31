@@ -36,9 +36,10 @@ export const fetchJson = async (url: string, data: any) => {
 	return response.json();
 };
 
-export const fetchData = async (description: string) => {
+export const fetchData = async (data: any) => {
 	const analysis = await fetchJson(BASE + "analysis", {
-		description: description,
+		description: data.description,
+		key: data.key
 	});
 
 	const artists = await fetchJson(BASE + "artist", {
