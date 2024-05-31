@@ -1,6 +1,9 @@
-fastapi[all]
-pandas
-tqdm
-requests
-langchain
-langchain-openai
+fastapi==0.111.0
+langchain==0.2.1
+langchain_openai==0.1.8
+pandas==2.0.3
+pydantic==2.7.2
+python-dotenv==1.0.1
+Requests==2.32.3
+SQLAlchemy==2.0.29
+tqdm==4.66.2
