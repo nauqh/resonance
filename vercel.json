@@ -1,5 +1,4 @@
 {
-    "version": 3,
     "builds": [
         {
             "src": "backend/app/main.py",
