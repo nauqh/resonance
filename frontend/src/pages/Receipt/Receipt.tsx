@@ -59,7 +59,7 @@ const Receipt = ({ data, playlist }: ReceiptProps) => {
 				attachment: canvas.toDataURL("image/png"),
 			};
 
-			fetch("http://127.0.0.1:8000/receipt", {
+			fetch("https://musicotherapy.onrender.com/receipt", {
 				method: "POST",
 				headers: {
 					"Content-Type": "application/json",
