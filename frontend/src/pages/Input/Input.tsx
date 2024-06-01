@@ -77,6 +77,7 @@ const Input = () => {
 					key: apiKey,
 				},
 				genre: genre,
+				useOwnerKey: apiKey === "hym",
 			},
 		});
 	};

@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { Tabs, TabList, TabPanels, Tab, TabPanel } from "@chakra-ui/react";
+import { Box, Tabs, TabList, TabPanels, Tab, TabPanel } from "@chakra-ui/react";
+import { Alert, AlertTitle, AlertDescription } from "@chakra-ui/react";
 
 // Components
 import DisplayCard from "./DisplayCard";
@@ -48,10 +49,10 @@ const User = () => {
 		const fetchData = async () => {
 			if (!data) {
 				const dataResp = await fetch(
-					`http://127.0.0.1:8000/users/${params.username}@gmail.com/diagnoses`
+					`https://musicotherapy.onrender.com/users/${params.username}@gmail.com/diagnoses`
 				);
 				const userDataResp = await fetch(
-					`http://127.0.0.1:8000/users/${params.username}@gmail.com`
+					`https://musicotherapy.onrender.com/users/${params.username}@gmail.com`
 				);
 
 				const jsonData = await dataResp.json();
@@ -69,6 +70,20 @@ const User = () => {
 		<>
 			{data && user ? (
 				<section className="container">
+					<Alert
+						mt={"1rem"}
+						colorScheme="gray"
+						width={{ base: "320px", md: "500px", lg: "580px" }}
+					>
+						<Box bg={"transparent"}>
+							<AlertTitle bg={"transparent"}>🚧 Note!</AlertTitle>
+							<AlertDescription bg={"transparent"}>
+								The following feature is currently in
+								development. Below is a draft of the user
+								profile.
+							</AlertDescription>
+						</Box>
+					</Alert>
 					<UserProfile
 						name={user.name}
 						subtitle={params.username}

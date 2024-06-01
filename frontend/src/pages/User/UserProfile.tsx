@@ -12,7 +12,7 @@ const UserProfile = ({ name, subtitle, joined_at }: UserProfileProps) => {
 		<Flex
 			justifyContent={"space-between"}
 			width={{ base: "320px", md: "500px", lg: "580px" }}
-			mt="5rem"
+			mt="3rem"
 		>
 			<Box>
 				<Text
