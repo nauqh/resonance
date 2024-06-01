@@ -13,7 +13,11 @@
 	height: 100%;
 	padding: 1.5rem;
 	border-radius: 0.5rem;
-	border: 1px solid #161513;
+	border: 1px solid #ccc;
+}
+
+.contact__form-input:focus {
+	outline: 1px solid #ccc;
 }
 
 .contact__form-tag {

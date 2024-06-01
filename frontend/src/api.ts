@@ -60,12 +60,17 @@ export const fetchData = async (data: any) => {
 };
 
 
-// Test
-// const description = "Korean Soft Indie";
-// fetchData(description)
+// export const fetchDiagnoseData = async (data: any) => {
+//     const diagnoseData = await fetchData(data);
+//     return diagnoseData;
+// };
+
+// // Test
+// fetchDiagnoseData({ description: "Korean Soft Indie" })
 //     .then((result) => {
 //         console.log(result);
 //     })
 //     .catch((error) => {
 //         console.error("Error fetching data:", error);
+//     });
 //     });
