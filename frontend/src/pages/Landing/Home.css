@@ -63,6 +63,10 @@
 	border-radius: 0.2rem;
 }
 
+.input-container input:focus {
+	outline: 1px solid #ccc;
+}
+
 .home__img img {
 	width: 300px;
 	animation: floaty 1.8s infinite alternate;
