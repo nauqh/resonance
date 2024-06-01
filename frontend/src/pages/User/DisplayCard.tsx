@@ -27,6 +27,10 @@ const DisplayCard = ({
 			columnGap={"2rem"}
 			cursor={onClick ? "pointer" : "default"}
 			onClick={onClick}
+			_hover={{
+				transform: "translateY(-5px)",
+				transition: "transform 0.3s",
+			}}
 		>
 			<Image
 				boxSize={{ base: "100px", lg: "150px" }}
