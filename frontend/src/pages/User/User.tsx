@@ -49,10 +49,10 @@ const User = () => {
 		const fetchData = async () => {
 			if (!data) {
 				const dataResp = await fetch(
-					`https://musicotherapy.onrender.com/users/${params.username}@gmail.com/diagnoses`
+					`https://web-production-460c1.up.railway.app/users/${params.username}@gmail.com/diagnoses`
 				);
 				const userDataResp = await fetch(
-					`https://musicotherapy.onrender.com/users/${params.username}@gmail.com`
+					`https://web-production-460c1.up.railway.app/users/${params.username}@gmail.com`
 				);
 
 				const jsonData = await dataResp.json();
