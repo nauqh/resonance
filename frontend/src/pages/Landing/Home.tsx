@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import ScrollReveal from "scrollreveal";
+import { Toaster, toast } from "sonner";
 
 // Components
 import Footer from "../../components/Footer";
@@ -58,9 +59,26 @@ const Home = () => {
 					</a>
 
 					<div className="nav__menu" id="nav-menu">
+						<Toaster
+							toastOptions={{
+								style: {
+									padding: "0.5rem",
+								},
+							}}
+							position="top-center"
+						/>
+
 						<ul className="nav__list">
 							<li className="nav__item">
-								<a href="#" className="nav__link">
+								<a
+									href="#"
+									className="nav__link"
+									onClick={() =>
+										toast.info(
+											"Explore user profile through the Login button"
+										)
+									}
+								>
 									About
 								</a>
 							</li>
