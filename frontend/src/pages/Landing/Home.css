@@ -145,15 +145,10 @@
 	.button-container,
 	.home__input {
 		align-self: center;
-		justify-self: center;
 	}
 
 	.home__input {
 		display: grid;
-	}
-
-	.input-container {
-		justify-self: center;
 	}
 }
 
